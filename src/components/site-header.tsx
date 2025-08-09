@@ -220,7 +220,7 @@ export default function SiteHeader({ onContactClick = () => {} }: Props) {
                 <SheetTitle>
                   <span className="sr-only">Navigation</span>
                   <div className="flex items-center gap-2">
-                    <Logo showText={true} />
+                    <Logo/>
                   </div>
                 </SheetTitle>
               </SheetHeader>
