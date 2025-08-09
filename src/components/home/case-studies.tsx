@@ -1,12 +1,13 @@
 "use client";
 
-import Section from "./section";
-import useEmblaCarousel from "embla-carousel-react";
-import Image from "next/image";
-import { useCallback, useEffect, useRef, useState } from "react";
-import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useCallback, useEffect, useRef, useState } from "react";
+
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import Section from "@/components/home/section";
 import { motion } from "framer-motion";
+import useEmblaCarousel from "embla-carousel-react";
 
 const slides = [
   {
@@ -26,7 +27,7 @@ const slides = [
   },
 ];
 
-export default function CaseStudiesCarousel() {
+export default function CaseStudies() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [progressKey, setProgressKey] = useState(0);

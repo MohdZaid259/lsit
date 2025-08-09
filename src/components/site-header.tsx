@@ -38,7 +38,7 @@ import {
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Logo from "./logo";
-import MetallicButton from "./metallic-button";
+import MetallicButton from "./common/metallic-button";
 import { useState } from "react";
 
 type Props = {
@@ -121,6 +121,18 @@ export default function SiteHeader({ onContactClick = () => {} }: Props) {
               </NavigationMenuLink>
             </NavigationMenuItem>
 
+            {/* Technologies */}
+            <NavigationMenuItem>
+              <NavigationMenuLink asChild>
+                <Link
+                  href="#technologies"
+                  className="px-4 py-2 text-sm font-semibold text-muted-foreground hover:text-slate-900 transition-colors"
+                >
+                  Technologies
+                </Link>
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+
             {/* Products Mega Menu */}
             <NavigationMenuItem>
               <NavigationMenuTrigger className="px-4 py-2 text-sm font-semibold text-muted-foreground hover:text-slate-900 transition-colors">
@@ -164,18 +176,6 @@ export default function SiteHeader({ onContactClick = () => {} }: Props) {
                   })}
                 </div>
               </NavigationMenuContent>
-            </NavigationMenuItem>
-
-            {/* Technologies */}
-            <NavigationMenuItem>
-              <NavigationMenuLink asChild>
-                <Link
-                  href="#technologies"
-                  className="px-4 py-2 text-sm font-semibold text-muted-foreground hover:text-slate-900 transition-colors"
-                >
-                  Technologies
-                </Link>
-              </NavigationMenuLink>
             </NavigationMenuItem>
 
             {/* About */}

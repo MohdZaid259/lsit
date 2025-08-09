@@ -1,10 +1,8 @@
-"use client";
-
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import MetallicButton from "./metallic-button";
-import Reveal from "./reveal";
+import MetallicButton from "@/components/common/metallic-button";
+import Reveal from "@/components/common/reveal";
 
 type CTA = { href: string; label: string };
 

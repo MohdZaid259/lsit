@@ -1,15 +1,14 @@
 "use client";
 
-import AboutSection from "@/components/about-section";
-import ApplicationsSlider from "@/components/applications-slider";
-import CaseStudiesCarousel from "@/components/case-studies-carousel";
-import CertificationsPartners from "@/components/certifications-partners";
-import ComparisonSlider from "@/components/comparison-slider";
-import ContactSection from "@/components/contact-section";
-import FabricTechnologies from "@/components/fabric-technologies";
-import Hero from "@/components/hero";
-import ProductCatalog from "@/components/product-catalog";
+import CaseStudies from "@/components/home/case-studies";
+import Certifications from "@/components/home/certifications";
+import ContactSection from "@/components/home/contact";
+import Hero from "@/components/home/hero";
+import OurServices from "@/components/home/our-services";
+import SiteFooter from "@/components/site-footer";
 import SiteHeader from "@/components/site-header";
+import TechnologiesSection from "@/components/home/technologies-section";
+import WhyChooseUs from "@/components/home/why-choose-us";
 import { useRef } from "react";
 
 export default function Page() {
@@ -32,26 +31,16 @@ export default function Page() {
           ctaPrimary={{ href: "#technologies", label: "Explore Technologies" }}
           ctaSecondary={{ href: "#contact", label: "Speak to an Engineer" }}
         />
-        {/* <AboutSection />
-        <FabricTechnologies />
-        <ApplicationsSlider />
-        <ComparisonSlider />
-        <CertificationsPartners />
-        <CaseStudiesCarousel />
-        <ProductCatalog />
+        <OurServices />
+        <WhyChooseUs />
+        <TechnologiesSection />
+        <CaseStudies />
+        <Certifications />
         <div ref={contactRef}>
           <ContactSection />
         </div>
-        */}
       </main>
-      {/* <footer className="border-t bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
-        <div className="container mx-auto px-4 md:px-6 py-6 text-xs text-muted-foreground flex flex-col sm:flex-row items-center gap-2">
-          <div>
-            © {new Date().getFullYear()} SunTech Fabrics. All rights reserved.
-          </div>
-          <div className="sm:ml-auto">Engineered textiles for industry.</div>
-        </div>
-      </footer> */}
+      <SiteFooter />
     </div>
   );
 }
