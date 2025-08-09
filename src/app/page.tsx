@@ -32,26 +32,25 @@ export default function Page() {
           ctaPrimary={{ href: "#technologies", label: "Explore Technologies" }}
           ctaSecondary={{ href: "#contact", label: "Speak to an Engineer" }}
         />
-        {/* <AboutSection />
-        <FabricTechnologies />
+        {/* <AboutSection /> */}
+        {/* <FabricTechnologies />
         <ApplicationsSlider />
         <ComparisonSlider />
         <CertificationsPartners />
         <CaseStudiesCarousel />
-        <ProductCatalog />
+        <ProductCatalog /> */}
         <div ref={contactRef}>
           <ContactSection />
         </div>
-        */}
       </main>
-      {/* <footer className="border-t bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+      <footer className="border-t bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
         <div className="container mx-auto px-4 md:px-6 py-6 text-xs text-muted-foreground flex flex-col sm:flex-row items-center gap-2">
           <div>
-            © {new Date().getFullYear()} SunTech Fabrics. All rights reserved.
+          <div>© {new Date().getFullYear()} Lateral System for Innovation and Technology. All rights reserved.</div>
           </div>
-          <div className="sm:ml-auto">Engineered textiles for industry.</div>
+          <div className="sm:ml-auto">LS4IT. Engineered textiles for industry.</div>
         </div>
-      </footer> */}
+      </footer>
     </div>
   );
 }

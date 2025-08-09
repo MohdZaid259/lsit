@@ -123,7 +123,7 @@ export default function SiteHeader({ onContactClick = () => {} }: Props) {
 
             {/* Products Mega Menu */}
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="px-4 py-2 text-sm font-semibold text-muted-foreground hover:text-slate-900 transition-colors">
+              <NavigationMenuTrigger className="px-4 py-2 text-sm font-semibold text-muted-foreground hover:text-slate-900 bg-transparent transition-colors">
                 Products
               </NavigationMenuTrigger>
               <NavigationMenuContent>
@@ -182,7 +182,7 @@ export default function SiteHeader({ onContactClick = () => {} }: Props) {
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
                 <Link
-                  href="#about"
+                  href="/about"
                   className="px-4 py-2 text-sm font-semibold text-muted-foreground hover:text-slate-900 transition-colors"
                 >
                   About
