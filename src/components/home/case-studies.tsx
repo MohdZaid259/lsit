@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import Section from "@/components/home/section";
+import Section from "@/components/common/section";
 import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 

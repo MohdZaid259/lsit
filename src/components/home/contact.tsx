@@ -2,7 +2,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import type React from "react";
-import Section from "./section";
+import Section from "../common/section";
 import { Textarea } from "@/components/ui/textarea";
 
 
@@ -100,13 +100,19 @@ export default function Contact() {
           <div className="p-4 rounded-xl border border-gray-500">
             <div className="flex items-center gap-1 text-slate-800">
               <Mail className="h-4 w-4 text-slate-500" />
-              <a href="mailto:info@lsit.com" className="tracking-wider hover:underline">
+              <a
+                href="mailto:info@lsit.com"
+                className="tracking-wider hover:underline"
+              >
                 info@lsit.com
               </a>
             </div>
             <div className="mt-3 flex items-center gap-1 text-slate-800">
               <Phone className="h-4 w-4 text-slate-500" />
-              <a href="tel:+971 52 666 9974" className="tracking-wide hover:underline">
+              <a
+                href="tel:+971 52 666 9974"
+                className="tracking-wide hover:underline"
+              >
                 +971 52 666 997
               </a>
             </div>
@@ -130,5 +136,5 @@ export default function Contact() {
         </aside>
       </div>
     </Section>
-  )
+  );
 }

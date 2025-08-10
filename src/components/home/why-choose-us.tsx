@@ -1,32 +1,9 @@
-import {
-  BadgeCheck,
-  Car,
-  ChevronRight,
-  Cpu,
-  FlaskConical,
-  Gauge,
-  Globe,
-  Layers,
-  Leaf,
-  Microscope,
-  ShieldCheck,
-  Tent,
-  Timer,
-} from "lucide-react";
+import { Car, Microscope, ShieldCheck, Tent } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import Link from "next/link";
-import Section from "./section";
+import Section from "../common/section";
 
 export default function WhyChooseUs() {
-  const kpis = [
-    { label: "IR Reflectivity", value: "Up to 86%", icon: Gauge },
-    { label: "Lead Time", value: "2–6 weeks", icon: Timer },
-    { label: "Global Reach", value: "40+ countries", icon: Globe },
-    { label: "Compliance", value: "ISO • CE • NFPA", icon: BadgeCheck },
-  ];
-
   const benefits = [
     {
       icon: Microscope,
@@ -73,27 +50,6 @@ export default function WhyChooseUs() {
       title="Built on science. Proven in the field."
       subtitle="Technology‑first textiles for heat control, protection, and all‑weather performance across automotive and outdoor applications."
     >
-      {/* KPI Row */}
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {kpis.map(({ label, value, icon: Icon }) => (
-          <Card key={label} className="p-4">
-            <div className="flex items-center gap-3">
-              <div className="grid h-10 w-10 place-items-center rounded-md border bg-white">
-                <Icon className="h-5 w-5 text-slate-600" />
-              </div>
-              <div>
-                <div className="text-xs uppercase tracking-wide text-slate-500">
-                  {label}
-                </div>
-                <div className="text-lg font-semibold text-slate-900">
-                  {value}
-                </div>
-              </div>
-            </div>
-          </Card>
-        ))}
-      </div>
-
       {/* Benefits Grid */}
       <div className="mt-10 grid gap-6 md:grid-cols-2">
         {benefits.map((b) => {

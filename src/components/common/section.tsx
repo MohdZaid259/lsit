@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import type React from "react";
 import { motion } from "framer-motion";
@@ -60,5 +60,5 @@ export default function Section({
         <div className="mt-10">{children}</div>
       </div>
     </section>
-  )
+  );
 }

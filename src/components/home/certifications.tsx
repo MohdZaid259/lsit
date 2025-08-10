@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/dialog";
 
 import Image from "next/image";
-import Section from "@/components/home/section";
+import Section from "@/components/common/section";
 
 const certs = [
   {
