@@ -7,7 +7,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import {
-  CheckCircle2,
   ChevronRight,
   CloudRain,
   Heart,
@@ -41,36 +40,48 @@ import Logo from "./logo";
 import MetallicButton from "./common/metallic-button";
 import { useState } from "react";
 
-type Props = {
-  readonly onContactClick?: () => void;
-};
-
-export default function SiteHeader({ onContactClick = () => {} }: Props) {
+export default function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   const products = [
     {
-      title: "Technical Fabrics",
-      desc: "High-performance textiles for military, medical, and industrial use.",
+      title: "Military & Defense",
       items: [
-        { label: "Heat Resistant", href: "/products/heat-resistant" },
-        { label: "Waterproof & Breathable", href: "/products/waterproof" },
+        { label: "Combat Uniforms", href: "/products/military" },
+        { label: "Tactical Gear", href: "/products/tactical" },
       ],
+      technologies: ["SunTech", "Fire-Resistant", "Waterproof"],
     },
     {
-      title: "Specialized Applications",
-      desc: "Tailored fabrics for demanding environments.",
+      title: "Industrial & Workwear",
       items: [
-        { label: "Military & Defense", href: "/products/military" },
-        { label: "Medical & Healthcare", href: "/products/medical" },
+        { label: "Heat Resistant", href: "/products/heat-resistant" },
+        { label: "High-Visibility", href: "/products/hi-vis" },
       ],
+      technologies: ["Fire-Resistant", "Breathable", "Abrasion-Resistant"],
+    },
+    {
+      title: "Medical & Healthcare",
+      items: [
+        { label: "Medical Gowns", href: "/products/medical" },
+        { label: "Protective Covers", href: "/products/protective" },
+      ],
+      technologies: ["Antibacterial", "Wash-Durable"],
+    },
+    {
+      title: "Outdoor & Automotive",
+      items: [
+        { label: "Tent Fabric", href: "/products/tent" },
+        { label: "Car Covers", href: "/products/car" },
+      ],
+      technologies: ["Waterproof", "UV-Block"],
     },
   ];
 
   const primaryLinks = [
-    { label: "Our Services", href: "#our-services" },
-    { label: "Technologies", href: "#technologies" },
-    { label: "About", href: "#about" },
+    { label: "Our Services", href: "/#our-services" },
+    { label: "Technologies", href: "/#technologies" },
+    { label: "About", href: "/about" },
   ];
 
   const getCategoryIcon = (title: string) => {
@@ -113,7 +124,7 @@ export default function SiteHeader({ onContactClick = () => {} }: Props) {
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
                 <Link
-                  href="#our-services"
+                  href="/#our-services"
                   className="px-4 py-2 text-sm font-semibold text-muted-foreground hover:text-slate-900 transition-colors"
                 >
                   Our Services
@@ -125,7 +136,7 @@ export default function SiteHeader({ onContactClick = () => {} }: Props) {
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
                 <Link
-                  href="#technologies"
+                  href="/#technologies"
                   className="px-4 py-2 text-sm font-semibold text-muted-foreground hover:text-slate-900 transition-colors"
                 >
                   Technologies
@@ -139,7 +150,7 @@ export default function SiteHeader({ onContactClick = () => {} }: Props) {
                 Products
               </NavigationMenuTrigger>
               <NavigationMenuContent>
-                <div className="w-[480px] max-w-[90vw] p-1.5 grid gap-3 md:grid-cols-2">
+                <div className="w-[480px] max-w-[90vw] p-2 grid gap-3 md:grid-cols-2">
                   {products.map((category) => {
                     const CategoryIcon = getCategoryIcon(category.title);
                     return (
@@ -147,30 +158,43 @@ export default function SiteHeader({ onContactClick = () => {} }: Props) {
                         key={category.title}
                         className="rounded-lg border bg-white p-2 hover:shadow-sm transition"
                       >
-                        <div className="flex items-center gap-1.5">
+                        {/* Fabric Type */}
+                        <div className="flex items-center gap-1.5 mb-1">
                           <CategoryIcon className="h-3 w-3 text-slate-500" />
                           <h3 className="text-sm font-semibold text-slate-900">
                             {category.title}
                           </h3>
                         </div>
-                        <ul className="mt-2 space-y-1">
+
+                        {/* Applications */}
+                        <ul className="space-y-1 mb-2">
                           {category.items.map((item) => {
                             const ItemIcon = getItemIcon(item.label);
                             return (
                               <li key={item.label}>
-                                <NavigationMenuLink asChild>
-                                  <Link
-                                    href={item.href}
-                                    className="group flex items-center gap-1.5 rounded-md px-1.5 py-1 text-xs text-slate-700 hover:bg-slate-50 hover:text-slate-900 transition"
-                                  >
-                                    <ItemIcon className="h-3 w-3 text-slate-500 group-hover:text-slate-700 transition" />
-                                    <span>{item.label}</span>
-                                  </Link>
-                                </NavigationMenuLink>
+                                <Link
+                                  href={item.href}
+                                  className="group flex items-center gap-1.5 rounded-md px-1 py-0.5 text-xs text-slate-700 hover:bg-slate-50 hover:text-slate-900 transition"
+                                >
+                                  <ItemIcon className="h-3 w-3 text-slate-500 group-hover:text-slate-700 transition" />
+                                  {item.label}
+                                </Link>
                               </li>
                             );
                           })}
                         </ul>
+
+                        {/* Technologies */}
+                        <div className="flex flex-wrap gap-1 mt-auto">
+                          {category.technologies?.map((tech) => (
+                            <span
+                              key={tech}
+                              className="text-[10px] bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     );
                   })}
@@ -197,14 +221,7 @@ export default function SiteHeader({ onContactClick = () => {} }: Props) {
 
         {/* Desktop CTA */}
         <div className="hidden md:block">
-          <MetallicButton
-            onClick={() => {
-              if (onContactClick) onContactClick();
-            }}
-            className="ml-3"
-          >
-            Contact Us
-          </MetallicButton>
+          <MetallicButton className="ml-3">Contact Us</MetallicButton>
         </div>
 
         {/* Mobile Menu */}
@@ -220,7 +237,7 @@ export default function SiteHeader({ onContactClick = () => {} }: Props) {
                 <SheetTitle>
                   <span className="sr-only">Navigation</span>
                   <div className="flex items-center gap-2">
-                    <Logo/>
+                    <Logo />
                   </div>
                 </SheetTitle>
               </SheetHeader>
@@ -252,9 +269,6 @@ export default function SiteHeader({ onContactClick = () => {} }: Props) {
                           {category.title}
                         </AccordionTrigger>
                         <AccordionContent>
-                          <p className="text-sm text-slate-600 mb-2">
-                            {category.desc}
-                          </p>
                           <ul className="grid gap-2">
                             {category.items.map((item) => (
                               <li key={item.label}>
@@ -278,7 +292,6 @@ export default function SiteHeader({ onContactClick = () => {} }: Props) {
                   <MetallicButton
                     onClick={() => {
                       setOpen(false);
-                      if (onContactClick) onContactClick();
                     }}
                     className="w-full"
                   >

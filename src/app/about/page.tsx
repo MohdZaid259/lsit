@@ -3,10 +3,12 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: "Your workspace to manage folders, prompts, and recent activity.",
+  description:
+    "Your workspace to manage folders, prompts, and recent activity.",
   openGraph: {
     title: "Dashboard",
-    description: "Manage your prompt workspace, explore folders, and stay organized.",
+    description:
+      "Manage your prompt workspace, explore folders, and stay organized.",
   },
   twitter: {
     card: "summary",
