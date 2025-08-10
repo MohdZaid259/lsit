@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Logo from "./logo";
 import { Mail, MapPin, Phone } from "lucide-react";
+import Image from "next/image";
 
 const footerLinks = [
   {
@@ -41,15 +42,15 @@ const contactInfo = [
         href="mailto:hello@suntechfabrics.com"
         className="hover:text-slate-900"
       >
-        hello@suntechfabrics.com
+        info@lsit.com
       </a>
     ),
   },
   {
     icon: Phone,
     content: (
-      <a href="tel:+15551234567" className="hover:text-slate-900">
-        +1 (555) 123-4567
+      <a href="tel:+97152666997" className="hover:text-slate-900">
+        +971 52 666997
       </a>
     ),
   },
@@ -57,9 +58,9 @@ const contactInfo = [
     icon: MapPin,
     content: (
       <span>
-        1200 Industrial Way, Suite 300
+        1200 Industrials, Suite 300
         <br />
-        Austin, TX 73301
+        Ajman, UAE
       </span>
     ),
   },
@@ -68,7 +69,7 @@ const contactInfo = [
 export default function SiteFooter() {
   return (
     <footer
-      className="mt-16 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-t"
+      className="mt-16 mx-16 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-t"
       aria-labelledby="footer-heading"
     >
       <h2 id="footer-heading" className="sr-only">
@@ -79,10 +80,10 @@ export default function SiteFooter() {
         <div className="grid gap-10 md:grid-cols-12">
           {/* Brand */}
           <div className="md:col-span-4">
-            <Link href="/" className="inline-flex items-center gap-3">
+            <Link href="/" className="inline-flex -ml-6 -mt-12 scale-150 absolute items-center gap-3">
               <Logo />
             </Link>
-            <p className="mt-3 text-sm text-primary">
+            <p className="mt-20 text-sm text-primary">
               Engineering textiles for heat control, protection, and all-weather
               performance.
             </p>
@@ -92,7 +93,7 @@ export default function SiteFooter() {
           <nav className="md:col-span-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
             {footerLinks.map(({ title, links }) => (
               <div key={title}>
-                <div className="text-xs uppercase tracking-wide text-slate-500">
+                <div className="text-xs uppercase tracking-wide text-primary">
                   {title}
                 </div>
                 <ul className="mt-3 space-y-2 text-sm">
@@ -100,7 +101,7 @@ export default function SiteFooter() {
                     <li key={label}>
                       <Link
                         href={href}
-                        className="text-slate-700 hover:text-slate-900"
+                        className="text-slate-700 hover:underline hover:text-slate-900"
                       >
                         {label}
                       </Link>
@@ -112,10 +113,10 @@ export default function SiteFooter() {
 
             {/* Contact */}
             <div>
-              <div className="text-xs uppercase tracking-wide text-slate-500">
+              <div className="text-xs uppercase text-primary tracking-wide ">
                 Contact
               </div>
-              <ul className="mt-3 space-y-2 text-sm">
+              <ul className="mt-3 -mx-6 space-y-2 text-sm">
                 {contactInfo.map(({ icon: Icon, content }, idx) => (
                   <li
                     key={idx}
@@ -137,7 +138,7 @@ export default function SiteFooter() {
           </div>
           <div className="sm:ml-auto flex items-center gap-4">
             {["Privacy", "Terms", "Sitemap"].map((item) => (
-              <Link key={item} href="#" className="hover:text-slate-800">
+              <Link key={item} href="#" className="hover:text-slate-800 hover:underline">
                 {item}
               </Link>
             ))}

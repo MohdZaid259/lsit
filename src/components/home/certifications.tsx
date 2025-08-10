@@ -37,6 +37,7 @@ const certs = [
 export default function Certifications() {
   return (
     <Section
+      className="mx-16"
       id="certifications"
       eyebrow="Certifications"
       title="Proven compliance, trusted globally"

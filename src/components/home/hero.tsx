@@ -10,23 +10,21 @@ export default function Hero({
   title = "Technology-Integrated Fabrics",
   subtitle = "Premium, engineered textiles with embedded intelligence.",
   ctaPrimary = { href: "#", label: "Explore" },
-  ctaSecondary = { href: "#", label: "Contact" },
 }: {
   readonly title?: string;
   readonly subtitle?: string;
   readonly ctaPrimary?: CTA;
-  readonly ctaSecondary?: CTA;
 }) {
   return (
     <section className="relative isolate overflow-hidden">
-      <div className="relative h-[72vh] min-h-[520px] w-full">
+      <div className="relative h-screen min-h-[520px] w-full">
         {/* Background image */}
         <div className="absolute inset-0 -z-10">
           <Image
-            src="/images/hero/fabricOptions.jpg"
+            src="/images/hero/fibreOptions.png"
             alt="Metallic woven fabric background"
             fill
-            className="object-cover scale-105 animate-[pan_18s_ease-in-out_infinite]"
+            className="object-cover scale-100 animate-[pan_18s_ease-in-out_infinite]"
             priority
           />
           {/* Dark overlay for contrast */}
@@ -34,11 +32,11 @@ export default function Hero({
         </div>
 
         {/* Content */}
-        <div className="container mx-auto px-4 h-full flex items-center">
-          <div className="max-w-3xl">
+        <div className="container mx-auto px-4 ml-24 h-full flex items-center">
+          <div className="max-w-3xl -mt-16">
             <Reveal>
               <h1
-                className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white"
+                className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-wide text-white"
                 style={{ fontFamily: "var(--font-jakarta)" }}
               >
                 {title}
@@ -46,24 +44,17 @@ export default function Hero({
             </Reveal>
             <Reveal delay={0.05}>
               <p
-                className="mt-4 text-lg md:text-xl text-gray-200"
-                style={{ fontFamily: "var(--font-inter)", fontWeight: 300 }}
+                className="mt-4 text-lg md:text-xl text-gray-200 tracking-wide"
+                style={{ fontFamily: "var(--font-inter)", fontWeight: 400 }}
               >
                 {subtitle}
               </p>
             </Reveal>
             <Reveal delay={0.1}>
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                <MetallicButton>
-                  <Link href={ctaPrimary.href}>{ctaPrimary.label}</Link>
+                <MetallicButton className="py-2 border">
+                  <Link className="tracking-wider" href={ctaPrimary.href}>{ctaPrimary.label}</Link>
                 </MetallicButton>
-                <Button
-                  asChild
-                  variant="outline"
-                  className="border-white text-white bg-transparent shadow-sm transition-colors hover:text-white"
-                >
-                  <Link href={ctaSecondary.href}>{ctaSecondary.label}</Link>
-                </Button>
               </div>
             </Reveal>
           </div>

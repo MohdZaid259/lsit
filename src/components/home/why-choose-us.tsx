@@ -45,6 +45,7 @@ export default function WhyChooseUs() {
 
   return (
     <Section
+      className="mx-16"
       id="why-us"
       eyebrow="Why Choose Us"
       title="Built on science. Proven in the field."

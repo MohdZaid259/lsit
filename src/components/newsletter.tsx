@@ -38,8 +38,8 @@ export default function NewsletterSignup({
         <div className="grid items-center gap-8 md:grid-cols-2">
           {/* Text */}
           <div>
-            <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">Stay Ahead with <span className="text-teal-500 tracking-wider">LS4IT</span> Innovations</h2>
-            <p className="mt-3 max-w-prose text-sm text-white/80 md:text-base">
+            <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">Stay Ahead with <span className="font-bold ml-1 text-teal-500 tracking-wider">LS4IT</span> Innovations</h2>
+            <p className="mt-3 max-w-prose text-sm text-white/70 md:text-base">
               {"Get the latest updates on our advanced textile technologies, industry insights, exclusive product launches."}
             </p>
           </div>

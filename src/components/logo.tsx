@@ -6,11 +6,11 @@ export default function Logo({ size = 36 }: { readonly size?: number }) {
   return (
     <div className="flex items-center justify-center">
       <Image
-        src="/logo.jpg"
+        src="/logo/logoSvg.svg"
         alt="SunTech Fabrics logo"
-        height={12}
+        height={size}
         width={size}
-        className="w-14 rounded-lg"
+        className="w-36 invert mt-3 rounded-lg"
         priority
       />
     </div>

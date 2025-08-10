@@ -14,7 +14,6 @@ import {
   Truck,
 } from "lucide-react";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
@@ -28,7 +27,7 @@ export default function OurServices() {
       title: "Technology in Fabric",
       desc: "From fiber selection to advanced coatings, we engineer performance at the yarn and finish level with measurable results.",
       icon: FlaskConical,
-      image: "/images/services/technology.jpg", // new field
+      image: "/service/future.jpg",
       highlights: [
         { icon: Cpu, text: "Smart/IoT-ready fabrics" },
         { icon: Shield, text: "FR, antibacterial, UV protection" },
@@ -37,30 +36,30 @@ export default function OurServices() {
       cta: { label: "Explore Technologies", href: "#technologies" },
     },
     {
-      key: "car",
-      title: "Automotive and Car Fabrics",
-      desc: "Thermal-reflective shades and interior textiles designed for heat management, durability, and compliance.",
-      icon: Car,
-      image: "/images/services/automotive.jpg",
-      highlights: [
-        { icon: Sun, text: "IR/UV heat reduction" },
-        { icon: Shield, text: "Abrasion and fade resistance" },
-        { icon: FileCheck2, text: "OEM-grade compliance" },
-      ],
-      cta: { label: "View Car Solutions", href: "/products/heat-resistant" },
-    },
-    {
       key: "tent",
       title: "Tent and Outdoor Fabrics",
       desc: "Rugged membranes and blends for tents, canopies, and shelters—balanced breathability, weatherproofing, and strength.",
       icon: Tent,
-      image: "/images/services/tent.jpg",
+      image: "/service/tentFabric.webp",
       highlights: [
         { icon: Droplets, text: "20K/15K waterproof/breathable" },
         { icon: Shield, text: "Tear + mildew resistance" },
         { icon: Sun, text: "High UV stability" },
       ],
       cta: { label: "Explore Tent Fabrics", href: "/products/tents" },
+    },
+    {
+      key: "car",
+      title: "Automotive and Car Fabrics",
+      desc: "Thermal-reflective shades and interior textiles designed for heat management, durability, and compliance.",
+      icon: Car,
+      image: "/service/shadeCover.png",
+      highlights: [
+        { icon: Sun, text: "IR/UV heat reduction" },
+        { icon: Shield, text: "Abrasion and fade resistance" },
+        { icon: FileCheck2, text: "OEM-grade compliance" },
+      ],
+      cta: { label: "View Car Solutions", href: "/products/heat-resistant" },
     },
   ];
 
@@ -95,8 +94,8 @@ export default function OurServices() {
 
   return (
     <Section
+      className="mx-16"
       id="our-services"
-      eyebrow="Our Services"
       title="End-to-end textile engineering for real-world performance"
       subtitle="We specialize in advanced fabric technologies, automotive heat-management textiles, and rugged tent/outdoor membranes."
     >
@@ -106,13 +105,13 @@ export default function OurServices() {
           const Icon = s.icon;
           return (
             <Reveal key={s.key}>
-              <Card className="h-full overflow-hidden border-slate-200 gap-0">
+              <Card className="h-full shadow-xl overflow-hidden border-slate-200 gap-0 pt-0">
                 {/* Image at top */}
-                <div className="relative w-full h-40">
+                <div className="relative w-full h-50">
                   <Image
                     src={s.image}
                     alt={s.title}
-                    fill
+                    fill 
                     className="object-cover"
                   />
                 </div>
@@ -155,48 +154,6 @@ export default function OurServices() {
           );
         })}
       </div>
-
-      {/* Process timeline */}
-      <Reveal>
-        <div className="mt-12 rounded-xl border p-6">
-          <div className="text-sm font-semibold text-slate-800">
-            How we work
-          </div>
-          <p className="text-sm text-slate-600 mt-1">
-            A collaborative, test-driven approach from consultation to certified
-            production.
-          </p>
-          <ol className="mt-5 grid gap-4 md:grid-cols-3 lg:grid-cols-6">
-            {steps.map((step, idx) => {
-              const SIcon = step.icon;
-              return (
-                <li key={step.title} className="flex gap-3">
-                  <div className="shrink-0">
-                    <div className="grid h-9 w-9 place-items-center rounded-md border bg-white">
-                      <SIcon className="h-4 w-4 text-slate-600" />
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-sm font-semibold text-slate-900">
-                      {idx + 1}. {step.title}
-                    </div>
-                    <div className="text-xs text-slate-600">{step.text}</div>
-                  </div>
-                </li>
-              );
-            })}
-          </ol>
-
-          <div className="mt-6 flex flex-col sm:flex-row gap-3">
-            <Button asChild>
-              <Link href="#contact">Talk to engineering</Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link href="#technologies">See fabric technologies</Link>
-            </Button>
-          </div>
-        </div>
-      </Reveal>
     </Section>
   );
 }

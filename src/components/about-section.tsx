@@ -106,7 +106,7 @@ export default function AboutPage() {
           <div className="mb-12 text-center">
             <ScrollAnimation animation="fade-in-up">
               <h2 className="mb-4 text-3xl font-bold text-navy-blue sm:text-4xl">Fabric Technologies</h2>
-              <p className="mx-auto max-w-2xl text-muted-foreground">
+              <p className="mx-auto max-w-3xl text-muted-foreground">
                 At LS4IT, innovation begins at the fiber level. Instead of applying performance features as afterthoughts, we integrate technology directly into the fabric structure, ensuring durability, consistency, and maximum efficiency in real-world use.
               </p>
             </ScrollAnimation>
@@ -129,8 +129,8 @@ export default function AboutPage() {
                     | "delay-500"
                 }
               >
-                <div className="rounded-xl border border-primary/40 p-6">
-                    <img src={value.icon.src} className="w-16" />
+                <div className="rounded-xl border border-primary/40 p-6 relative">
+                    <img src={value.icon.src} className="w-10 absolute p-[1px] right-3 top-3"/>
                   <h3 className="mb-2 text-xl font-semibold text-navy-blue">{value.title}</h3>
                   <p className="text-muted-foreground">{value.description}</p>
                 </div>
@@ -139,8 +139,9 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      <NewsletterSignup/>
+      <section className="-mb-16 mt-20">
+        <NewsletterSignup/>
+      </section>
     </>
   )
 }

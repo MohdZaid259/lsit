@@ -1,8 +1,8 @@
-import antibacterial from './technology/antibacterial.jpg'
-import climate from './technology/climate.jpg'
-import weather from './technology/weather.jpg'
-import reflective from './technology/reflective.webp'
-import military from './technology/military.jpg'
+import antibacterial from './technology/icons/antibacterial.jpg'
+import climate from './technology/icons/climate.jpg'
+import weather from './technology/icons/weather.jpg'
+import reflective from './technology/icons/reflective.png'
+import military from './technology/icons/military.jpg'
 
 export const values = [
     {

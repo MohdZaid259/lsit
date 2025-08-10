@@ -58,7 +58,7 @@ export default function SiteHeader() {
         { label: "Heat Resistant", href: "/products/heat-resistant" },
         { label: "High-Visibility", href: "/products/hi-vis" },
       ],
-      technologies: ["Fire-Resistant", "Breathable", "Abrasion-Resistant"],
+      technologies: ["Fire-Resistant", "Breathable"],
     },
     {
       title: "Medical & Healthcare",
