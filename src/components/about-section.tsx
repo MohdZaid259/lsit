@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { values } from "../../public/aboutData"
 const ScrollAnimation = dynamic(() => import('./scroll-animation'));
 import company from '../../public/company.webp'
+import NewsletterSignup from './newsletter'
 
 export default function AboutPage() {
   return (
@@ -15,7 +16,7 @@ export default function AboutPage() {
           <div className="max-w-3xl">
             <h1 className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl">About Our Company</h1>
             <p className="mb-8 text-lg text-white/80 sm:text-xl">
-              Your trusted technical service provider in Dubai since 2010, delivering excellence in every project.
+              Engineering fabrics that protect, perform, and endure — no matter the environment
             </p>
           </div>
         </div>
@@ -30,18 +31,13 @@ export default function AboutPage() {
                 <h2 className="mb-6 text-3xl font-bold text-navy-blue sm:text-4xl">Our Story</h2>
                 <div className="space-y-4 text-muted-foreground">
                   <p>
-                    Founded in 2010, our company has grown from a small civil contracting business to a comprehensive
-                    technical service provider in Dubai and across the UAE. What started as a vision to deliver quality
-                    services has evolved into a trusted name in the industry.
+                    LS4IT (Lateral 4 System for Innovation Technology) is a pioneering technical textile manufacturer headquartered in Ajman, UAE. We design and produce cutting-edge fabrics engineered for extreme performance, capable of withstanding the harshest climates and most demanding applications.
                   </p>
                   <p>
-                    Over the years, we've expanded our expertise to include heavy equipment lifting and transportation,
-                    birds and pest control, marble supply, and all kinds of civil and carpentry work. This
-                    diversification allows us to be a one-stop solution for all technical service needs.
+                    Our expertise lies in merging material innovation with precision manufacturing to create fabrics that excel in defense, industrial, and outdoor environments. Whether it's the relentless heat of desert terrain, the constant exposure of marine settings, LS4IT fabrics are built to endure, protect, and perform.
                   </p>
                   <p>
-                    Today, we're proud to have served hundreds of clients across residential, commercial, and industrial
-                    sectors, building a reputation for reliability, quality, and customer satisfaction.
+                    We don’t just manufacture textiles — we deliver solutions that enhance safety, sustainability, and operational efficiency for industries worldwide.
                   </p>
                 </div>
                 <div className="mt-8 flex flex-wrap gap-4">
@@ -76,9 +72,7 @@ export default function AboutPage() {
               <div className="rounded-xl bg-white p-8 shadow-sm">
                 <h3 className="mb-4 text-2xl font-bold text-navy-blue">Our Vision</h3>
                 <p className="text-muted-foreground">
-                  To be the leading technical service provider in the UAE, recognized for excellence, innovation, and
-                  customer satisfaction. We aim to set new standards in the industry by delivering comprehensive
-                  solutions that exceed client expectations and contribute to the development of Dubai's infrastructure.
+                  Our vision is to be recognized globally as the benchmark for technical textile innovation. A company where science, craftsmanship, and responsibility come together to create materials that redefine industry standards. We aspire to not only supply fabrics, but to inspire progress across defense, industrial, and outdoor sectors.
                 </p>
               </div>
             </ScrollAnimation>
@@ -86,10 +80,7 @@ export default function AboutPage() {
               <div className="rounded-xl bg-white p-8 shadow-sm">
                 <h3 className="mb-4 text-2xl font-bold text-navy-blue">Our Mission</h3>
                 <p className="text-muted-foreground">
-                  To deliver high-quality technical services that meet the diverse needs of our clients through
-                  professional expertise, innovative solutions, and unwavering commitment to excellence. We strive to
-                  build lasting relationships with our clients by providing reliable, safe, and timely services that add
-                  value to their projects.
+                  Our mission is to push the boundaries of textile technology, delivering fabrics that empower our clients to operate with confidence in any environment available. We strive to create products that merge high performance with environmental responsibility, ensuring that strength never comes at the cost of sustainability.
                 </p>
               </div>
             </ScrollAnimation>
@@ -102,10 +93,9 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <ScrollAnimation animation="fade-in-up">
-              <h2 className="mb-4 text-3xl font-bold text-navy-blue sm:text-4xl">Our Values</h2>
+              <h2 className="mb-4 text-3xl font-bold text-navy-blue sm:text-4xl">Fabric Technologies</h2>
               <p className="mx-auto max-w-2xl text-muted-foreground">
-                The core principles that guide our operations and relationships with clients, partners, and team
-                members.
+                At LS4IT, innovation begins at the fiber level. Instead of applying performance features as afterthoughts, we integrate technology directly into the fabric structure, ensuring durability, consistency, and maximum efficiency in real-world use.
               </p>
             </ScrollAnimation>
           </div>
@@ -124,9 +114,7 @@ export default function AboutPage() {
                 }
               >
                 <div className="rounded-xl border border-primary/40 p-6">
-                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary/20">
-                    <value.icon className="h-6 w-6 text-gold" />
-                  </div>
+                    <img src={value.icon.src} className="w-16" />
                   <h3 className="mb-2 text-xl font-semibold text-navy-blue">{value.title}</h3>
                   <p className="text-muted-foreground">{value.description}</p>
                 </div>
@@ -135,6 +123,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <NewsletterSignup/>
     </main>
   )
 }

@@ -1,34 +1,33 @@
-import { ShieldCheck, TrafficCone, HeartHandshake, BadgeCheck, Lightbulb, Focus} from 'lucide-react'
+import antibacterial from './technology/antibacterial.jpg'
+import climate from './technology/climate.jpg'
+import weather from './technology/weather.jpg'
+import reflective from './technology/reflective.webp'
+import military from './technology/military.jpg'
 
 export const values = [
     {
-      title: "Trust",
-      description: "Building lasting relationships through honesty, transparency, and reliability in every interaction.",
-      icon: ShieldCheck
+      title: "Reflective Fiber Technology",
+      description: "Enhances visibility and safety for applications like car covers, military uniforms, and police gear, even in low-light or high-risk conditions.",
+      icon: reflective
     },
     {
-      title: "Quality",
-      description: "Delivering exceptional workmanship and using premium materials to exceed client expectations.",
-      icon: BadgeCheck
+      title: "Antibacterial & Antimicrobial",
+      description: "Integrated into fabrics for surgeon gowns, doctor coats, and medical scrubs, preventing bacterial growth and maintaining hygiene over extended use.",
+      icon: antibacterial
     },
     {
-      title: "Safety",
-      description: "Maintaining the highest safety standards to protect our team, clients, and the environment.",
-      icon: TrafficCone
+      title: "Climate-Control Performance",
+      description: "Uses passive cooling and UV-reflective properties to reduce heat buildup in tents, protective uniforms, enhancing comfort in extreme temperatures.",
+      icon: climate
     },
     {
-      title: "Innovation",
-      description: "Embracing new technologies and methodologies to provide cutting-edge solutions.",
-      icon: Lightbulb
+      title: "Industrial-Grade Protection",
+      description: "Durable fibers resistant to abrasion, tearing, and environmental wear, tailored for industrial worker uniforms operating in high-stress conditions.",
+      icon: military
     },
     {
-      title: "Commitment",
-      description: "Dedicated to meeting deadlines and delivering projects with precision and excellence.",
-      icon: HeartHandshake
-    },
-    {
-      title: "Customer Focus",
-      description: "Placing client satisfaction at everything we do, from initial consultation to project completion.",
-      icon: Focus
+      title: "All-Weather Resistance",
+      description: "Fabrics engineered to be waterproof yet breathable, capable of performing in desert heat, heavy rain, and freezing cold without compromising flexibility.",
+      icon: weather
     }
   ]

@@ -1,16 +1,7 @@
 "use client";
-
-import { Linkedin, Mail, MapPin, Phone } from "lucide-react";
-import { SiGithub, SiX } from "@icons-pack/react-simple-icons";
-
 import Link from "next/link";
 import Logo from "./logo";
-
-const socialLinks = [
-  { href: "https://www.linkedin.com", label: "LinkedIn", icon: Linkedin },
-  { href: "https://twitter.com", label: "Twitter", icon: SiX },
-  { href: "https://github.com", label: "GitHub", icon: SiGithub },
-];
+import { Mail, MapPin, Phone } from "lucide-react";
 
 const footerLinks = [
   {
@@ -95,22 +86,6 @@ export default function SiteFooter() {
               Engineering textiles for heat control, protection, and all-weather
               performance.
             </p>
-
-            {/* Social */}
-            <div className="mt-4 flex items-center gap-3">
-              {socialLinks.map(({ href, label, icon: Icon }) => (
-                <Link
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-md border hover:bg-slate-50 transition"
-                >
-                  <Icon className="h-4 w-4 text-primary" />
-                </Link>
-              ))}
-            </div>
           </div>
 
           {/* Links */}

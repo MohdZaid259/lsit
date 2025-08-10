@@ -2,7 +2,6 @@
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
-
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Section from "@/components/home/section";
@@ -11,19 +10,29 @@ import useEmblaCarousel from "embla-carousel-react";
 
 const slides = [
   {
-    title: "Metro Fleet Cabin Cooling",
+    title: "The Future Of Industrial Fabrics",
     img: "/images/case-metro.png",
-    text: "SunRay Reflective fabrics reduced in-cabin temperatures by up to 8°C in peak summer.",
+    text: "From sun-ray reflective coatings to antibacterial textiles, discover how LS4IT is evolving industrial fabrics.",
   },
   {
-    title: "Wildland Firefighting Suits",
+    title: "7 Reasons To Choose LS4IT Fabrics",
     img: "/images/case-fire.png",
-    text: "Multi-layer FR solution achieved a 35% lower flame spread index than baseline.",
+    text: "Leading Industries prefer advanced technical fabrics — from durability to performance",
   },
   {
-    title: "Hospital Scrubs Hygiene",
+    title: "Applications of High-Performance Fabrics",
     img: "/images/case-med.png",
-    text: "Antibacterial treatment maintained 99.9% efficacy after 50 wash cycles.",
+    text: "From automotive to defense, high-performance fabrics are reshaping industries.",
+  },
+  {
+    title: "Why Certification Matters in Industrial Fabrics",
+    img: "/images/case-med.png",
+    text: "Learn why ISO and CE are critical in ensuring quality, safety, and global compliance in industrial fabrics.",
+  },
+  {
+    title: "Choosing Right Industrial Fabric Supplier",
+    img: "/images/case-med.png",
+    text: "The right industrial fabric supplier can make or break your projects. Here's what to look when sourcing fabrics.",
   },
 ];
 
