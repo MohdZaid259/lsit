@@ -19,6 +19,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "../common/reveal";
+import { SafeImage } from "../ui/safe-image";
 import Section from "@/components/common/section";
 
 export default function OurServices() {
@@ -37,19 +38,6 @@ export default function OurServices() {
       cta: { label: "Explore Technologies", href: "#technologies" },
     },
     {
-      key: "tent",
-      title: "Tent and Outdoor Fabrics",
-      desc: "Rugged membranes and blends for tents, canopies, and shelters—balanced breathability, weatherproofing, and strength.",
-      icon: Tent,
-      image: "/service/tentFabric.webp",
-      highlights: [
-        { icon: Droplets, text: "20K/15K waterproof/breathable" },
-        { icon: Shield, text: "Tear + mildew resistance" },
-        { icon: Sun, text: "High UV stability" },
-      ],
-      cta: { label: "Explore Tent Fabrics", href: "/products/tents" },
-    },
-    {
       key: "car",
       title: "Automotive and Car Fabrics",
       desc: "Thermal-reflective shades and interior textiles designed for heat management, durability, and compliance.",
@@ -62,34 +50,18 @@ export default function OurServices() {
       ],
       cta: { label: "View Car Solutions", href: "/products/heat-resistant" },
     },
-  ];
-
-  const steps = [
     {
-      icon: MessageSquare,
-      title: "Consult",
-      text: "Define use case, targets, and constraints.",
-    },
-    {
-      icon: Ruler,
-      title: "Material Design",
-      text: "Select fibers, weaves, finishes, and coatings.",
-    },
-    {
-      icon: FlaskConical,
-      title: "Prototype",
-      text: "Lab samples, durability tests, and iterations.",
-    },
-    {
-      icon: FileCheck2,
-      title: "Certify",
-      text: "Compliance verification and documentation.",
-    },
-    { icon: Factory, title: "Manufacture", text: "Scaled production and QC." },
-    {
-      icon: Truck,
-      title: "Deliver",
-      text: "Global logistics with scheduling support.",
+      key: "tent",
+      title: "Tent and Outdoor Fabrics",
+      desc: "Rugged membranes and blends for tents, canopies, and shelters—balanced breathability, weatherproofing, and strength.",
+      icon: Tent,
+      image: "/service/tentFabric.webp",
+      highlights: [
+        { icon: Droplets, text: "20K/15K waterproof/breathable" },
+        { icon: Shield, text: "Tear + mildew resistance" },
+        { icon: Sun, text: "High UV stability" },
+      ],
+      cta: { label: "Explore Tent Fabrics", href: "/products/tents" },
     },
   ];
 
@@ -97,6 +69,7 @@ export default function OurServices() {
     <Section
       className="md:mx-16 mx-0"
       id="our-services"
+      eyebrow="Our Services"
       title="End-to-end textile engineering for real-world performance"
       subtitle="We specialize in advanced fabric technologies, automotive heat-management textiles, and rugged tent/outdoor membranes."
     >
@@ -109,8 +82,8 @@ export default function OurServices() {
               <Card className="h-full shadow-xl overflow-hidden border-slate-200 gap-0 pt-0">
                 {/* Image at top */}
                 <div className="relative w-full h-50">
-                  <Image
-                    src={s.image}
+                  <SafeImage
+                    src={s.image || ""}
                     alt={s.title}
                     fill
                     className="object-cover"

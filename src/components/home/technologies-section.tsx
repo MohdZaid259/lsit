@@ -10,6 +10,7 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 
 import Image from "next/image";
 import type React from "react";
+import { SafeImage } from "../ui/safe-image";
 import Section from "@/components/common/section";
 import { motion } from "framer-motion";
 
@@ -65,6 +66,7 @@ export default function TechnologiesSection() {
   return (
     <Section
       id="technologies"
+      eyebrow="Fabric Technologies"
       title="Our advanced fabric technologies"
       subtitle="Explore each platform’s texture and benefits."
       className="md:mx-16 mx-0"
@@ -89,13 +91,11 @@ function TechCard({ tech }: { tech: Tech }) {
     >
       <Card className="overflow-hidden border-slate-200 h-full flex flex-col p-0 gap-0 shadow-xl ">
         <CardContent className="relative aspect-[16/10]">
-          <Image
-            src={
-              tech.img ||
-              "/placeholder.svg?height=400&width=640&query=technology-texture"
-            }
+          <SafeImage
+            src={tech.img || ""}
             alt={`${tech.name} fabric texture`}
             fill
+            sizes="(100vw - 2rem)"
             className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/0 to-black/0" />

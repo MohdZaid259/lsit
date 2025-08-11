@@ -3,9 +3,11 @@
 import { Button } from "@/components/ui/button";
 import type { ButtonHTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
+import { useRouter } from "next/navigation";
 
 type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   className?: string;
+  children: React.ReactNode;
 };
 
 export default function MetallicButton({
@@ -13,6 +15,8 @@ export default function MetallicButton({
   children,
   ...props
 }: Props) {
+  const router = useRouter();
+
   return (
     <Button
       {...props}

@@ -1,9 +1,11 @@
 "use client";
 
 import { Mail, MapPin, Phone } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import type React from "react";
+import { SafeImage } from "../ui/safe-image";
 import Section from "../common/section";
 import { Textarea } from "@/components/ui/textarea";
 
@@ -30,12 +32,12 @@ export default function Contact() {
   }
 
   return (
-    // <div className="absolute inset-0 bg-[url('/coverImage/aboutCover.jpg')] bg-cover bg-center">
     <Section
       id="contact"
+      eyebrow="Get in touch"
       title="Let's discuss"
       subtitle="Share your requirements—our engineering team will recommend the right construction."
-      className="md:mx-16 mx-0 bg-transparent md:pb-16 pb-0"
+      className="md:mx-16 mx-0 bg-transparent md:pb-16 pb-0 relative isolate overflow-hidden"
     >
       <div className="grid lg:grid-cols-[1fr_420px] gap-8">
         <form className="grid gap-0 p-6 pb-0 rounded-xl border border-gray-500 bg-white">
@@ -141,6 +143,5 @@ export default function Contact() {
         </aside>
       </div>
     </Section>
-    // </div>
   );
 }

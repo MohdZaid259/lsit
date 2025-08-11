@@ -1,7 +1,8 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import MetallicButton from "@/components/common/metallic-button";
 import Reveal from "@/components/common/reveal";
+import { SafeImage } from "../ui/safe-image";
 
 export default function Hero() {
   return (
@@ -9,15 +10,16 @@ export default function Hero() {
       <div className="relative h-screen min-h-[520px] w-full">
         {/* Background image */}
         <div className="absolute inset-0 -z-10">
-          <Image
-            src="/images/hero/fibreOptions.png"
+          <SafeImage
+            src="/hero/fibreOptions.png"
             alt="Metallic woven fabric background"
             fill
+            sizes="100vw"
             className="object-cover scale-100 animate-[pan_18s_ease-in-out_infinite]"
             priority
           />
           {/* Dark overlay for contrast */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-br from-black via-black/50 to-black" />
         </div>
 
         {/* Content */}
@@ -40,18 +42,20 @@ export default function Hero() {
                 and performance coatings—manufactured at scale.
               </p>
             </Reveal>
-            
+
             <Reveal delay={0.1}>
-                <MetallicButton className="py-2 mt-4 border">
-                  <Link className="tracking-wider" href="#technologies">Explore Technologies</Link>
+              <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                <MetallicButton>
+                  <Link href="/#technologies">Explore Technologies</Link>
                 </MetallicButton>
+                <Button variant="outline" className="">
+                  <Link href="/#contact">Speak to an Engineer</Link>
+                </Button>
+              </div>
             </Reveal>
           </div>
         </div>
       </div>
-
-      {/* Bottom divider */}
-      <div className="h-px bg-gradient-to-r from-transparent via-white/40 to-transparent" />
     </section>
   );
 }

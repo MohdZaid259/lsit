@@ -1,8 +1,10 @@
 "use client";
+
+import { Mail, MapPin, Phone } from "lucide-react";
+
+import Image from "next/image";
 import Link from "next/link";
 import Logo from "./logo";
-import { Mail, MapPin, Phone } from "lucide-react";
-import Image from "next/image";
 
 const footerLinks = [
   {
@@ -76,14 +78,14 @@ export default function SiteFooter() {
         Footer
       </h2>
 
-      <div className="container mx-auto px-4 md:px-6 py-12">
+      <div className="container mx-auto px-4 md:px-6 py-6 sm:py-12">
         <div className="grid gap-10 md:grid-cols-12">
           {/* Brand */}
-          <div className="md:col-span-4">
-            <Link href="/" className="inline-flex -ml-6 -mt-12 scale-150 absolute items-center gap-3">
-              <Logo />
+          <div className="md:col-span-4 flex flex-col items-start">
+            <Link href="/">
+              <Logo size={72} />
             </Link>
-            <p className="mt-20 text-sm text-primary">
+            <p className="mt-5 md:mt-10 text-sm text-primary">
               Engineering textiles for heat control, protection, and all-weather
               performance.
             </p>
@@ -138,14 +140,17 @@ export default function SiteFooter() {
           </div>
           <div className="sm:ml-auto flex items-center gap-4">
             {["Privacy", "Terms", "Sitemap"].map((item) => (
-              <Link key={item} href="#" className="hover:text-slate-800 hover:underline">
+              <Link
+                key={item}
+                href="#"
+                className="hover:text-slate-800 hover:underline"
+              >
                 {item}
               </Link>
             ))}
           </div>
         </div>
       </div>
-      
     </footer>
   );
 }

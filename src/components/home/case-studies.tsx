@@ -2,8 +2,9 @@
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
+
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import { SafeImage } from "../ui/safe-image";
 import Section from "@/components/common/section";
 import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
@@ -81,6 +82,7 @@ export default function CaseStudies() {
   return (
     <Section
       id="case-studies"
+      eyebrow="Case Studies"
       title="Real-world deployments"
       subtitle="Validated performance across environments and industries."
       className="md:mx-16 mx-0"
@@ -92,10 +94,11 @@ export default function CaseStudies() {
               <div key={s.title} className="min-w-0 flex-[0_0_100%]">
                 <div className="grid lg:grid-cols-2 gap-6 items-stretch">
                   <div className="relative aspect-[16/10] lg:aspect-auto lg:min-h-[360px] rounded-xl overflow-hidden">
-                    <Image
-                      src={s.img || "/placeholder.svg"}
+                    <SafeImage
+                      src={s.img || ""}
                       alt={s.title}
                       fill
+                      sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
                       className="object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-black/0" />

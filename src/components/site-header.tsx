@@ -38,9 +38,11 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Logo from "./logo";
 import MetallicButton from "./common/metallic-button";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function SiteHeader() {
+  const router = useRouter();
   const [open, setOpen] = useState(false);
 
   const products = [
@@ -107,12 +109,12 @@ export default function SiteHeader() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+    <header className="sticky top-0 z-[99] w-full border-b bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <div className="container mx-auto px-4 md:px-6 h-16 flex items-center gap-3">
         {/* Logo */}
         <Link
           href="/"
-          className="flex -ml-4 md:-ml-0 items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 rounded"
+          className="flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 rounded"
         >
           <Logo />
         </Link>
@@ -221,7 +223,12 @@ export default function SiteHeader() {
 
         {/* Desktop CTA */}
         <div className="hidden md:block">
-          <MetallicButton className="ml-3">Contact Us</MetallicButton>
+          <MetallicButton
+            onClick={() => router.push("/#contact")}
+            className="ml-3"
+          >
+            Contact Us
+          </MetallicButton>
         </div>
 
         {/* Mobile Menu */}
@@ -292,6 +299,7 @@ export default function SiteHeader() {
                   <MetallicButton
                     onClick={() => {
                       setOpen(false);
+                      router.push("/#contact");
                     }}
                     className="w-full"
                   >
