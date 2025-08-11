@@ -22,11 +22,11 @@ export default function Hero() {
         </div>
 
         {/* Content */}
-        <div className="container mx-auto px-4 ml-24 h-full flex items-center">
+        <div className="container mx-auto px-4 ml-0 md:ml-24 h-full flex items-center">
           <div className="max-w-3xl -mt-16">
             <Reveal>
               <h1
-                className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-wide text-white"
+                className="text-3xl text-shadow-black text-shadow-2xs md:text-5xl lg:text-6xl font-bold md:font-extrabold tracking-wide text-white"
                 style={{ fontFamily: "var(--font-jakarta)" }}
               >
                 Technology‑Integrated Fabrics for Demanding Environments
@@ -34,13 +34,14 @@ export default function Hero() {
             </Reveal>
             <Reveal delay={0.05}>
               <p
-                className="mt-4 text-lg md:text-xl text-gray-200 tracking-wide"
+                className="mt-4 text-shadow-black text-shadow-2xs text-lg md:text-xl text-gray-200 tracking-wide"
                 style={{ fontFamily: "var(--font-inter)", fontWeight: 400 }}
               >
                 Premium, engineered textiles with embedded electronics, sensing,
                 and performance coatings—manufactured at scale.
               </p>
             </Reveal>
+
             <Reveal delay={0.1}>
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <MetallicButton>

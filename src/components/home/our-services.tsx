@@ -66,7 +66,7 @@ export default function OurServices() {
 
   return (
     <Section
-      className="mx-16"
+      className="md:mx-16 mx-0"
       id="our-services"
       eyebrow="Our Services"
       title="End-to-end textile engineering for real-world performance"

@@ -114,7 +114,7 @@ export default function SiteHeader() {
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 rounded"
+          className="flex -ml-4 md:-ml-0 items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 rounded"
         >
           <Logo />
         </Link>
@@ -244,12 +244,12 @@ export default function SiteHeader() {
                 <SheetTitle>
                   <span className="sr-only">Navigation</span>
                   <div className="flex items-center gap-2">
-                    <Logo />
+                    <Logo size={36} className={"absolute mt-16 ml-10"} />
                   </div>
                 </SheetTitle>
               </SheetHeader>
 
-              <nav className="grid gap-3">
+              <nav className="grid gap-3 mt-6">
                 {primaryLinks.map((l) => (
                   <Link
                     key={l.label}

@@ -71,7 +71,7 @@ const contactInfo = [
 export default function SiteFooter() {
   return (
     <footer
-      className="mt-16 mx-16 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-t"
+      className="mt-16 mx-0 md:mx-16 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-t"
       aria-labelledby="footer-heading"
     >
       <h2 id="footer-heading" className="sr-only">
@@ -154,6 +154,7 @@ export default function SiteFooter() {
           </div>
         </div>
       </div>
+      
     </footer>
   );
 }

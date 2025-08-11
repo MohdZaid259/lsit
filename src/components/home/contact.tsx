@@ -1,7 +1,6 @@
 "use client";
 
 import { Mail, MapPin, Phone } from "lucide-react";
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import type React from "react";
@@ -36,6 +35,7 @@ export default function Contact() {
       eyebrow="Get in touch"
       title="Let's discuss"
       subtitle="Share your requirements—our engineering team will recommend the right construction."
+      className="md:mx-16 mx-0 bg-transparent md:pb-16 pb-0"
     >
       <div className="grid lg:grid-cols-[1fr_420px] gap-8">
         <form className="grid gap-0 p-6 pb-0 rounded-xl border border-gray-500 bg-white">

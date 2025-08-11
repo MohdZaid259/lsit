@@ -25,7 +25,7 @@ export default function AboutPage() {
       </section>
 
       {/* Company Overview */}
-      <section className="py-16 mx-16 md:py-24">
+      <section className="py-16 md:mx-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <ScrollAnimation animation="fade-in-left">
@@ -74,7 +74,7 @@ export default function AboutPage() {
 
       {/* Vision & Mission */}
       <section className="bg-primary/10 py-16 md:py-24">
-        <div className=" mx-16 px-4 sm:px-6 lg:px-8">
+        <div className="mx-0 md:mx-16 px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2">
             <ScrollAnimation animation="fade-in-left">
               <div className="rounded-xl bg-white p-8 shadow-sm">
@@ -101,7 +101,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Values */}
-      <section className="py-16 mx-16 md:py-24 md:pb-8">
+      <section className="py-16 mx-0 md:mx-16 md:py-24 pb-0 md:pb-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <ScrollAnimation animation="fade-in-up">
@@ -130,7 +130,7 @@ export default function AboutPage() {
                 }
               >
                 <div className="rounded-xl border border-primary/40 p-6 relative">
-                    <img src={value.icon.src} className="w-10 absolute p-[1px] right-3 top-3"/>
+                    <img src={value.icon.src} className="w-10 pb-2 md:pb-0 mx-4 md:mx-0 -mt-2 md:-mt-0 md:absolute md:p-[1px] md:right-3 md:top-3"/>
                   <h3 className="mb-2 text-xl font-semibold text-navy-blue">{value.title}</h3>
                   <p className="text-muted-foreground">{value.description}</p>
                 </div>

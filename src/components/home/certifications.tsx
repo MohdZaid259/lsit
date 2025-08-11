@@ -19,17 +19,17 @@ const certs = [
   },
   {
     name: "CE",
-    img: "/ce.png",
+    img: "/images/hero/iso.png",
     desc: "Conforms with EU health, safety, and environmental protection standards.",
   },
   {
     name: "NFPA",
-    img: "/nfpa-patch.png",
+    img: "/images/hero/iso.png",
     desc: "Meets NFPA 2112 flame-resistant garment standard.",
   },
   {
     name: "OEKO-TEX",
-    img: "/oeko-tex-badge.png",
+    img: "/images/hero/iso.png",
     desc: "Tested for harmful substances.",
   },
 ];
@@ -37,7 +37,7 @@ const certs = [
 export default function Certifications() {
   return (
     <Section
-      className="mx-16"
+      className="md:mx-16 mx-0"
       id="certifications"
       eyebrow="Certifications"
       title="Proven compliance, trusted globally"
@@ -63,14 +63,14 @@ export default function Certifications() {
               <div key={row} className="flex items-center gap-8">
                 {/* Attached banner tile */}
                 <div className="h-[72px] w-[240px] sm:w-[280px] md:w-[320px] relative rounded-lg border bg-slate-50">
-                  <Image
-                    src=""
+                  {/* <Image
+                    src={''}
                     alt="Certifications banner"
                     fill
                     sizes="(min-width: 768px) 320px, (min-width: 640px) 280px, 240px"
                     className="object-cover"
                     priority={row === 0}
-                  />
+                  /> */}
                 </div>
 
                 {certs.map((c) => (

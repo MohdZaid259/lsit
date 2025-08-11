@@ -74,7 +74,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
         <SiteHeader />
         <main className="min-h-[100dvh] bg-white text-muted-foreground">
