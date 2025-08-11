@@ -61,14 +61,11 @@ export default function NewsletterSignup({
 
           {/* Form */}
           <form onSubmit={onSubmit} className="w-full">
-            <label htmlFor="email" className="sr-only">
-              {"Your email address"}
-            </label>
             <div className="flex w-full items-stretch overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-black/10 focus-within:ring-black/20">
               <Input
                 id="email"
                 type="email"
-                placeholder="Your email address"
+                placeholder="Enter your email address here"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className={cn(

@@ -38,19 +38,6 @@ export default function OurServices() {
       cta: { label: "Explore Technologies", href: "#technologies" },
     },
     {
-      key: "car",
-      title: "Automotive and Car Fabrics",
-      desc: "Thermal-reflective shades and interior textiles designed for heat management, durability, and compliance.",
-      icon: Car,
-      image: "/service/shadeCover.png",
-      highlights: [
-        { icon: Sun, text: "IR/UV heat reduction" },
-        { icon: Shield, text: "Abrasion and fade resistance" },
-        { icon: FileCheck2, text: "OEM-grade compliance" },
-      ],
-      cta: { label: "View Car Solutions", href: "/products/heat-resistant" },
-    },
-    {
       key: "tent",
       title: "Tent and Outdoor Fabrics",
       desc: "Rugged membranes and blends for tents, canopies, and shelters—balanced breathability, weatherproofing, and strength.",
@@ -62,6 +49,19 @@ export default function OurServices() {
         { icon: Sun, text: "High UV stability" },
       ],
       cta: { label: "Explore Tent Fabrics", href: "/products/tents" },
+    },
+    {
+      key: "car",
+      title: "Automotive and Car Fabrics",
+      desc: "Thermal-reflective shades and interior textiles designed for heat management, durability, and compliance.",
+      icon: Car,
+      image: "/service/shadeCover.png",
+      highlights: [
+        { icon: Sun, text: "IR/UV heat reduction" },
+        { icon: Shield, text: "Abrasion and fade resistance" },
+        { icon: FileCheck2, text: "OEM-grade compliance" },
+      ],
+      cta: { label: "View Car Solutions", href: "/products/heat-resistant" },
     },
   ];
 

@@ -43,7 +43,7 @@ export default function Certifications() {
       title="Proven compliance, trusted globally"
       subtitle="Rigorous third‑party verification and standards adherence for critical applications."
     >
-      <div className="relative overflow-hidden rounded-xl border bg-white">
+      <div className="relative overflow-hidden border border-x-0 bg-white">
         {/* Edge fades */}
         <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white to-transparent z-[50]" />
         <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white to-transparent z-[50]" />

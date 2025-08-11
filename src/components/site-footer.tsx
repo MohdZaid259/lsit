@@ -83,9 +83,9 @@ export default function SiteFooter() {
           {/* Brand */}
           <div className="md:col-span-4 flex flex-col items-start">
             <Link href="/">
-              <Logo size={72} />
+              <Logo className="absolute w-52 md:w-64 -mr-24 md:-mr-30  mt-20" />
             </Link>
-            <p className="mt-5 md:mt-10 text-sm text-primary">
+            <p className="mt-20 text-sm text-primary">
               Engineering textiles for heat control, protection, and all-weather
               performance.
             </p>
