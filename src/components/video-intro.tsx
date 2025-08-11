@@ -7,31 +7,37 @@ export default function VideoIntro({
 }: {
   readonly onlyOnHome?: boolean;
 }) {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true); // start as true to block SSR flash
+  const [showVideo, setShowVideo] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
   const [progress, setProgress] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  useEffect(() => {
-    const el = document.getElementById("initial-splash");
-    if (el) el.remove();
-  }, []);
-
-  // Show intro only when conditions match
+  // Decide whether to play intro
   useEffect(() => {
     if (typeof window === "undefined") return;
 
     const prefersReduced = window.matchMedia?.(
       "(prefers-reduced-motion: reduce)"
     ).matches;
-    if (prefersReduced) return;
+    if (prefersReduced) {
+      setVisible(false);
+      return;
+    }
 
     // @ts-expect-error Optional NetworkInformation
-    if (navigator?.connection?.saveData) return;
+    if (navigator?.connection?.saveData) {
+      setVisible(false);
+      return;
+    }
 
-    if (onlyOnHome && window.location?.pathname !== "/") return;
+    if (onlyOnHome && window.location?.pathname !== "/") {
+      setVisible(false);
+      return;
+    }
 
-    setVisible(true);
+    // Show video after checks
+    setShowVideo(true);
   }, [onlyOnHome]);
 
   // Track video progress
@@ -45,7 +51,7 @@ export default function VideoIntro({
     };
     video.addEventListener("timeupdate", onTime);
     return () => video.removeEventListener("timeupdate", onTime);
-  }, [visible]);
+  }, [showVideo]);
 
   const handleHide = () => {
     setFadeOut(true);
@@ -56,7 +62,7 @@ export default function VideoIntro({
 
   // Keyboard shortcuts
   useEffect(() => {
-    if (!visible) return;
+    if (!showVideo) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape" || e.key.toLowerCase() === "s") {
         e.preventDefault();
@@ -65,11 +71,17 @@ export default function VideoIntro({
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [visible]);
+  }, [showVideo]);
 
   const bgTo = useMemo(() => "var(--background, #ffffff)", []);
 
+  // If not visible at all, remove from DOM
   if (!visible) return null;
+
+  // SSR initial block (black screen) before checks run
+  if (!showVideo) {
+    return <div className="fixed inset-0 bg-black z-[9999]" />;
+  }
 
   return (
     <div
@@ -81,7 +93,7 @@ export default function VideoIntro({
       <video
         ref={videoRef}
         src="/intro.mp4"
-        poster="/intro-poster.png"
+        // poster="/intro-poster.png"
         autoPlay
         muted
         playsInline
