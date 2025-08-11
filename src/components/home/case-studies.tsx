@@ -2,6 +2,7 @@
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
+
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Section from "@/components/common/section";
@@ -81,6 +82,7 @@ export default function CaseStudies() {
   return (
     <Section
       id="case-studies"
+      eyebrow="Case Studies"
       title="Real-world deployments"
       subtitle="Validated performance across environments and industries."
       className="mx-16"

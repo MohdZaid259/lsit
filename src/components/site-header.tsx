@@ -38,9 +38,11 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Logo from "./logo";
 import MetallicButton from "./common/metallic-button";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function SiteHeader() {
+  const router = useRouter();
   const [open, setOpen] = useState(false);
 
   const products = [
@@ -221,7 +223,12 @@ export default function SiteHeader() {
 
         {/* Desktop CTA */}
         <div className="hidden md:block">
-          <MetallicButton className="ml-3">Contact Us</MetallicButton>
+          <MetallicButton
+            onClick={() => router.push("/#contact")}
+            className="ml-3"
+          >
+            Contact Us
+          </MetallicButton>
         </div>
 
         {/* Mobile Menu */}
@@ -292,6 +299,7 @@ export default function SiteHeader() {
                   <MetallicButton
                     onClick={() => {
                       setOpen(false);
+                      router.push("/#contact");
                     }}
                     className="w-full"
                   >

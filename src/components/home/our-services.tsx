@@ -41,7 +41,7 @@ export default function OurServices() {
       title: "Automotive and Car Fabrics",
       desc: "Thermal-reflective shades and interior textiles designed for heat management, durability, and compliance.",
       icon: Car,
-      image: "",
+      image: "/service/shadeCover.png",
       highlights: [
         { icon: Sun, text: "IR/UV heat reduction" },
         { icon: Shield, text: "Abrasion and fade resistance" },
@@ -62,54 +62,13 @@ export default function OurServices() {
       ],
       cta: { label: "Explore Tent Fabrics", href: "/products/tents" },
     },
-    {
-      key: "car",
-      title: "Automotive and Car Fabrics",
-      desc: "Thermal-reflective shades and interior textiles designed for heat management, durability, and compliance.",
-      icon: Car,
-      image: "/service/shadeCover.png",
-      highlights: [
-        { icon: Sun, text: "IR/UV heat reduction" },
-        { icon: Shield, text: "Abrasion and fade resistance" },
-        { icon: FileCheck2, text: "OEM-grade compliance" },
-      ],
-      cta: { label: "View Car Solutions", href: "/products/heat-resistant" },
-    },
-  ];
-
-  const steps = [
-    {
-      icon: MessageSquare,
-      title: "Consult",
-      text: "Define use case, targets, and constraints.",
-    },
-    {
-      icon: Ruler,
-      title: "Material Design",
-      text: "Select fibers, weaves, finishes, and coatings.",
-    },
-    {
-      icon: FlaskConical,
-      title: "Prototype",
-      text: "Lab samples, durability tests, and iterations.",
-    },
-    {
-      icon: FileCheck2,
-      title: "Certify",
-      text: "Compliance verification and documentation.",
-    },
-    { icon: Factory, title: "Manufacture", text: "Scaled production and QC." },
-    {
-      icon: Truck,
-      title: "Deliver",
-      text: "Global logistics with scheduling support.",
-    },
   ];
 
   return (
     <Section
       className="mx-16"
       id="our-services"
+      eyebrow="Our Services"
       title="End-to-end textile engineering for real-world performance"
       subtitle="We specialize in advanced fabric technologies, automotive heat-management textiles, and rugged tent/outdoor membranes."
     >

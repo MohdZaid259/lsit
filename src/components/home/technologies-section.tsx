@@ -65,6 +65,7 @@ export default function TechnologiesSection() {
   return (
     <Section
       id="technologies"
+      eyebrow="Fabric Technologies"
       title="Our advanced fabric technologies"
       subtitle="Explore each platform’s texture and benefits."
       className="mx-16"

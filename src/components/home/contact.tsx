@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 "use client";
-=======
-'use client';
->>>>>>> c9ddb19924f545118720cbb539d250e7f5265c6e
 
 import { Mail, MapPin, Phone } from "lucide-react";
 
@@ -35,9 +31,9 @@ export default function Contact() {
   }
 
   return (
-    // <div className="absolute inset-0 bg-[url('/coverImage/aboutCover.jpg')] bg-cover bg-center">
     <Section
       id="contact"
+      eyebrow="Get in touch"
       title="Let's discuss"
       subtitle="Share your requirements—our engineering team will recommend the right construction."
     >
@@ -145,6 +141,5 @@ export default function Contact() {
         </aside>
       </div>
     </Section>
-    // </div>
   );
 }

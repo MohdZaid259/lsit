@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import Link from "next/link";
 import MetallicButton from "@/components/common/metallic-button";
 import Reveal from "@/components/common/reveal";
+import { SafeImage } from "../ui/safe-image";
 
 export default function Hero() {
   return (
@@ -10,7 +10,7 @@ export default function Hero() {
       <div className="relative h-screen min-h-[520px] w-full">
         {/* Background image */}
         <div className="absolute inset-0 -z-10">
-          <Image
+          <SafeImage
             src="/images/hero/fibreOptions.png"
             alt="Metallic woven fabric background"
             fill
@@ -44,23 +44,16 @@ export default function Hero() {
             <Reveal delay={0.1}>
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <MetallicButton>
-                  <Link href="#technologies">Explore Technologies</Link>
+                  <Link href="/#technologies">Explore Technologies</Link>
                 </MetallicButton>
-                <Button
-                  asChild
-                  variant="outline"
-                  className="border-white text-white bg-transparent shadow-sm transition-colors hover:text-white"
-                >
-                  <Link href="#contact">Speak to an Engineer</Link>
+                <Button variant="outline" className="">
+                  <Link href="/#contact">Speak to an Engineer</Link>
                 </Button>
               </div>
             </Reveal>
           </div>
         </div>
       </div>
-
-      {/* Bottom divider */}
-      <div className="h-px bg-gradient-to-r from-transparent via-white/40 to-transparent" />
     </section>
   );
 }
