@@ -48,10 +48,10 @@ export default async function ProductsPage() {
       <header className="rounded-xl overflow-hidden border">
         <div className="relative h-44 sm:h-56 md:h-64">
           <SafeImage
-            src=""
+            src="/intro-poster.png"
             alt="Products cover"
-            fill
-            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+            height={256}
+            width={1024}
             className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-background/30 to-transparent" />

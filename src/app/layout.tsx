@@ -91,16 +91,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
-        {/* Initial static splash screen (visible instantly before hydration) */}
-        <div
-          id="initial-splash"
-          style={{
-            position: "fixed",
-            inset: 0,
-            background: "black",
-            zIndex: 999999,
-          }}
-        ></div>
         <VideoIntro />
 
         <SiteHeader />
