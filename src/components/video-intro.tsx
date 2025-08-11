@@ -2,76 +2,39 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 
-type Props = {
-  src?: string;
-  poster?: string;
-  ttlDays?: number; // how long to remember the intro was seen
-  onlyOnHome?: boolean;
-};
-
-const DONT_SHOW_KEY = "intro:dontShow";
-
 export default function VideoIntro({
-  src = "/intro.mp4",
-  poster = "/images/hero-fabric.png",
-  ttlDays = 7,
   onlyOnHome = true,
-}: Props) {
-  const [show, setShow] = useState(false);
+}: {
+  readonly onlyOnHome?: boolean;
+}) {
+  const [visible, setVisible] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
   const [progress, setProgress] = useState(0);
-  const [ready, setReady] = useState(false);
-  const [deferredSkipVisible, setDeferredSkipVisible] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Decide early whether we should show the intro
+  useEffect(() => {
+    const el = document.getElementById("initial-splash");
+    if (el) el.remove();
+  }, []);
+
+  // Show intro only when conditions match
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    // Respect "Reduce Motion"
     const prefersReduced = window.matchMedia?.(
       "(prefers-reduced-motion: reduce)"
     ).matches;
-    if (prefersReduced) {
-      setShow(false);
-      return;
-    }
+    if (prefersReduced) return;
 
-    // Respect Save-Data
     // @ts-expect-error Optional NetworkInformation
-    const saveData = navigator?.connection?.saveData;
-    if (saveData) {
-      setShow(false);
-      return;
-    }
+    if (navigator?.connection?.saveData) return;
 
-    if (onlyOnHome && window.location?.pathname !== "/") {
-      setShow(false);
-      return;
-    }
+    if (onlyOnHome && window.location?.pathname !== "/") return;
 
-    // Don't show if user opted out
-    const dontShow = localStorage.getItem(DONT_SHOW_KEY) === "true";
-    if (dontShow) {
-      setShow(false);
-      return;
-    }
-
-    // If session already saw it, skip (but TTL still applies next time)
-    const sessionSeen = sessionStorage.getItem("hasSeenIntro") === "true";
-    if (sessionSeen) {
-      setShow(false);
-      return;
-    }
-
-    setShow(true);
-
-    // Show skip after a moment to avoid accidental taps
-    const t = window.setTimeout(() => setDeferredSkipVisible(true), 600);
-    return () => window.clearTimeout(t);
+    setVisible(true);
   }, [onlyOnHome]);
 
-  // Progress updates
+  // Track video progress
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
@@ -80,93 +43,58 @@ export default function VideoIntro({
         setProgress((video.currentTime / video.duration) * 100);
       }
     };
-    const onCanPlay = () => setReady(true);
     video.addEventListener("timeupdate", onTime);
-    video.addEventListener("canplay", onCanPlay);
-    return () => {
-      video.removeEventListener("timeupdate", onTime);
-      video.removeEventListener("canplay", onCanPlay);
-    };
-  }, [show]);
+    return () => video.removeEventListener("timeupdate", onTime);
+  }, [visible]);
 
-  const handleHide = (persist = true) => {
+  const handleHide = () => {
     setFadeOut(true);
-    window.setTimeout(() => {
-      if (persist) {
-        sessionStorage.setItem("hasSeenIntro", "true");
-      }
-      setShow(false);
-    }, 420);
-  };
-
-  const handleDontShowAgain = () => {
-    localStorage.setItem(DONT_SHOW_KEY, "true");
-    handleHide(true);
+    setTimeout(() => {
+      setVisible(false);
+    }, 500);
   };
 
   // Keyboard shortcuts
   useEffect(() => {
-    if (!show) return;
+    if (!visible) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape" || e.key.toLowerCase() === "s") {
         e.preventDefault();
-        handleHide(true);
+        handleHide();
       }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [show]);
+  }, [visible]);
 
   const bgTo = useMemo(() => "var(--background, #ffffff)", []);
 
-  if (!show) return null;
+  if (!visible) return null;
 
   return (
     <div
       className={`fixed inset-0 z-[9999] flex items-center justify-center transition-opacity duration-500 ${
         fadeOut ? "opacity-0" : "opacity-100"
       }`}
-      role="dialog"
-      aria-label="Intro"
-      aria-modal="true"
     >
       {/* Video */}
       <video
         ref={videoRef}
-        src={src}
-        poster={poster}
+        src="/intro.mp4"
+        poster="/intro-poster.png"
         autoPlay
         muted
         playsInline
         preload="auto"
-        onEnded={() => handleHide(true)}
+        onEnded={handleHide}
         className="w-full h-full object-cover"
       />
 
-      {/* Brand overlay */}
+      {/* Overlay instructions */}
       <div className="pointer-events-none absolute inset-x-0 top-0 flex justify-center pt-12">
         <div className="rounded-full border border-white/15 bg-white/10 backdrop-blur px-3 py-1 text-white/90 text-xs">
           Press S or Esc to skip
         </div>
-      </div>
-
-      {/* Controls */}
-      <div className="absolute right-4 top-4 flex items-center gap-2">
-        {deferredSkipVisible && (
-          <button
-            onClick={() => handleHide(true)}
-            className="rounded-md bg-white/60 text-foreground/90 px-3 py-1 text-sm hover:bg-white transition"
-          >
-            Skip
-          </button>
-        )}
-        <button
-          onClick={handleDontShowAgain}
-          className="rounded-md bg-white/60 text-foreground/90 px-3 py-1 text-sm hover:bg-white transition"
-          title="Don't show again"
-        >
-          Don’t show again
-        </button>
       </div>
 
       {/* Progress bar */}
@@ -177,7 +105,7 @@ export default function VideoIntro({
         />
       </div>
 
-      {/* End fade to theme background */}
+      {/* Fade overlay */}
       <div
         className={`pointer-events-none absolute inset-0 transition-opacity duration-500 ${
           fadeOut ? "opacity-100" : "opacity-0"
