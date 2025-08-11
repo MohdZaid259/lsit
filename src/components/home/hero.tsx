@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import MetallicButton from "@/components/common/metallic-button";
@@ -32,11 +31,11 @@ export default function Hero({
         </div>
 
         {/* Content */}
-        <div className="container mx-auto px-4 ml-24 h-full flex items-center">
+        <div className="container mx-auto px-4 ml-0 md:ml-24 h-full flex items-center">
           <div className="max-w-3xl -mt-16">
             <Reveal>
               <h1
-                className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-wide text-white"
+                className="text-3xl text-shadow-black text-shadow-2xs md:text-5xl lg:text-6xl font-bold md:font-extrabold tracking-wide text-white"
                 style={{ fontFamily: "var(--font-jakarta)" }}
               >
                 {title}
@@ -44,18 +43,19 @@ export default function Hero({
             </Reveal>
             <Reveal delay={0.05}>
               <p
-                className="mt-4 text-lg md:text-xl text-gray-200 tracking-wide"
+                className="mt-4 text-shadow-black text-shadow-2xs text-lg md:text-xl text-gray-200 tracking-wide"
                 style={{ fontFamily: "var(--font-inter)", fontWeight: 400 }}
               >
                 {subtitle}
               </p>
             </Reveal>
+            
             <Reveal delay={0.1}>
-              <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                <MetallicButton className="py-2 border">
+              
+                <MetallicButton className="py-2 mt-4 border">
                   <Link className="tracking-wider" href={ctaPrimary.href}>{ctaPrimary.label}</Link>
                 </MetallicButton>
-              </div>
+              
             </Reveal>
           </div>
         </div>

@@ -94,7 +94,7 @@ export default function OurServices() {
 
   return (
     <Section
-      className="mx-16"
+      className="md:mx-16 mx-0"
       id="our-services"
       title="End-to-end textile engineering for real-world performance"
       subtitle="We specialize in advanced fabric technologies, automotive heat-management textiles, and rugged tent/outdoor membranes."

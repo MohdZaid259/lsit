@@ -32,7 +32,7 @@ export default function Contact() {
       id="contact"
       title="Let's discuss"
       subtitle="Share your requirements—our engineering team will recommend the right construction."
-      className="mx-16 bg-transparent pb-16"
+      className="md:mx-16 mx-0 bg-transparent md:pb-16 pb-0"
     >
       <div className="grid lg:grid-cols-[1fr_420px] gap-8">
         <form className="grid gap-0 p-6 pb-0 rounded-xl border border-gray-500 bg-white">

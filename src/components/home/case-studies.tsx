@@ -83,7 +83,7 @@ export default function CaseStudies() {
       id="case-studies"
       title="Real-world deployments"
       subtitle="Validated performance across environments and industries."
-      className="mx-16"
+      className="md:mx-16 mx-0"
     >
       <div className="relative">
         <div className="overflow-hidden rounded-xl" ref={emblaRef}>
