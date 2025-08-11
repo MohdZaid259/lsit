@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import SiteFooter from "@/components/site-footer";
 import SiteHeader from "@/components/site-header";
 import { Toaster } from "@/components/ui/sonner";
+import VideoIntro from "@/components/video-intro";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -90,6 +91,18 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
+        {/* Initial static splash screen (visible instantly before hydration) */}
+        <div
+          id="initial-splash"
+          style={{
+            position: "fixed",
+            inset: 0,
+            background: "black",
+            zIndex: 999999,
+          }}
+        ></div>
+        <VideoIntro />
+
         <SiteHeader />
         <main className="min-h-[100vh] bg-white text-muted-foreground">
           {children}

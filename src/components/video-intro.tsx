@@ -1,0 +1,119 @@
+"use client";
+
+import { useEffect, useMemo, useRef, useState } from "react";
+
+export default function VideoIntro({
+  onlyOnHome = true,
+}: {
+  readonly onlyOnHome?: boolean;
+}) {
+  const [visible, setVisible] = useState(false);
+  const [fadeOut, setFadeOut] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const el = document.getElementById("initial-splash");
+    if (el) el.remove();
+  }, []);
+
+  // Show intro only when conditions match
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const prefersReduced = window.matchMedia?.(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    if (prefersReduced) return;
+
+    // @ts-expect-error Optional NetworkInformation
+    if (navigator?.connection?.saveData) return;
+
+    if (onlyOnHome && window.location?.pathname !== "/") return;
+
+    setVisible(true);
+  }, [onlyOnHome]);
+
+  // Track video progress
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const onTime = () => {
+      if (video.duration && Number.isFinite(video.duration)) {
+        setProgress((video.currentTime / video.duration) * 100);
+      }
+    };
+    video.addEventListener("timeupdate", onTime);
+    return () => video.removeEventListener("timeupdate", onTime);
+  }, [visible]);
+
+  const handleHide = () => {
+    setFadeOut(true);
+    setTimeout(() => {
+      setVisible(false);
+    }, 500);
+  };
+
+  // Keyboard shortcuts
+  useEffect(() => {
+    if (!visible) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape" || e.key.toLowerCase() === "s") {
+        e.preventDefault();
+        handleHide();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [visible]);
+
+  const bgTo = useMemo(() => "var(--background, #ffffff)", []);
+
+  if (!visible) return null;
+
+  return (
+    <div
+      className={`fixed inset-0 z-[9999] flex items-center justify-center transition-opacity duration-500 ${
+        fadeOut ? "opacity-0" : "opacity-100"
+      }`}
+    >
+      {/* Video */}
+      <video
+        ref={videoRef}
+        src="/intro.mp4"
+        poster="/intro-poster.png"
+        autoPlay
+        muted
+        playsInline
+        preload="auto"
+        onEnded={handleHide}
+        className="w-full h-full object-cover"
+      />
+
+      {/* Overlay instructions */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 flex justify-center pt-12">
+        <div className="rounded-full border border-white/15 bg-white/10 backdrop-blur px-3 py-1 text-white/90 text-xs">
+          Press S or Esc to skip
+        </div>
+      </div>
+
+      {/* Progress bar */}
+      <div className="absolute left-0 right-0 bottom-0 h-1 bg-white/10">
+        <div
+          className="h-full bg-[var(--primary,#0c4377)] transition-[width] duration-200 ease-linear"
+          style={{ width: `${Math.min(100, Math.max(0, progress))}%` }}
+        />
+      </div>
+
+      {/* Fade overlay */}
+      <div
+        className={`pointer-events-none absolute inset-0 transition-opacity duration-500 ${
+          fadeOut ? "opacity-100" : "opacity-0"
+        }`}
+        style={{
+          background: `radial-gradient(60% 60% at 50% 50%, ${bgTo} 0%, ${bgTo} 35%, rgba(255,255,255,0) 100%)`,
+        }}
+      />
+    </div>
+  );
+}
