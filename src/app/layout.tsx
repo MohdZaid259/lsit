@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import SiteFooter from "@/components/site-footer";
 import SiteHeader from "@/components/site-header";
 import { Toaster } from "@/components/ui/sonner";
+import VideoIntro from "@/components/video-intro";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -92,6 +93,7 @@ export default function RootLayout({
       >
         <SiteHeader />
         <main className="min-h-[100vh] bg-white text-muted-foreground">
+          <VideoIntro />
           {children}
         </main>
         <SiteFooter />
