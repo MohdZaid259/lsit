@@ -1,14 +1,20 @@
 import Image from "next/image";
 
-export default function Logo({ size = 36, className='' }: { readonly size?: number, className?: string }) {
+export default function Logo({
+  size = 48,
+  className = "",
+}: {
+  readonly size?: number;
+  readonly className?: string;
+}) {
   return (
     <div className="flex items-center justify-center">
       <Image
         src="/logo/logoWhite.jpg"
         alt="LS4IT logo"
-        height={12}
+        height={size}
         width={size}
-        className={`w-36 ${className} invert mt-3 rounded-lg`}
+        className={`${className} rounded-lg`}
         priority
       />
     </div>

@@ -11,14 +11,15 @@ export default function Hero() {
         {/* Background image */}
         <div className="absolute inset-0 -z-10">
           <SafeImage
-            src="/images/hero/fibreOptions.png"
+            src="/hero/fibreOptions.png"
             alt="Metallic woven fabric background"
             fill
+            sizes="100vw"
             className="object-cover scale-100 animate-[pan_18s_ease-in-out_infinite]"
             priority
           />
           {/* Dark overlay for contrast */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-br from-black via-black/50 to-black" />
         </div>
 
         {/* Content */}

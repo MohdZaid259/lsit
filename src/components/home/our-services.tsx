@@ -19,6 +19,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "../common/reveal";
+import { SafeImage } from "../ui/safe-image";
 import Section from "@/components/common/section";
 
 export default function OurServices() {
@@ -81,8 +82,8 @@ export default function OurServices() {
               <Card className="h-full shadow-xl overflow-hidden border-slate-200 gap-0 pt-0">
                 {/* Image at top */}
                 <div className="relative w-full h-50">
-                  <Image
-                    src={s.image}
+                  <SafeImage
+                    src={s.image || ""}
                     alt={s.title}
                     fill
                     className="object-cover"
