@@ -4,19 +4,7 @@ import Link from "next/link";
 import MetallicButton from "@/components/common/metallic-button";
 import Reveal from "@/components/common/reveal";
 
-type CTA = { href: string; label: string };
-
-export default function Hero({
-  title = "Technology-Integrated Fabrics",
-  subtitle = "Premium, engineered textiles with embedded intelligence.",
-  ctaPrimary = { href: "#", label: "Explore" },
-  ctaSecondary = { href: "#", label: "Contact" },
-}: {
-  readonly title?: string;
-  readonly subtitle?: string;
-  readonly ctaPrimary?: CTA;
-  readonly ctaSecondary?: CTA;
-}) {
+export default function Hero() {
   return (
     <section className="relative isolate overflow-hidden">
       <div className="relative h-[72vh] min-h-[520px] w-full">
@@ -41,7 +29,7 @@ export default function Hero({
                 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white"
                 style={{ fontFamily: "var(--font-jakarta)" }}
               >
-                {title}
+                Technology‑Integrated Fabrics for Demanding Environments
               </h1>
             </Reveal>
             <Reveal delay={0.05}>
@@ -49,20 +37,21 @@ export default function Hero({
                 className="mt-4 text-lg md:text-xl text-gray-200"
                 style={{ fontFamily: "var(--font-inter)", fontWeight: 300 }}
               >
-                {subtitle}
+                Premium, engineered textiles with embedded electronics, sensing,
+                and performance coatings—manufactured at scale.
               </p>
             </Reveal>
             <Reveal delay={0.1}>
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <MetallicButton>
-                  <Link href={ctaPrimary.href}>{ctaPrimary.label}</Link>
+                  <Link href="#technologies">Explore Technologies</Link>
                 </MetallicButton>
                 <Button
                   asChild
                   variant="outline"
                   className="border-white text-white bg-transparent shadow-sm transition-colors hover:text-white"
                 >
-                  <Link href={ctaSecondary.href}>{ctaSecondary.label}</Link>
+                  <Link href="#contact">Speak to an Engineer</Link>
                 </Button>
               </div>
             </Reveal>

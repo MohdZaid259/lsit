@@ -27,7 +27,7 @@ const techs: Tech[] = [
     key: "sunray",
     name: "SunRay Reflective",
     desc: "High-reflectance outer layer to reduce heat gain under extreme sun.",
-    img: "/images/tech-sunray.png",
+    img: "/technology/reflective.webp",
     icon: Sun,
     bullets: [
       "IR reflectivity ≥ 85%",
@@ -39,7 +39,7 @@ const techs: Tech[] = [
     key: "fire",
     name: "Fire-Resistant",
     desc: "Inherently flame-retardant fibers and coatings for high-temperature safety.",
-    img: "/images/tech-fire.png",
+    img: "/technology/tech-fire.png",
     icon: ThermometerSun,
     bullets: ["Meets NFPA 2112", "Self-extinguishing", "Low smoke index"],
   },

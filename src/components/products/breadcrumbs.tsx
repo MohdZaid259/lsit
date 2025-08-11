@@ -2,16 +2,35 @@
 
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-
-type Crumb = { label: string; href?: string };
+import { useParams } from "next/navigation";
 
 export function Breadcrumbs({
-  items,
   className = "",
 }: {
-  readonly items: Crumb[];
   readonly className?: string;
 }) {
+  const params = useParams<{ category?: string; product?: string }>();
+
+  // Start with base crumbs
+  const items = [
+    { label: "Home", href: "/" },
+    { label: "Products", href: "/products" },
+  ];
+
+  if (params.category) {
+    items.push({
+      label: decodeURIComponent(params.category),
+      href: `/products/${params.category}`,
+    });
+  }
+
+  if (params.product) {
+    items.push({
+      label: decodeURIComponent(params.product),
+      href: "",
+    });
+  }
+
   return (
     <nav
       aria-label="Breadcrumb"

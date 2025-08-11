@@ -1,34 +1,82 @@
+import { getAllProducts, getProductBySubCategorySlug } from "@/app/services";
+
 import { Breadcrumbs } from "@/components/products/breadcrumbs";
 import Link from "next/link";
+import type { Metadata } from "next";
+import { Product } from "@/lib/types";
 import { ProductGallery } from "@/components/products/product-gallery";
-import { getProduct } from "@/lib/catalog";
+import { SafeImage } from "@/components/ui/safe-image";
+import { notFound } from "next/navigation";
 
-export default function ProductDetailPage({
+export async function generateStaticParams() {
+  const res = (await getAllProducts()) as { products: Product[] };
+
+  return (
+    res.products.map((p: Product) => ({
+      product: p.slug,
+    })) || []
+  );
+}
+
+export async function generateMetadata({
   params,
 }: {
-  params: { category: string; product: string };
-}) {
-  const result = getProduct(params.category, params.product);
-  if (!result) {
-    return <div className="py-10">Product not found.</div>;
-  }
-  const { product, category, subcategory } = result;
+  params: Promise<{ product: string }>;
+}): Promise<Metadata> {
+  const { product: productSlug } = await params;
 
-  const breadcrumb = [
-    { label: "Home", href: "/" },
-    { label: "Products", href: "/products" },
-    { label: category.title, href: `/products/${category.key}` },
-    { label: product.name },
-  ];
+  const { product } = (await getProductBySubCategorySlug(productSlug)) as {
+    product: Product;
+  };
+
+  if (!product) {
+    return {
+      title: "Product Not Found",
+    };
+  }
+
+  return {
+    title: `${product.name} | My Store`,
+    description:
+      product.description ||
+      `Learn more about ${product.name} from our premium product catalog.`,
+    openGraph: {
+      title: product.name,
+      description:
+        product.description ||
+        `Discover more about ${product.name} in our collection.`,
+      images: product.gallery?.length
+        ? product.gallery.map((img) => ({ url: img.url }))
+        : [],
+    },
+  };
+}
+
+export default async function ProductDetailPage({
+  params,
+}: {
+  readonly params: Promise<{ product: string }>;
+}) {
+  const { product: ProductSlug } = await params;
+
+  const { product } = (await getProductBySubCategorySlug(ProductSlug)) as {
+    product: Product;
+  };
+
+  if (!product) {
+    return notFound();
+  }
 
   return (
     <div className="space-y-6">
-      <Breadcrumbs items={breadcrumb} />
+      <Breadcrumbs />
       <header className="rounded-xl overflow-hidden border">
         <div className="relative h-32 sm:h-36 md:h-40">
-          <img
-            src={category.coverImage || "/placeholder.svg"}
-            alt={`${category.title} cover`}
+          <SafeImage
+            src={product.subCategories.category.image?.url || ""}
+            alt={`${product.subCategories.category.name} cover`}
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
             className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent" />
@@ -36,23 +84,27 @@ export default function ProductDetailPage({
             <h1 className="text-lg md:text-xl font-semibold text-foreground">
               {product.name}
             </h1>
-            <p className="text-xs text-muted-foreground">
-              {category.title}
-              {subcategory ? ` • ${subcategory.title}` : ""}
+            <p className="text-xs text-muted-foreground capitalize">
+              {product.subCategories.category.name}
+              {product.subCategories.name
+                ? ` • ${product.subCategories.name}`
+                : ""}
             </p>
           </div>
         </div>
       </header>
 
       <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-        <ProductGallery images={product.images} />
+        <ProductGallery
+          images={product.gallery ? product.gallery.map((img) => img.url) : []}
+        />
         <aside className="space-y-5">
           <div>
             <h2 className="text-base font-semibold text-foreground">
               Overview
             </h2>
             <p className="mt-2 text-sm text-muted-foreground">
-              {product.summary ||
+              {product.description ||
                 "High-performance textile engineered for durability, comfort, and compliance in demanding environments."}
             </p>
           </div>
@@ -61,25 +113,25 @@ export default function ProductDetailPage({
             <div className="rounded-md border p-3">
               <div className="text-xs text-muted-foreground">Fabric</div>
               <div className="text-sm font-medium text-foreground">
-                Poly blend
+                {product.fabric}
               </div>
             </div>
             <div className="rounded-md border p-3">
               <div className="text-xs text-muted-foreground">Finish</div>
               <div className="text-sm font-medium text-foreground">
-                Hydrophobic
+                {product.finish || "Standard"}
               </div>
             </div>
             <div className="rounded-md border p-3">
               <div className="text-xs text-muted-foreground">Compliance</div>
               <div className="text-sm font-medium text-foreground">
-                ISO • CE • NFPA
+                {product.compliance || "ISO 9001, ISO 14001"}
               </div>
             </div>
             <div className="rounded-md border p-3">
               <div className="text-xs text-muted-foreground">Use case</div>
               <div className="text-sm font-medium text-foreground">
-                Industrial
+                {product.useCase || "General use"}
               </div>
             </div>
           </div>

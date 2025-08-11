@@ -28,7 +28,7 @@ export default function OurServices() {
       title: "Technology in Fabric",
       desc: "From fiber selection to advanced coatings, we engineer performance at the yarn and finish level with measurable results.",
       icon: FlaskConical,
-      image: "/images/services/technology.jpg", // new field
+      image: "",
       highlights: [
         { icon: Cpu, text: "Smart/IoT-ready fabrics" },
         { icon: Shield, text: "FR, antibacterial, UV protection" },
@@ -41,7 +41,7 @@ export default function OurServices() {
       title: "Automotive and Car Fabrics",
       desc: "Thermal-reflective shades and interior textiles designed for heat management, durability, and compliance.",
       icon: Car,
-      image: "/images/services/automotive.jpg",
+      image: "",
       highlights: [
         { icon: Sun, text: "IR/UV heat reduction" },
         { icon: Shield, text: "Abrasion and fade resistance" },
@@ -54,7 +54,7 @@ export default function OurServices() {
       title: "Tent and Outdoor Fabrics",
       desc: "Rugged membranes and blends for tents, canopies, and shelters—balanced breathability, weatherproofing, and strength.",
       icon: Tent,
-      image: "/images/services/tent.jpg",
+      image: "",
       highlights: [
         { icon: Droplets, text: "20K/15K waterproof/breathable" },
         { icon: Shield, text: "Tear + mildew resistance" },

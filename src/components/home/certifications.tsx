@@ -63,7 +63,7 @@ export default function Certifications() {
                 {/* Attached banner tile */}
                 <div className="h-[72px] w-[240px] sm:w-[280px] md:w-[320px] relative rounded-lg border bg-slate-50">
                   <Image
-                    src="/images/certifications-banner.png"
+                    src=""
                     alt="Certifications banner"
                     fill
                     sizes="(min-width: 768px) 320px, (min-width: 640px) 280px, 240px"

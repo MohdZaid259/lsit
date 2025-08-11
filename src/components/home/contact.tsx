@@ -1,22 +1,27 @@
+"use client";
+
 import { Mail, MapPin, Phone } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import type React from "react";
 import Section from "../common/section";
 import { Textarea } from "@/components/ui/textarea";
 
-
 export default function Contact() {
-
-  function handleSubmit(e: any){
+  function handleSubmit(e: any) {
     e.preventDefault();
     const name = (document.getElementById("name") as HTMLInputElement)?.value;
     const email = (document.getElementById("email") as HTMLInputElement)?.value;
     const phone = (document.getElementById("phone") as HTMLInputElement)?.value;
-    const company = (document.getElementById("company") as HTMLSelectElement)?.value;
-    const message = (document.getElementById("message") as HTMLTextAreaElement)?.value;
+    const company = (document.getElementById("company") as HTMLSelectElement)
+      ?.value;
+    const message = (document.getElementById("message") as HTMLTextAreaElement)
+      ?.value;
 
-    const subject = encodeURIComponent("New Technical Support Request from " + name);
+    const subject = encodeURIComponent(
+      "New Technical Support Request from " + name
+    );
     const body = encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nCompany: ${company}\n\nMessage:\n${message}\n\n--\n`
     );
@@ -30,7 +35,6 @@ export default function Contact() {
       id="contact"
       title="Let's discuss"
       subtitle="Share your requirements—our engineering team will recommend the right construction."
-      className="mx-16"
     >
       <div className="grid lg:grid-cols-[1fr_420px] gap-8">
         <form className="grid gap-0 p-6 pb-0 rounded-xl border border-gray-500 bg-white">

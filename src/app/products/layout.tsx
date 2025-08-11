@@ -4,7 +4,7 @@ import type React from "react";
 export default function ProductsLayout({
   children,
 }: {
-  children: React.ReactNode;
+  readonly children: React.ReactNode;
 }) {
   return (
     <div className="container mx-auto px-4 md:px-6 py-6">
