@@ -7,6 +7,7 @@ import {
   ThermometerSun,
 } from "lucide-react";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
+
 import Image from "next/image";
 import type React from "react";
 import Section from "@/components/common/section";
@@ -56,10 +57,7 @@ const techs: Tech[] = [
     desc: "Water-repellent, breathable membranes for year-round protection.",
     img: "/technology/images/raincoat.png",
     icon: CloudRain,
-    bullets: [
-      "20K/15K waterproof/breathable",
-      "Hydrophobic finish",
-    ],
+    bullets: ["20K/15K waterproof/breathable", "Hydrophobic finish"],
   },
 ];
 

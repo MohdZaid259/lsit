@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -8,16 +8,19 @@ import Section from "../common/section";
 import { Textarea } from "@/components/ui/textarea";
 
 export default function Contact() {
-
-  function handleSubmit(e: any){
+  function handleSubmit(e: any) {
     e.preventDefault();
     const name = (document.getElementById("name") as HTMLInputElement)?.value;
     const email = (document.getElementById("email") as HTMLInputElement)?.value;
     const phone = (document.getElementById("phone") as HTMLInputElement)?.value;
-    const company = (document.getElementById("company") as HTMLSelectElement)?.value;
-    const message = (document.getElementById("message") as HTMLTextAreaElement)?.value;
+    const company = (document.getElementById("company") as HTMLSelectElement)
+      ?.value;
+    const message = (document.getElementById("message") as HTMLTextAreaElement)
+      ?.value;
 
-    const subject = encodeURIComponent("New Technical Support Request from " + name);
+    const subject = encodeURIComponent(
+      "New Technical Support Request from " + name
+    );
     const body = encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nCompany: ${company}\n\nMessage:\n${message}\n\n--\n`
     );

@@ -4,6 +4,7 @@ import { useMemo, useRef, useState } from "react";
 
 import Image from "next/image";
 import type React from "react";
+import { SafeImage } from "../ui/safe-image";
 import { cn } from "@/lib/utils";
 
 export function ProductGallery({ images }: { readonly images: string[] }) {
@@ -23,10 +24,11 @@ export function ProductGallery({ images }: { readonly images: string[] }) {
             )}
             aria-label={`Select image ${i + 1}`}
           >
-            <Image
-              src={img || "/placeholder.svg"}
+            <SafeImage
+              src={img || ""}
               alt={`Thumbnail ${i + 1}`}
               fill
+              sizes="(max-width: 640px) 25vw, (max-width: 768px) 20vw, 15vw"
               className="object-cover"
             />
           </button>
@@ -73,9 +75,10 @@ function ZoomImage({
       onMouseMove={handleMove}
     >
       <Image
-        src={src || "/placeholder.svg"}
+        src={src || ""}
         alt={alt}
         fill
+        sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
         className="object-cover transition-opacity"
         style={{ opacity: hovering ? 0 : 1 }}
       />

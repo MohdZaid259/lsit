@@ -3,17 +3,7 @@ import Link from "next/link";
 import MetallicButton from "@/components/common/metallic-button";
 import Reveal from "@/components/common/reveal";
 
-type CTA = { href: string; label: string };
-
-export default function Hero({
-  title = "Technology-Integrated Fabrics",
-  subtitle = "Premium, engineered textiles with embedded intelligence.",
-  ctaPrimary = { href: "#", label: "Explore" },
-}: {
-  readonly title?: string;
-  readonly subtitle?: string;
-  readonly ctaPrimary?: CTA;
-}) {
+export default function Hero() {
   return (
     <section className="relative isolate overflow-hidden">
       <div className="relative h-screen min-h-[520px] w-full">
@@ -38,7 +28,7 @@ export default function Hero({
                 className="text-3xl text-shadow-black text-shadow-2xs md:text-5xl lg:text-6xl font-bold md:font-extrabold tracking-wide text-white"
                 style={{ fontFamily: "var(--font-jakarta)" }}
               >
-                {title}
+                Technology‑Integrated Fabrics for Demanding Environments
               </h1>
             </Reveal>
             <Reveal delay={0.05}>
@@ -46,16 +36,15 @@ export default function Hero({
                 className="mt-4 text-shadow-black text-shadow-2xs text-lg md:text-xl text-gray-200 tracking-wide"
                 style={{ fontFamily: "var(--font-inter)", fontWeight: 400 }}
               >
-                {subtitle}
+                Premium, engineered textiles with embedded electronics, sensing,
+                and performance coatings—manufactured at scale.
               </p>
             </Reveal>
             
             <Reveal delay={0.1}>
-              
                 <MetallicButton className="py-2 mt-4 border">
-                  <Link className="tracking-wider" href={ctaPrimary.href}>{ctaPrimary.label}</Link>
+                  <Link className="tracking-wider" href="#technologies">Explore Technologies</Link>
                 </MetallicButton>
-              
             </Reveal>
           </div>
         </div>
