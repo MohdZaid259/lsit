@@ -62,6 +62,19 @@ export default function OurServices() {
       ],
       cta: { label: "Explore Tent Fabrics", href: "/products/tents" },
     },
+    {
+      key: "car",
+      title: "Automotive and Car Fabrics",
+      desc: "Thermal-reflective shades and interior textiles designed for heat management, durability, and compliance.",
+      icon: Car,
+      image: "/service/shadeCover.png",
+      highlights: [
+        { icon: Sun, text: "IR/UV heat reduction" },
+        { icon: Shield, text: "Abrasion and fade resistance" },
+        { icon: FileCheck2, text: "OEM-grade compliance" },
+      ],
+      cta: { label: "View Car Solutions", href: "/products/heat-resistant" },
+    },
   ];
 
   const steps = [
@@ -95,8 +108,8 @@ export default function OurServices() {
 
   return (
     <Section
+      className="mx-16"
       id="our-services"
-      eyebrow="Our Services"
       title="End-to-end textile engineering for real-world performance"
       subtitle="We specialize in advanced fabric technologies, automotive heat-management textiles, and rugged tent/outdoor membranes."
     >
@@ -106,9 +119,9 @@ export default function OurServices() {
           const Icon = s.icon;
           return (
             <Reveal key={s.key}>
-              <Card className="h-full overflow-hidden border-slate-200 gap-0">
+              <Card className="h-full shadow-xl overflow-hidden border-slate-200 gap-0 pt-0">
                 {/* Image at top */}
-                <div className="relative w-full h-40">
+                <div className="relative w-full h-50">
                   <Image
                     src={s.image}
                     alt={s.title}
@@ -155,48 +168,6 @@ export default function OurServices() {
           );
         })}
       </div>
-
-      {/* Process timeline */}
-      <Reveal>
-        <div className="mt-12 rounded-xl border p-6">
-          <div className="text-sm font-semibold text-slate-800">
-            How we work
-          </div>
-          <p className="text-sm text-slate-600 mt-1">
-            A collaborative, test-driven approach from consultation to certified
-            production.
-          </p>
-          <ol className="mt-5 grid gap-4 md:grid-cols-3 lg:grid-cols-6">
-            {steps.map((step, idx) => {
-              const SIcon = step.icon;
-              return (
-                <li key={step.title} className="flex gap-3">
-                  <div className="shrink-0">
-                    <div className="grid h-9 w-9 place-items-center rounded-md border bg-white">
-                      <SIcon className="h-4 w-4 text-slate-600" />
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-sm font-semibold text-slate-900">
-                      {idx + 1}. {step.title}
-                    </div>
-                    <div className="text-xs text-slate-600">{step.text}</div>
-                  </div>
-                </li>
-              );
-            })}
-          </ol>
-
-          <div className="mt-6 flex flex-col sm:flex-row gap-3">
-            <Button asChild>
-              <Link href="#contact">Talk to engineering</Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link href="#technologies">See fabric technologies</Link>
-            </Button>
-          </div>
-        </div>
-      </Reveal>
     </Section>
   );
 }

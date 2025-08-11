@@ -7,14 +7,14 @@ import Reveal from "@/components/common/reveal";
 export default function Hero() {
   return (
     <section className="relative isolate overflow-hidden">
-      <div className="relative h-[72vh] min-h-[520px] w-full">
+      <div className="relative h-screen min-h-[520px] w-full">
         {/* Background image */}
         <div className="absolute inset-0 -z-10">
           <Image
-            src="/images/hero/fabricOptions.jpg"
+            src="/images/hero/fibreOptions.png"
             alt="Metallic woven fabric background"
             fill
-            className="object-cover scale-105 animate-[pan_18s_ease-in-out_infinite]"
+            className="object-cover scale-100 animate-[pan_18s_ease-in-out_infinite]"
             priority
           />
           {/* Dark overlay for contrast */}
@@ -22,11 +22,11 @@ export default function Hero() {
         </div>
 
         {/* Content */}
-        <div className="container mx-auto px-4 h-full flex items-center">
-          <div className="max-w-3xl">
+        <div className="container mx-auto px-4 ml-24 h-full flex items-center">
+          <div className="max-w-3xl -mt-16">
             <Reveal>
               <h1
-                className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white"
+                className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-wide text-white"
                 style={{ fontFamily: "var(--font-jakarta)" }}
               >
                 Technology‑Integrated Fabrics for Demanding Environments
@@ -34,8 +34,8 @@ export default function Hero() {
             </Reveal>
             <Reveal delay={0.05}>
               <p
-                className="mt-4 text-lg md:text-xl text-gray-200"
-                style={{ fontFamily: "var(--font-inter)", fontWeight: 300 }}
+                className="mt-4 text-lg md:text-xl text-gray-200 tracking-wide"
+                style={{ fontFamily: "var(--font-inter)", fontWeight: 400 }}
               >
                 Premium, engineered textiles with embedded electronics, sensing,
                 and performance coatings—manufactured at scale.

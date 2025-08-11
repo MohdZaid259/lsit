@@ -27,7 +27,7 @@ const techs: Tech[] = [
     key: "sunray",
     name: "SunRay Reflective",
     desc: "High-reflectance outer layer to reduce heat gain under extreme sun.",
-    img: "/technology/reflective.webp",
+    img: "/technology/images/uvFabric.webp",
     icon: Sun,
     bullets: [
       "IR reflectivity ≥ 85%",
@@ -39,7 +39,7 @@ const techs: Tech[] = [
     key: "fire",
     name: "Fire-Resistant",
     desc: "Inherently flame-retardant fibers and coatings for high-temperature safety.",
-    img: "/technology/tech-fire.png",
+    img: "/technology/images/fireFibre.webp",
     icon: ThermometerSun,
     bullets: ["Meets NFPA 2112", "Self-extinguishing", "Low smoke index"],
   },
@@ -47,7 +47,7 @@ const techs: Tech[] = [
     key: "antibacterial",
     name: "Antibacterial",
     desc: "Embedded silver-ion protection for durable antimicrobial performance.",
-    img: "/images/tech-antibacterial.png",
+    img: "/technology/images/antibactCover.webp",
     icon: Bacteria,
     bullets: ["99.9% bacterial reduction", "Odor control", "Wash-durable"],
   },
@@ -55,13 +55,9 @@ const techs: Tech[] = [
     key: "allweather",
     name: "All-Weather",
     desc: "Water-repellent, breathable membranes for year-round protection.",
-    img: "/images/tech-allweather.png",
+    img: "/technology/images/raincoat.png",
     icon: CloudRain,
-    bullets: [
-      "20K/15K waterproof/breathable",
-      "Hydrophobic finish",
-      "Abrasion-resistant",
-    ],
+    bullets: ["20K/15K waterproof/breathable", "Hydrophobic finish"],
   },
 ];
 
@@ -69,9 +65,9 @@ export default function TechnologiesSection() {
   return (
     <Section
       id="technologies"
-      eyebrow="Fabric Technologies"
       title="Our advanced fabric technologies"
       subtitle="Explore each platform’s texture and benefits."
+      className="mx-16"
     >
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
         {techs.map((tech) => (
@@ -89,8 +85,9 @@ function TechCard({ tech }: { tech: Tech }) {
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
+      className="-mx-1"
     >
-      <Card className="overflow-hidden border-slate-200 h-full flex flex-col">
+      <Card className="overflow-hidden border-slate-200 h-full flex flex-col p-0 gap-0 shadow-xl ">
         <CardContent className="relative aspect-[16/10]">
           <Image
             src={
@@ -99,7 +96,6 @@ function TechCard({ tech }: { tech: Tech }) {
             }
             alt={`${tech.name} fabric texture`}
             fill
-            sizes="(min-width:1024px) 25vw, (min-width:768px) 50vw, 100vw"
             className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/0 to-black/0" />

@@ -11,27 +11,27 @@ import useEmblaCarousel from "embla-carousel-react";
 const slides = [
   {
     title: "The Future Of Industrial Fabrics",
-    img: "/images/case-metro.png",
+    img: "/blog/future.jpg",
     text: "From sun-ray reflective coatings to antibacterial textiles, discover how LS4IT is evolving industrial fabrics.",
   },
   {
     title: "7 Reasons To Choose LS4IT Fabrics",
-    img: "/images/case-fire.png",
+    img: "/blog/quality.avif",
     text: "Leading Industries prefer advanced technical fabrics — from durability to performance",
   },
   {
     title: "Applications of High-Performance Fabrics",
-    img: "/images/case-med.png",
+    img: "/blog/choose.jpg",
     text: "From automotive to defense, high-performance fabrics are reshaping industries.",
   },
   {
     title: "Why Certification Matters in Industrial Fabrics",
-    img: "/images/case-med.png",
+    img: "/blog/certificate.jpg",
     text: "Learn why ISO and CE are critical in ensuring quality, safety, and global compliance in industrial fabrics.",
   },
   {
     title: "Choosing Right Industrial Fabric Supplier",
-    img: "/images/case-med.png",
+    img: "/blog/supplier.jpg",
     text: "The right industrial fabric supplier can make or break your projects. Here's what to look when sourcing fabrics.",
   },
 ];
@@ -81,9 +81,9 @@ export default function CaseStudies() {
   return (
     <Section
       id="case-studies"
-      eyebrow="Case Studies"
       title="Real-world deployments"
       subtitle="Validated performance across environments and industries."
+      className="mx-16"
     >
       <div className="relative">
         <div className="overflow-hidden rounded-xl" ref={emblaRef}>

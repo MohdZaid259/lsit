@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 
 export default function Logo({ size = 36 }: { readonly size?: number }) {
@@ -10,7 +8,7 @@ export default function Logo({ size = 36 }: { readonly size?: number }) {
         alt="LS4IT logo"
         height={12}
         width={size}
-        className="w-14 rounded-lg"
+        className="w-36 invert mt-3 rounded-lg"
         priority
       />
     </div>
