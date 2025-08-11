@@ -4,7 +4,7 @@ export default function Logo({ size = 36, className='' }: { readonly size?: numb
   return (
     <div className="flex items-center justify-center">
       <Image
-        src="/logo/logoWhite.jpg"
+        src="/logo/logoSvg.svg"
         alt="LS4IT logo"
         height={12}
         width={size}
