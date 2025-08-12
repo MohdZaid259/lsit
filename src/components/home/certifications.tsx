@@ -61,19 +61,6 @@ export default function Certifications() {
             {/* Duplicate rows for seamless loop */}
             {[0, 1].map((row) => (
               <div key={row} className="flex items-center gap-8">
-                {/* Attached banner tile */}
-                <button
-                  className="h-[72px] w-[160px] sm:w-[180px] md:w-[200px] grid place-items-center rounded-lg border bg-white hover:shadow-sm transition focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400"
-                  aria-label={`${certs[2].name} certification details`}
-                >
-                  <SafeImage
-                    src={certs[2].img || ""}
-                    alt={`${certs[2].name} certification`}
-                    width={52}
-                    height={52}
-                  />
-                </button>
-
                 {certs.map((c) => (
                   <Dialog key={`${c.name}-${row}`}>
                     <DialogTrigger asChild>

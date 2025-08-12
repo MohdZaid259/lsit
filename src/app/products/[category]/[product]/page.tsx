@@ -36,7 +36,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${product.name} | My Store`,
+    title: `${product.name}`,
     description:
       product.description ||
       `Learn more about ${product.name} from our premium product catalog.`,
@@ -63,6 +63,8 @@ export default async function ProductDetailPage({
     product: Product;
   };
 
+  console.log("Product details:", product);
+
   if (!product) {
     return notFound();
   }
@@ -79,12 +81,15 @@ export default async function ProductDetailPage({
             sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent" />
+
+          {/* Overlay  */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+
           <div className="absolute bottom-3 left-4 right-4">
-            <h1 className="text-lg md:text-xl font-semibold text-foreground">
+            <h1 className="text-lg md:text-xl font-semibold text-white">
               {product.name}
             </h1>
-            <p className="text-xs text-muted-foreground capitalize">
+            <p className="text-xs text-white capitalize">
               {product.subCategories.category.name}
               {product.subCategories.name
                 ? ` • ${product.subCategories.name}`
@@ -110,28 +115,42 @@ export default async function ProductDetailPage({
           </div>
 
           <div className="grid grid-cols-2 gap-3">
+            {/* Fabric */}
             <div className="rounded-md border p-3">
               <div className="text-xs text-muted-foreground">Fabric</div>
               <div className="text-sm font-medium text-foreground">
-                {product.fabric}
+                {Array.isArray(product.fabric) && product.fabric.length > 0
+                  ? product.fabric.join(", ")
+                  : "Not specified"}
               </div>
             </div>
+
+            {/* Finish */}
             <div className="rounded-md border p-3">
               <div className="text-xs text-muted-foreground">Finish</div>
               <div className="text-sm font-medium text-foreground">
                 {product.finish || "Standard"}
               </div>
             </div>
+
+            {/* Compliance */}
             <div className="rounded-md border p-3">
               <div className="text-xs text-muted-foreground">Compliance</div>
               <div className="text-sm font-medium text-foreground">
-                {product.compliance || "ISO 9001, ISO 14001"}
+                {Array.isArray(product.compliance) &&
+                product.compliance.length > 0
+                  ? product.compliance.join(", ")
+                  : "ISO 9001, ISO 14001"}
               </div>
             </div>
+
+            {/* Use case */}
             <div className="rounded-md border p-3">
               <div className="text-xs text-muted-foreground">Use case</div>
               <div className="text-sm font-medium text-foreground">
-                {product.useCase || "General use"}
+                {Array.isArray(product.useCase) && product.useCase.length > 0
+                  ? product.useCase.join(", ")
+                  : "General use"}
               </div>
             </div>
           </div>

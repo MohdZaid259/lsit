@@ -40,7 +40,7 @@ export function Breadcrumbs({
         {items.map((item, idx) => {
           const isLast = idx === items.length - 1;
           return (
-            <li key={idx} className="flex items-center gap-2">
+            <li key={idx} className="flex items-center gap-2 capitalize">
               {item.href && !isLast ? (
                 <Link href={item.href} className="hover:text-foreground">
                   {item.label}

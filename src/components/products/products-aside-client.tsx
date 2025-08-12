@@ -105,7 +105,7 @@ export function ProductsAsideClient({
                             <li key={s.key}>
                               <Link
                                 href={`/products/${c.key}/#${s.key}`}
-                                className="block rounded px-2 py-1.5 text-xs text-muted-foreground hover:text-foreground hover:bg-muted capitalize"
+                                className="block rounded px-2 py-1.5 text-sm text-muted-foreground hover:text-foreground hover:bg-muted capitalize"
                               >
                                 {s.title}
                               </Link>

@@ -54,12 +54,15 @@ export default async function ProductsPage() {
             width={1024}
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-background/30 to-transparent" />
+
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+
           <div className="absolute bottom-4 left-4 right-4">
-            <h1 className="text-2xl md:text-3xl font-semibold text-foreground">
+            <h1 className="text-2xl md:text-3xl font-semibold text-white">
               Products
             </h1>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-white">
               Browse categories and explore our portfolio.
             </p>
           </div>
@@ -83,10 +86,10 @@ export default async function ProductsPage() {
                   sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                   className="h-full w-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                 <div className="absolute bottom-3 left-3 right-3">
-                  <div className="text-foreground font-semibold">{c.title}</div>
-                  <div className="text-xs text-muted-foreground">
+                  <div className="text-white font-semibold">{c.title}</div>
+                  <div className="text-xs text-white">
                     {c.subCategories.reduce(
                       (acc, sub) => acc + (sub.products?.length || 0),
                       0
