@@ -93,7 +93,7 @@ export default function VideoIntro({
       <video
         ref={videoRef}
         src="/intro.mp4"
-        // poster="/intro-poster.png"
+        poster="/intro-poster.png"
         autoPlay
         muted
         playsInline
