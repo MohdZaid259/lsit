@@ -14,7 +14,7 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="relative bg-primary text-white">
         <div className="absolute inset-0 bg-[url('/coverImage/aboutCover.jpg')] bg-cover bg-center [mask-image:linear-gradient(to_right,rgba(0,0,0,0)_0%,rgba(0,0,0,0)_30%,rgba(0,0,0,0.7)_100%)] [mask-repeat:no-repeat] [mask-size:cover]" />
-        <div className="container relative px-4 py-8 md:py-20 sm:px-6 lg:px-16">
+        <div className="container relative py-8 md:py-20 sm:px-6 px-4 lg:px-24">
           <div className="max-w-3xl">
             <h1 className="mb-4 text-3xl md:text-4xl font-bold tracking-tight">
               About Our Company

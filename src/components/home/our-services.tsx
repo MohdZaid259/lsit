@@ -35,7 +35,7 @@ export default function OurServices() {
         { icon: Shield, text: "FR, antibacterial, UV protection" },
         { icon: Droplets, text: "Waterproof + breathable membranes" },
       ],
-      cta: { label: "Explore Technologies", href: "#technologies" },
+      cta: { label: "Explore Technologies", href: "/technology" },
     },
     {
       key: "tent",
@@ -48,7 +48,7 @@ export default function OurServices() {
         { icon: Shield, text: "Tear + mildew resistance" },
         { icon: Sun, text: "High UV stability" },
       ],
-      cta: { label: "Explore Tent Fabrics", href: "/products/tents" },
+      cta: { label: "Explore Tent Fabrics", href: "/products" },
     },
     {
       key: "car",
@@ -61,7 +61,7 @@ export default function OurServices() {
         { icon: Shield, text: "Abrasion and fade resistance" },
         { icon: FileCheck2, text: "OEM-grade compliance" },
       ],
-      cta: { label: "View Car Solutions", href: "/products/heat-resistant" },
+      cta: { label: "View Car Solutions", href: "/products" },
     },
   ];
 

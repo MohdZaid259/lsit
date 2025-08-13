@@ -15,7 +15,7 @@ export default function Hero() {
             alt="Metallic woven fabric background"
             fill
             sizes="100vw"
-            className="object-cover scale-100 animate-[pan_18s_ease-in-out_infinite]"
+            className="object-cover animate-[pan_18s_ease-in-out_infinite]"
             priority
           />
           {/* Dark overlay for contrast */}
@@ -27,7 +27,7 @@ export default function Hero() {
           <div className="max-w-3xl -mt-16">
             <Reveal>
               <h1
-                className="text-3xl text-shadow-black text-shadow-2xs md:text-5xl lg:text-6xl font-bold md:font-extrabold tracking-wide text-white"
+                className="text-3xl -mt-10 text-shadow-black text-shadow-2xs md:text-5xl lg:text-6xl font-bold md:font-extrabold tracking-wide text-white"
                 style={{ fontFamily: "var(--font-jakarta)" }}
               >
                 Technology‑Integrated Fabrics for Demanding Environments
@@ -44,7 +44,7 @@ export default function Hero() {
             </Reveal>
 
             <Reveal delay={0.1}>
-              <div className="mt-6 flex flex-col sm:flex-row gap-3">
+              <div className="mt-6 flex w-44 flex-col sm:flex-row gap-3">
                 <MetallicButton>
                   <Link href="/#technologies">Explore Technologies</Link>
                 </MetallicButton>

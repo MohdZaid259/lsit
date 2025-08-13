@@ -21,7 +21,7 @@ const contactInfo = [
     icon: Phone,
     content: (
       <a href="tel:+97152666997" className="hover:text-muted-foreground">
-        +971 52 666997
+        0657 32450
       </a>
     ),
   },
@@ -29,9 +29,7 @@ const contactInfo = [
     icon: MapPin,
     content: (
       <span>
-        1200 Industrials, Suite 300
-        <br />
-        Ajman, UAE
+        AFZ Office 1038, Ajman Free Zone, UAE
       </span>
     ),
   },
@@ -84,9 +82,9 @@ export default async function SiteFooter() {
           {/* Brand */}
           <div className="md:col-span-4 flex flex-col items-start">
             <Link href="/">
-              <Logo className="absolute inset-0 -ml-6 -mt-2 md:-ml-4 md:-mt-2 md:size-44" />
+              <Logo className="absolute inset-0 -ml-6 -mt-2 md:-ml-6 md:-mt-6 md:size-44" />
             </Link>
-            <p className="mt-20 text-sm text-primary">
+            <p className="md:mt-10 mt-16 text-sm text-primary">              <h1 className="text-xl font-bold text-black mb-2 tracking-wide">Lateral System for Innovation Technology</h1>
               Engineering textiles for heat control, protection, and all-weather
               performance.
             </p>
