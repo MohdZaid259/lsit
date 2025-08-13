@@ -2,17 +2,22 @@
 
 import { useMemo, useRef, useState } from "react";
 
-import Image from "next/image";
 import type React from "react";
 import { SafeImage } from "../ui/safe-image";
 import { cn } from "@/lib/utils";
 
-export function ProductGallery({ images }: { readonly images: string[] }) {
+export function ProductGallery({
+  images,
+  category,
+}: {
+  readonly images: string[];
+  readonly category?: string;
+}) {
   const [index, setIndex] = useState(0);
   const src = images[index] || images[0];
   return (
     <div className="grid gap-4">
-      <ZoomImage src={src} alt="Product main image" />
+      <ZoomImage src={src} category={category} alt="Product main image" />
       <div className="grid grid-cols-4 gap-2">
         {images.slice(0, 4).map((img, i) => (
           <button
@@ -41,9 +46,11 @@ export function ProductGallery({ images }: { readonly images: string[] }) {
 function ZoomImage({
   src,
   alt,
+  category = "",
 }: {
   readonly src: string;
   readonly alt: string;
+  readonly category?: string;
 }) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [hovering, setHovering] = useState(false);
@@ -79,7 +86,12 @@ function ZoomImage({
         alt={alt}
         fill
         sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
-        className="object-contain transition-opacity"
+        className={cn(
+          "transition-opacity",
+          category.toLowerCase() == "material"
+            ? "object-cover"
+            : "object-contain"
+        )}
         style={{ opacity: hovering ? 0 : 1 }}
       />
       {/* Zoom layer */}

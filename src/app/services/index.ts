@@ -39,7 +39,7 @@ export async function getProductsByCategorySlug(slug: string) {
         subCategories {
           name
           slug
-          products {
+          products(first: 50) {
             name
             slug
             description
