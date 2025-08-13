@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: {
     default:
-      "LS4IT – Advanced Technical Textile Solutions for Extreme Environments",
+      "LS4IT – Advanced Technical Textile Solutions",
     template: "%s | LS4IT",
   },
   description:
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: {
       default:
-        "LS4IT - Advanced Technical Textile Solutions for Extreme Environments",
+        "LS4IT - Advanced Technical Textile Solutions",
       template: "%s | LS4IT",
     },
     description:
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     siteName: "LS4IT",
     images: [
       {
-        url: "public/logo/logoWhite.jpg",
+        url: "/logo/preview.jpg",
         width: 1200,
         height: 630,
         alt: "LS4IT Technical Textile Solutions for Extreme Environments",
@@ -69,12 +69,12 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: {
       default:
-        "LS4IT - Advanced Technical Textile Solutions for Extreme Environments",
+        "LS4IT - Advanced Technical Textile Solutions",
       template: "%s | LS4IT",
     },
     description:
       "High-performance fabrics for defense, outdoor, and industrial use. Fire-resistant, UV-protected, waterproof, and breathable.",
-    images: ["public/logo/logoWhite.jpg"],
+  images: ["/logo/preview.jpg"],
   },
   alternates: {
     canonical: "https://LS4IT.com",

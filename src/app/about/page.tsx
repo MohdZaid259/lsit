@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "LS4IT",
     images: [
       {
-        url: "public/logo/logoWhite.jpg", 
+        url: "/logo/preview.jpg",
         width: 1200,
         height: 630,
         alt: "LS4IT Technical Textile Solutions for Extreme Environments",

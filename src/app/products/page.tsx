@@ -15,11 +15,10 @@ export const metadata: Metadata = {
     title: "Products",
     description:
       "Browse all product categories and explore our portfolio of high-quality offerings.",
-    url: "https://your-domain.com/products",
     siteName: "Your Brand Name",
     images: [
       {
-        url: "https://your-domain.com/og/products.jpg",
+        url: "/logo/preview.jpg",
         width: 1200,
         height: 630,
         alt: "Products cover",

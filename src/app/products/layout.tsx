@@ -1,5 +1,24 @@
+
 import { ProductsAside } from "@/components/products/products-aside";
 import type React from "react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  openGraph: {
+    images: [
+      {
+        url: "/logo/preview.jpg",
+        width: 1200,
+        height: 630,
+        alt: "LS4IT Technical Textile Solutions for Extreme Environments",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/logo/preview.jpg"],
+  },
+};
 
 export default function ProductsLayout({
   children,
