@@ -70,13 +70,13 @@ export default async function ProductDetailPage({
     <div className="space-y-6">
       <Breadcrumbs />
       <header className="rounded-xl overflow-hidden border">
-        <div className="relative h-32 sm:h-36 md:h-40">
+        <div className="relative h-40 sm:h-48 md:h-72">
           <SafeImage
             src={product.subCategories.category.image?.url || ""}
             alt={`${product.subCategories.category.name} cover`}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
-            className="h-full w-full object-cover"
+            className="object-center"
           />
 
           {/* Overlay  */}
