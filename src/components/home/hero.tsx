@@ -24,7 +24,7 @@ export default function Hero() {
 
         {/* Content */}
         <div className="container mx-auto px-4 ml-0 md:ml-24 h-full flex items-center">
-          <div className="max-w-3xl sm:-mt-16 mt-20">
+          <div className="max-w-3xl mt-20">
             <Reveal>
               <h1
                 className="text-3xl -mt-10 text-shadow-black text-shadow-2xs md:text-5xl lg:text-6xl font-bold md:font-extrabold tracking-wide text-white"
