@@ -14,7 +14,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-
 import { Button } from "@/components/ui/button";
 import { Category } from "@/lib/types";
 import Link from "next/link";
@@ -44,11 +43,11 @@ export default function MobileMenu({
         <SheetHeader className="px-0">
           <SheetTitle>
             <span className="sr-only">Navigation</span>
-            <Logo size={50} />
+            <Logo className="w-36 absolute inset-0 -mt-8 -ml-6" />
           </SheetTitle>
         </SheetHeader>
 
-        <nav className="grid gap-3">
+        <nav className="grid gap-3 mt-10">
           {primaryLinks.map((l) => (
             <Link
               key={l.label}

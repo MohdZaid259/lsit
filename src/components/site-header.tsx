@@ -7,7 +7,6 @@ import {
   NavigationMenuTrigger,
   NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
-
 import { Category } from "@/lib/types";
 import { ChevronRightIcon } from "lucide-react";
 import Link from "next/link";
@@ -35,7 +34,7 @@ export default async function SiteHeader() {
           href="/"
           className="flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 rounded"
         >
-          <Logo />
+          <Logo className="w-36 mt-4" />
         </Link>
 
         {/* Desktop Navigation */}

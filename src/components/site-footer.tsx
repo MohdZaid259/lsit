@@ -84,7 +84,7 @@ export default async function SiteFooter() {
           {/* Brand */}
           <div className="md:col-span-4 flex flex-col items-start">
             <Link href="/">
-              <Logo className="absolute w-52 md:w-64 -mr-24 md:-mr-30  mt-20" />
+              <Logo className="absolute inset-0 -ml-6 -mt-2 md:-ml-4 md:-mt-2 md:size-44" />
             </Link>
             <p className="mt-20 text-sm text-primary">
               Engineering textiles for heat control, protection, and all-weather
