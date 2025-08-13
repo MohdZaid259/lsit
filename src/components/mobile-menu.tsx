@@ -43,7 +43,7 @@ export default function MobileMenu({
         <SheetHeader className="px-0">
           <SheetTitle>
             <span className="sr-only">Navigation</span>
-            <Logo className="w-36 absolute inset-0 -mt-8 -ml-4" />
+            <Logo className="w-36 absolute inset-0 -mt-8 -ml-4 -z-99" />
           </SheetTitle>
         </SheetHeader>
 

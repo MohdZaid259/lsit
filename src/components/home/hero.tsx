@@ -7,7 +7,7 @@ import { SafeImage } from "../ui/safe-image";
 export default function Hero() {
   return (
     <section className="relative isolate overflow-hidden">
-      <div className="relative h-screen min-h-[500px] w-full">
+      <div className="relative h-screen min-h-[500px] -mt-16 w-full">
         {/* Background image */}
         <div className="absolute inset-0 -z-10">
           <SafeImage
@@ -44,7 +44,7 @@ export default function Hero() {
             </Reveal>
 
             <Reveal delay={0.1}>
-              <div className="mt-6 flex w-48 flex-col sm:flex-row gap-3">
+              <div className="mt-6 flex w-56 flex-col sm:flex-row gap-3">
                 <MetallicButton>
                   <Link href="/#technologies">Explore Technologies</Link>
                 </MetallicButton>

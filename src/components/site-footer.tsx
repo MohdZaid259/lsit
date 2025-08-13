@@ -123,7 +123,7 @@ export default async function SiteFooter() {
                     key={idx}
                     className="flex items-start gap-2 text-muted-foreground"
                   >
-                    <Icon className="h-4 w-4 text-slate-500 mt-0.5" />
+                    <Icon className={`${Icon===MapPin?"h-8 w-8 sm:h-6 sm:w-6":"h-4 w-4"} text-slate-500 mt-0.5`} />
                     {content}
                   </li>
                 ))}
