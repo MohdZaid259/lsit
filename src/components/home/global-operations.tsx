@@ -197,7 +197,7 @@ export default function GlobalOperations() {
           </div>
 
           {/* Countries List */}
-          <div className="space-y-4 -mt-10 z-99">
+          <div className="space-y-4 -mt-0 md:-mt-10 z-99">
             <div className="flex items-center gap-2">
               <Sparkles className="w-5 h-5 text-blue-500" />
               <h3 className="text-lg font-semibold text-slate-900">
@@ -275,7 +275,7 @@ export default function GlobalOperations() {
               initial={{ opacity: 0, x: 20 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
               transition={{ duration: 0.6, delay: 1.1 }}
-              className="group flex items-center gap-4 md:p-4 p-2 rounded-2xl border bg-gradient-to-r from-amber-50 via-orange-50 to-amber-50 hover:shadow-lg transition-all duration-300"
+              className="group flex items-center gap-4 md:p-4 p-3 rounded-2xl border bg-gradient-to-r from-amber-50 via-orange-50 to-amber-50 hover:shadow-lg transition-all duration-300"
             >
               <div className="w-4 h-4 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 shadow-lg group-hover:scale-125 transition-transform duration-300" />
               <div className="flex-1">
@@ -295,7 +295,7 @@ export default function GlobalOperations() {
               initial={{ opacity: 0, x: 20 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
               transition={{ duration: 0.6, delay: 1.2 }}
-              className="group flex items-center gap-4 md:p-5 p-2 rounded-2xl border bg-gradient-to-r from-blue-50 via-indigo-50 to-blue-50 hover:shadow-lg transition-all duration-300"
+              className="group flex items-center gap-4 md:p-5 p-3 rounded-2xl border bg-gradient-to-r from-blue-50 via-indigo-50 to-blue-50 hover:shadow-lg transition-all duration-300"
             >
               <div className="w-4 h-4 rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 shadow-lg group-hover:scale-125 transition-transform duration-300" />
               <div className="flex-1">

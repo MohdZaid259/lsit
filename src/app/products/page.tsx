@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     siteName: "Your Brand Name",
     images: [
       {
-        url: "/logo/preview.jpg",
+        url: "https://ls4it.com/logo/preview.jpg",
         width: 1200,
         height: 630,
         alt: "Products cover",

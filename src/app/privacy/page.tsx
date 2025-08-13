@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: "/logo/preview.jpg",
+        url: "https://ls4it.com/logo/preview.jpg",
         width: 1200,
         height: 630,
         alt: "LS4IT Technical Textile Solutions for Extreme Environments",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/logo/preview.jpg"],
+    images: ["https://ls4it.com/logo/preview.jpg"],
   },
 };
 

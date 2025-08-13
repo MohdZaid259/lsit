@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     siteName: "LS4IT",
     images: [
       {
-        url: "/logo/preview.jpg",
+        url: "https://ls4it.com/logo/preview.jpg",
         width: 1200,
         height: 630,
         alt: "LS4IT Technical Textile Solutions for Extreme Environments",
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     },
     description:
       "High-performance fabrics for defense, outdoor, and industrial use. Fire-resistant, UV-protected, waterproof, and breathable.",
-  images: ["/logo/preview.jpg"],
+  images: ["https://ls4it.com/logo/preview.jpg"],
   },
   alternates: {
     canonical: "https://LS4IT.com",
