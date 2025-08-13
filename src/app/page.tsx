@@ -11,7 +11,7 @@ export default function Page() {
     <>
       <Hero />
       <OurServices />
-      <WhyChooseUs />
+      {/* <WhyChooseUs /> */}
       <TechnologiesSection />
       <CaseStudies />
       <Certifications />

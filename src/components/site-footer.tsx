@@ -144,7 +144,7 @@ export default async function SiteFooter() {
             {["Privacy", "Terms", "Sitemap"].map((item) => (
               <Link
                 key={item}
-                href="#"
+                href={`/${item.toLowerCase()}`}
                 className="hover:text-slate-800 hover:underline"
               >
                 {item}

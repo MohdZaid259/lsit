@@ -191,7 +191,7 @@ export default function TechnologyPage() {
         </div>
       </section>
 
-      <section>
+      <section className="md:mx-8 mx-2">
         <img src="/technology/pages/banner.jpg" className="invert my-6" alt="banner" />
       </section>
 

@@ -53,7 +53,7 @@ export default function OurServices() {
     {
       key: "car",
       title: "Automotive and Car Fabrics",
-      desc: "Thermal-reflective shades and interior textiles designed for heat management, durability, and compliance.",
+      desc: "Thermal-reflective shades and interior textiles especially designed for advanced heat management, durability, and compliance.",
       icon: Car,
       image: "/service/shadeCover.png",
       highlights: [

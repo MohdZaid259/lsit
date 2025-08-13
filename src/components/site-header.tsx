@@ -129,7 +129,7 @@ export default async function SiteHeader() {
 
         {/* Desktop CTA */}
         <div className="hidden md:block">
-          <MetallicButton className="ml-3">
+          <MetallicButton className="mx-3">
             <Link href="/#contact">Contact Us</Link>
           </MetallicButton>
         </div>

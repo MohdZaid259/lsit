@@ -63,13 +63,13 @@ export default async function CategoryPage({
 
       {/* Category Header */}
       <header className="rounded-xl overflow-hidden border">
-        <div className="relative h-40 sm:h-48 md:h-56">
+        <div className="relative h-40 sm:h-48 md:h-72">
           <SafeImage
             src={category.image?.url || ""}
             alt={`${category.name} cover`}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
-            className="object-cover"
+            className="object-center"
             priority
           />
 

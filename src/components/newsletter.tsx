@@ -29,7 +29,7 @@ export default function NewsletterSignup({
       className={cn(
         "w-full",
         "bg-[#072243] text-white",
-        "relative overflow-hidden",
+        "relative overflow-hidden flex justify-center items-center",
         className
       )}
     >
@@ -42,7 +42,7 @@ export default function NewsletterSignup({
         }}
       />
       <div className="relative mx-0 sm:mx-4 max-w-7xl px-4 py-10 md:py-14">
-        <div className="grid items-center gap-8 md:grid-cols-2">
+        <div className="grid items-center gap-8 lg:gap-64 md:grid-cols-2">
           {/* Text */}
           <div>
             <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
