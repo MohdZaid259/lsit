@@ -55,7 +55,7 @@ export function ProductsAsideClient({
     <aside
       className={cn(
         "hidden min-[720px]:block",
-        "sticky top-20 self-start",
+        "sticky top-25 self-start",
         className
       )}
       aria-label="Product categories"

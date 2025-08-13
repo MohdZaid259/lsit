@@ -120,22 +120,22 @@ export default function Contact() {
                 href="tel:+971 52 666 9974"
                 className="tracking-wide hover:underline"
               >
-                +971 52 666 997
+                0657 32450
               </a>
             </div>
             <div className="mt-3 flex items-start gap-1 text-slate-800">
               <MapPin className="h-4 w-4 text-slate-500 mt-0.5" />
               <div className="tracking-wider">
-                Dubai, UAE
+                LS4IT, AFZ Office 1038,
                 <br />
-                Dubai, UAE
+                Ajman Free Zone, UAE
               </div>
             </div>
           </div>
           <div className="rounded-xl overflow-hidden border border-gray-500">
             <iframe
-              title="Lsit Office Map"
-              src="https://www.google.com/maps?q=Dubai,UAE&output=embed"
+              title="LS4IT Office Map"
+              src="https://www.google.com/maps?q=AFZ%20Office%201038,%20Ajman%20Free%20Zone,%20UAE&output=embed"
               className="w-full h-[260px]"
               loading="lazy"
             ></iframe>

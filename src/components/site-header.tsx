@@ -22,9 +22,9 @@ export default async function SiteHeader() {
   };
 
   const primaryLinks = [
+    { label: "About", href: "/about" },
     { label: "Our Services", href: "/#our-services" },
     { label: "Technologies", href: "/technology" },
-    { label: "About", href: "/about" },
   ];
 
   return (
@@ -41,6 +41,18 @@ export default async function SiteHeader() {
         {/* Desktop Navigation */}
         <NavigationMenu className="ml-auto hidden md:flex">
           <NavigationMenuList>
+            {/* About */}
+            <NavigationMenuItem>
+              <NavigationMenuLink asChild>
+                <Link
+                  href="/about"
+                  className="px-4 py-2 text-sm font-semibold text-muted-foreground hover:text-slate-900 transition-colors"
+                >
+                  About
+                </Link>
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+
             {/* Our Services */}
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
@@ -111,17 +123,6 @@ export default async function SiteHeader() {
               </NavigationMenuContent>
             </NavigationMenuItem>
 
-            {/* About */}
-            <NavigationMenuItem>
-              <NavigationMenuLink asChild>
-                <Link
-                  href="/about"
-                  className="px-4 py-2 text-sm font-semibold text-muted-foreground hover:text-slate-900 transition-colors"
-                >
-                  About
-                </Link>
-              </NavigationMenuLink>
-            </NavigationMenuItem>
           </NavigationMenuList>
 
           {/* Required viewport for proper popover rendering */}
