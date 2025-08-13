@@ -39,11 +39,11 @@ export default function MobileMenu({
           <Menu className="h-5 w-5" />
         </Button>
       </SheetTrigger>
-      <SheetContent side="right" className="w-80 px-4 gap-0">
+      <SheetContent side="right" className="w-80 px-6 gap-0">
         <SheetHeader className="px-0">
           <SheetTitle>
             <span className="sr-only">Navigation</span>
-            <Logo className="w-36 absolute inset-0 -mt-8 -ml-6" />
+            <Logo className="w-36 absolute inset-0 -mt-8 -ml-4" />
           </SheetTitle>
         </SheetHeader>
 
