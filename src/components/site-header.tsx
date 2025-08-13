@@ -7,6 +7,7 @@ import {
   NavigationMenuTrigger,
   NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
+
 import { Category } from "@/lib/types";
 import { ChevronRightIcon } from "lucide-react";
 import Link from "next/link";
@@ -129,9 +130,11 @@ export default async function SiteHeader() {
 
         {/* Desktop CTA */}
         <div className="hidden md:block">
-          <MetallicButton className="mx-3">
-            <Link href="/#contact">Contact Us</Link>
-          </MetallicButton>
+          <Link href="/#contact" className="cursor-pointer">
+            <MetallicButton className="cursor-pointer">
+              Contact Us
+            </MetallicButton>
+          </Link>
         </div>
 
         {/* Mobile Menu */}

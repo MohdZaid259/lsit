@@ -62,10 +62,10 @@ export default async function SiteFooter() {
     {
       title: "Resources",
       links: [
-        { label: "Fabric Technologies", href: "#technologies" },
+        { label: "Fabric Technologies", href: "/#technologies" },
         { label: "Product Catalog", href: "/products" },
-        { label: "Certifications", href: "#certifications" },
-        { label: "Why Choose Us", href: "#why-us" },
+        { label: "Certifications", href: "/#certifications" },
+        { label: "Why Choose Us", href: "/#why-us" },
       ],
     },
   ];
@@ -84,7 +84,7 @@ export default async function SiteFooter() {
           {/* Brand */}
           <div className="md:col-span-4 flex flex-col items-start">
             <Link href="/">
-              <Logo className="absolute inset-0 -ml-6 -mt-2 md:-ml-4 md:-mt-2 md:size-44" />
+              <Logo className="absolute inset-0 -ml-6 -mt-2 sm:ml-5 md:-mt-2 md:size-44" />
             </Link>
             <p className="mt-20 text-sm text-primary">
               Engineering textiles for heat control, protection, and all-weather
