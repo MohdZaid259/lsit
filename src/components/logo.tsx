@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 export default function Logo({
-  size = 85,
+  size = 36,
   className = "",
 }: {
   readonly size?: number;
@@ -14,7 +14,7 @@ export default function Logo({
         alt="LS4IT logo"
         height={size}
         width={size}
-        className={`invert rounded-lg ${className}`}
+        className={`w-${size} ${className} invert mt-3 -ml-2 md:-ml-0 rounded-lg`}
         priority
       />
     </div>

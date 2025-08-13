@@ -29,13 +29,26 @@ export default function OurServices() {
       title: "Technology in Fabric",
       desc: "From fiber selection to advanced coatings, we engineer performance at the yarn and finish level with measurable results.",
       icon: FlaskConical,
-      image: "",
+      image: "/service/future.jpg",
       highlights: [
         { icon: Cpu, text: "Smart/IoT-ready fabrics" },
         { icon: Shield, text: "FR, antibacterial, UV protection" },
         { icon: Droplets, text: "Waterproof + breathable membranes" },
       ],
       cta: { label: "Explore Technologies", href: "#technologies" },
+    },
+    {
+      key: "tent",
+      title: "Tent and Outdoor Fabrics",
+      desc: "Rugged membranes and blends for tents, canopies, and shelters—balanced breathability, weatherproofing, and strength.",
+      icon: Tent,
+      image: "/service/tentFabric.webp",
+      highlights: [
+        { icon: Droplets, text: "20K/15K waterproof/breathable" },
+        { icon: Shield, text: "Tear + mildew resistance" },
+        { icon: Sun, text: "High UV stability" },
+      ],
+      cta: { label: "Explore Tent Fabrics", href: "/products/tents" },
     },
     {
       key: "car",
@@ -49,19 +62,6 @@ export default function OurServices() {
         { icon: FileCheck2, text: "OEM-grade compliance" },
       ],
       cta: { label: "View Car Solutions", href: "/products/heat-resistant" },
-    },
-    {
-      key: "tent",
-      title: "Tent and Outdoor Fabrics",
-      desc: "Rugged membranes and blends for tents, canopies, and shelters—balanced breathability, weatherproofing, and strength.",
-      icon: Tent,
-      image: "",
-      highlights: [
-        { icon: Droplets, text: "20K/15K waterproof/breathable" },
-        { icon: Shield, text: "Tear + mildew resistance" },
-        { icon: Sun, text: "High UV stability" },
-      ],
-      cta: { label: "Explore Tent Fabrics", href: "/products/tents" },
     },
   ];
 

@@ -43,7 +43,7 @@ export default function Certifications() {
       title="Proven compliance, trusted globally"
       subtitle="Rigorous third‑party verification and standards adherence for critical applications."
     >
-      <div className="relative overflow-hidden rounded-xl border bg-white">
+      <div className="relative overflow-hidden border border-x-0 bg-white">
         {/* Edge fades */}
         <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white to-transparent z-[50]" />
         <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white to-transparent z-[50]" />
@@ -61,6 +61,19 @@ export default function Certifications() {
             {/* Duplicate rows for seamless loop */}
             {[0, 1].map((row) => (
               <div key={row} className="flex items-center gap-8">
+                {/* Attached banner tile */}
+                <button
+                  className="h-[72px] w-[160px] sm:w-[180px] md:w-[200px] grid place-items-center rounded-lg border bg-white hover:shadow-sm transition focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400"
+                  aria-label={`${certs[2].name} certification details`}
+                >
+                  <SafeImage
+                    src={certs[2].img || ""}
+                    alt={`${certs[2].name} certification`}
+                    width={certs[2].name === "NFPA" ? 72 : 52}
+                    height={certs[2].name === "NFPA" ? 72 : 52}
+                  />
+                </button>
+
                 {certs.map((c) => (
                   <Dialog key={`${c.name}-${row}`}>
                     <DialogTrigger asChild>
@@ -71,8 +84,8 @@ export default function Certifications() {
                         <SafeImage
                           src={c.img || ""}
                           alt={`${c.name} certification`}
-                          width={52}
-                          height={52}
+                          width={c.name === "NFPA" ? 72 : 52}
+                          height={c.name === "NFPA" ? 72 : 52}
                         />
                       </button>
                     </DialogTrigger>

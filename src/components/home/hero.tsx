@@ -19,7 +19,7 @@ export default function Hero() {
             priority
           />
           {/* Dark overlay for contrast */}
-          <div className="absolute inset-0 bg-gradient-to-br from-black via-black/50 to-black" />
+          <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-black/10 to-black/50" />
         </div>
 
         {/* Content */}
@@ -44,7 +44,7 @@ export default function Hero() {
             </Reveal>
 
             <Reveal delay={0.1}>
-              <div className="mt-8 flex flex-col sm:flex-row gap-3">
+              <div className="mt-6 flex flex-col sm:flex-row gap-3">
                 <MetallicButton>
                   <Link href="/#technologies">Explore Technologies</Link>
                 </MetallicButton>

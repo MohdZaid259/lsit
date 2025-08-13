@@ -1,5 +1,5 @@
 interface Article {
-    _id: string;
+    id: string;
     title: string;
     excerpt: string;
     category: string;
@@ -12,15 +12,15 @@ interface Article {
   }
 
 export const futureIndustrialFabrics: Article = {
-    _id: "1",
-    title: "The Future of Industrial Fabrics: How Technology is Transforming the Industry",
+    id: "1",
+    title: "The Future Of Industrial Fabrics",
     excerpt:
-      "From sun-ray reflective coatings to antibacterial textiles, discover how technology is reshaping the industrial fabric sector for B2B buyers worldwide.",
+      "From sun-ray reflective coatings to antibacterial textiles, discover how LS4IT is evolving industrial fabrics.",
     category: "fabric-technology",
     author: "Mohd Zaid",
     date: "August 9, 2025",
     readTime: "7 min read",
-    image: "/images/future-industrial-fabrics.jpeg",
+    image: "/blog/future.jpg",
     slug: "future-of-industrial-fabrics",
     content: `<div class="article-content">
   
@@ -52,15 +52,15 @@ export const futureIndustrialFabrics: Article = {
   };
   
   export const reasonsTechnicalFabrics: Article = {
-    _id: "2",
-    title: "7 Reasons Why Businesses Choose Advanced Technical Fabrics",
+    id: "2",
+    title: "7 Reasons To Choose LS4IT Fabrics",
     excerpt:
-      "Discover why leading industries prefer advanced technical fabrics — from durability to performance, here are seven reasons B2B buyers make the switch.",
+      "Leading Industries prefer advanced technical fabrics — from durability to performance",
     category: "fabric-technology",
     author: "Mohd Zaid",
     date: "August 9, 2025",
     readTime: "6 min read",
-    image: "/images/technical-fabrics-benefits.jpeg",
+    image: "/blog/quality.avif",
     slug: "reasons-to-choose-technical-fabrics",
     content: `<div class="article-content">
   
@@ -96,15 +96,15 @@ export const futureIndustrialFabrics: Article = {
   };
   
   export const applicationsHighPerformance: Article = {
-    _id: "3",
-    title: "Applications of High-Performance Fabrics in Modern Industries",
+    id: "3",
+    title: "Applications of High-Performance Fabrics",
     excerpt:
-      "From automotive to defense, high-performance fabrics are reshaping industries. Discover where and how they’re making an impact.",
+      "From automotive to defense, high-performance fabrics are reshaping industries.",
     category: "fabric-applications",
     author: "Mohd Zaid",
     date: "August 9, 2025",
     readTime: "6 min read",
-    image: "/images/high-performance-fabrics.jpeg",
+    image: "/blog/choose.jpg",
     slug: "applications-of-high-performance-fabrics",
     content: `<div class="article-content">
   
@@ -131,15 +131,15 @@ export const futureIndustrialFabrics: Article = {
   };
   
   export const certificationMatters: Article = {
-    _id: "4",
-    title: "Why Certification Matters in Industrial Fabric Manufacturing",
+    id: "4",
+    title: "Why Certification Matters in Industrial Fabrics",
     excerpt:
-      "Learn why certifications like ISO and CE are critical in ensuring quality, safety, and global compliance in industrial fabrics.",
+      "Learn why ISO and CE are critical in ensuring quality, safety, and global compliance in industrial fabrics.",
     category: "fabric-certification",
     author: "Mohd Zaid",
     date: "August 9, 2025",
     readTime: "5 min read",
-    image: "/images/fabric-certification.jpeg",
+    image: "/blog/certificate.jpg",
     slug: "why-certification-matters-in-industrial-fabrics",
     content: `<div class="article-content">
   
@@ -166,16 +166,16 @@ export const futureIndustrialFabrics: Article = {
   };
   
   export const choosingFabricSupplier: Article = {
-    _id: "5",
-    title: "Choosing the Right Industrial Fabric Supplier for Your Business",
+    id: "5",
+    title: "Choosing Right Industrial Fabric Supplier",
     excerpt:
-      "Selecting the right industrial fabric supplier can make or break your projects. Here’s what to look for when sourcing technical textiles.",
+      "The right industrial fabric supplier can make or break your projects. Here's what to look when sourcing fabrics.",
     category: "fabric-sourcing",
     author: "Mohd Zaid",
     date: "August 9, 2025",
     readTime: "6 min read",
-    image: "/images/choose-fabric-supplier.jpeg",
-    slug: "choosing-the-right-industrial-fabric-supplier",
+    image: "/blog/supplier.jpg",
+    slug: "right-industrial-fabric-supplier",
     content: `<div class="article-content">
   
     <h1 class="text-3xl font-bold mb-6">Choosing the Right Industrial Fabric Supplier for Your Business</h1>
