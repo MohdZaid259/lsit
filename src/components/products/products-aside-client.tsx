@@ -6,11 +6,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useParams, useRouter } from "next/navigation";
 
 import { FolderOpen } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { useParams } from "next/navigation";
+import { useState } from "react";
 
 interface SubCategory {
   key: string;
@@ -34,6 +35,7 @@ export function ProductsAsideClient({
   }[];
 }) {
   const params = useParams();
+  const router = useRouter();
   const activeCategoryKey = params?.category as string | undefined;
 
   const cats: Category[] =
@@ -46,6 +48,8 @@ export function ProductsAsideClient({
           title: sub.name,
         })) || [],
     })) || [];
+
+  const [openItem, setOpenItem] = useState(activeCategoryKey);
 
   return (
     <aside
@@ -72,11 +76,14 @@ export function ProductsAsideClient({
             <Accordion
               type="single"
               collapsible
-              defaultValue={activeCategoryKey}
+              value={openItem}
+              onValueChange={(val) => {
+                setOpenItem(val);
+                if (val) router.push(`/products/${val}`);
+              }}
               className="space-y-1"
             >
               {cats.map((c) => {
-                const href = `/products/${c.key}`;
                 const isActive = activeCategoryKey === c.key;
 
                 return (
@@ -84,7 +91,6 @@ export function ProductsAsideClient({
                     value={c.key}
                     key={c.key}
                     className="border-none"
-                    defaultChecked={isActive}
                   >
                     <AccordionTrigger
                       className={cn(
@@ -94,23 +100,23 @@ export function ProductsAsideClient({
                           : "text-foreground hover:bg-muted hover:text-foreground"
                       )}
                     >
-                      <Link href={href} className="w-full block">
-                        {c.title}
-                      </Link>
+                      {c.title}
                     </AccordionTrigger>
                     {c.subCategories?.length > 0 && (
                       <AccordionContent className="pl-6 pt-1">
                         <ul className="space-y-1">
-                          {c.subCategories.map((s) => (
-                            <li key={s.key}>
-                              <Link
-                                href={`/products/${c.key}/#${s.key}`}
-                                className="block rounded px-2 py-1.5 text-sm text-muted-foreground hover:text-foreground hover:bg-muted capitalize"
-                              >
-                                {s.title}
-                              </Link>
-                            </li>
-                          ))}
+                          {c.subCategories.map((s) => {
+                            return (
+                              <li key={s.key}>
+                                <Link
+                                  href={`/products/${c.key}#${s.key}`}
+                                  className="block rounded px-2 py-1.5 text-sm capitalize text-muted-foreground hover:text-foreground hover:bg-muted"
+                                >
+                                  {s.title}
+                                </Link>
+                              </li>
+                            );
+                          })}
                         </ul>
                       </AccordionContent>
                     )}

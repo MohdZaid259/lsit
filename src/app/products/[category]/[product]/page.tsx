@@ -63,8 +63,6 @@ export default async function ProductDetailPage({
     product: Product;
   };
 
-  console.log("Product details:", product);
-
   if (!product) {
     return notFound();
   }
@@ -102,6 +100,7 @@ export default async function ProductDetailPage({
       <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
         <ProductGallery
           images={product.gallery ? product.gallery.map((img) => img.url) : []}
+          category={product.subCategories.category.name}
         />
         <aside className="space-y-5">
           <div>
