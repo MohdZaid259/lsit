@@ -60,10 +60,10 @@ export default async function SiteFooter() {
     {
       title: "Resources",
       links: [
-        { label: "Fabric Technologies", href: "#technologies" },
+        { label: "Fabric Technologies", href: "/#technologies" },
         { label: "Product Catalog", href: "/products" },
-        { label: "Certifications", href: "#certifications" },
-        { label: "Why Choose Us", href: "#why-us" },
+        { label: "Certifications", href: "/#certifications" },
+        { label: "Why Choose Us", href: "/#why-us" },
       ],
     },
   ];

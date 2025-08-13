@@ -89,21 +89,22 @@ export default function VideoIntro({
         fadeOut ? "opacity-0" : "opacity-100"
       }`}
     >
+      <div className="md:hidden absolute inset-0 bg-[#001021] -z-[20]" />
       {/* Video */}
       <video
         ref={videoRef}
         src="/intro.mp4"
-        poster="/intro-poster.png"
+        // poster="/intro-poster.png"
         autoPlay
         muted
         playsInline
         preload="auto"
         onEnded={handleHide}
-        className="w-full h-full object-cover"
+        className="w-full h-full md:object-cover object-contain max-md:shadow-none"
       />
 
       {/* Overlay instructions */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 flex justify-center pt-12">
+      <div className="max-md:hidden pointer-events-none absolute inset-x-0 top-0 flex justify-center pt-12">
         <div className="rounded-full border border-white/15 bg-white/10 backdrop-blur px-3 py-1 text-white/90 text-xs">
           Press S or Esc to skip
         </div>
