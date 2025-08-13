@@ -19,7 +19,7 @@ type Tech = {
   name: string;
   desc: string;
   img: string;
-  icon: React.ElementType;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   bullets: string[];
 };
 

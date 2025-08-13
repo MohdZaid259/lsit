@@ -5,18 +5,16 @@ import GlobalOperations from "@/components/home/global-operations";
 import Hero from "@/components/home/hero";
 import OurServices from "@/components/home/our-services";
 import TechnologiesSection from "@/components/home/technologies-section";
-import WhyChooseUs from "@/components/home/why-choose-us";
 
 export default function Page() {
   return (
     <>
       <Hero />
       <OurServices />
-      {/* <WhyChooseUs /> */}
-      <GlobalOperations />
       <TechnologiesSection />
       <CaseStudies />
       <Certifications />
+      <GlobalOperations />
       <ContactSection />
     </>
   );

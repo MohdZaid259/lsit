@@ -27,13 +27,13 @@ export default function GlobalOperations() {
     { name: "Oman", lat: 21.4735, lng: 55.9754, color: "#f59e0b" },
     { name: "Kuwait", lat: 29.3117, lng: 47.4818, color: "#f59e0b" },
     { name: "Egypt", lat: 26.8206, lng: 30.8025, color: "#f59e0b" },
-    { name: "Saudi Arabia", lat: 23.8859, lng: 45.0792, color: "#f59e0b" },
     { name: "Bahrain", lat: 25.9304, lng: 50.6378, color: "#f59e0b" },
     { name: "Turkey", lat: 38.9637, lng: 35.2433, color: "#f59e0b" },
     // International
     { name: "Germany", lat: 51.1657, lng: 10.4515, color: "#3b82f6" },
     { name: "Canada", lat: 56.1304, lng: -106.3468, color: "#3b82f6" },
     { name: "USA", lat: 37.0902, lng: -95.7129, color: "#3b82f6" },
+    { name: "Saudi" + String.fromCharCode(0x2007) + "Arabia", lat: 23.8859, lng: 45.0792, color: "#f59e0b" },
   ];
 
   // Create arcs between key locations to show connections
@@ -126,7 +126,7 @@ export default function GlobalOperations() {
     maxRings: 3,
     initialPosition: { lat: 22.3193, lng: 114.1694 },
     autoRotate: true,
-    autoRotateSpeed: 0.5,
+    autoRotateSpeed: 0.8,
   };
 
   const stats = [
@@ -174,7 +174,7 @@ export default function GlobalOperations() {
       eyebrow="Global Presence"
       title="Operations across multiple continents"
       subtitle="That's enough for time being, we can add our operations in strategic locations worldwide to serve our clients better."
-      className="relative overflow-hidden"
+      className="relative overflow-hidden md:mx-16 mx-2"
     >
       <div
         ref={sectionRef}
@@ -189,10 +189,35 @@ export default function GlobalOperations() {
           transition={{ duration: 1, ease: "easeOut" }}
           className="relative"
         >
-          <div className="relative aspect-square max-w-lg mx-auto">
+          <div className="relative max-w-lg mx-auto">
             {/* 3D Globe */}
-            <div className="relative z-10 h-full">
+            <div className="relative z-10 h-96">
               <World globeConfig={globeConfig} data={globeData} />
+            </div>
+          </div>
+
+          {/* Countries List */}
+          <div className="space-y-4 -mt-10 z-99">
+            <div className="flex items-center gap-2">
+              <Sparkles className="w-5 h-5 text-blue-500" />
+              <h3 className="text-lg font-semibold text-slate-900">
+                Our Global Locations
+              </h3>
+            </div>
+            <div className="grid grid-cols-4 gap-x-4 gap-y-1 ">
+              {countries.map((country, index) => (
+                <motion.span
+                  key={country.name}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={
+                    isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }
+                  }
+                  transition={{ duration: 0.3, delay: 0.3 + index * 0.03 }}
+                  className="text-sm  text-muted-foreground"
+                >
+                  {country.name}
+                </motion.span>
+              ))}
             </div>
           </div>
         </motion.div>
@@ -204,33 +229,8 @@ export default function GlobalOperations() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="space-y-4"
         >
-          {/* Countries List */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <Sparkles className="w-5 h-5 text-blue-500" />
-              <h3 className="text-lg font-semibold text-slate-900">
-                Our Global Locations
-              </h3>
-            </div>
-            <div className="grid grid-cols-3 sm:grid-cols-4 gap-x-4 gap-y-1">
-              {countries.map((country, index) => (
-                <motion.span
-                  key={country.name}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={
-                    isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }
-                  }
-                  transition={{ duration: 0.3, delay: 0.3 + index * 0.03 }}
-                  className="text-sm text-muted-foreground"
-                >
-                  {country.name}
-                </motion.span>
-              ))}
-            </div>
-          </div>
-
           {/* Stats Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-4">
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -241,7 +241,7 @@ export default function GlobalOperations() {
                     : { opacity: 0, scale: 0.8, y: 20 }
                 }
                 transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
-                className="group relative p-5 rounded-2xl border bg-white hover:shadow-xl transition-all duration-300 overflow-hidden"
+                className="group relative md:p-4 p-3 rounded-2xl border bg-white hover:shadow-xl transition-all duration-300 overflow-hidden"
               >
                 <div
                   className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
@@ -252,7 +252,7 @@ export default function GlobalOperations() {
                     <div
                       className={`p-2.5 rounded-xl ${stat.iconBg} group-hover:scale-110 transition-transform duration-300`}
                     >
-                      <stat.icon className={`w-5 h-5 ${stat.iconColor}`} />
+                      <stat.icon className={`md:w-5 md:h-5 w-4 h-4 ${stat.iconColor}`} />
                     </div>
                     <div className="text-2xl font-bold text-slate-900 group-hover:scale-105 transition-transform duration-300">
                       {stat.value}
@@ -275,7 +275,7 @@ export default function GlobalOperations() {
               initial={{ opacity: 0, x: 20 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
               transition={{ duration: 0.6, delay: 1.1 }}
-              className="group flex items-center gap-4 p-5 rounded-2xl border bg-gradient-to-r from-amber-50 via-orange-50 to-amber-50 hover:shadow-lg transition-all duration-300"
+              className="group flex items-center gap-4 md:p-4 p-2 rounded-2xl border bg-gradient-to-r from-amber-50 via-orange-50 to-amber-50 hover:shadow-lg transition-all duration-300"
             >
               <div className="w-4 h-4 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 shadow-lg group-hover:scale-125 transition-transform duration-300" />
               <div className="flex-1">
@@ -295,7 +295,7 @@ export default function GlobalOperations() {
               initial={{ opacity: 0, x: 20 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
               transition={{ duration: 0.6, delay: 1.2 }}
-              className="group flex items-center gap-4 p-5 rounded-2xl border bg-gradient-to-r from-blue-50 via-indigo-50 to-blue-50 hover:shadow-lg transition-all duration-300"
+              className="group flex items-center gap-4 md:p-5 p-2 rounded-2xl border bg-gradient-to-r from-blue-50 via-indigo-50 to-blue-50 hover:shadow-lg transition-all duration-300"
             >
               <div className="w-4 h-4 rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 shadow-lg group-hover:scale-125 transition-transform duration-300" />
               <div className="flex-1">
