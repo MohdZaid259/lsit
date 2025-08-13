@@ -11,7 +11,7 @@ export default function ProductsLayout({
       {/* Responsive grid: sidebar + main; sidebar hidden < 720px */}
       <div className="grid gap-6 min-[720px]:grid-cols-[260px_1fr]">
         <ProductsAside />
-        <main>{children}</main>
+        {children}
       </div>
     </div>
   );

@@ -72,12 +72,15 @@ export default async function CategoryPage({
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent" />
+
+          {/* Overlay  */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+
           <div className="absolute bottom-4 left-4 right-4">
-            <h1 className="text-xl md:text-2xl font-semibold text-foreground">
+            <h1 className="text-xl md:text-2xl font-semibold text-white">
               {category.name}
             </h1>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-white">
               {category.description || `Explore ${category.name} products.`}
             </p>
           </div>
@@ -122,7 +125,7 @@ export default async function CategoryPage({
                           sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                           className="object-cover"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition" />
                       </div>
                       <div className="p-3">
                         <div className="text-sm font-medium text-foreground">

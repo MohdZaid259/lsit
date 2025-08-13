@@ -28,8 +28,8 @@ export function ProductGallery({ images }: { readonly images: string[] }) {
               src={img || ""}
               alt={`Thumbnail ${i + 1}`}
               fill
-              sizes="(max-width: 640px) 25vw, (max-width: 768px) 20vw, 15vw"
-              className="object-cover"
+              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+              className="object-contain"
             />
           </button>
         ))}
@@ -74,12 +74,12 @@ function ZoomImage({
       onMouseLeave={() => setHovering(false)}
       onMouseMove={handleMove}
     >
-      <Image
+      <SafeImage
         src={src || ""}
         alt={alt}
         fill
         sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
-        className="object-cover transition-opacity"
+        className="object-contain transition-opacity"
         style={{ opacity: hovering ? 0 : 1 }}
       />
       {/* Zoom layer */}

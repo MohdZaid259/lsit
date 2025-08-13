@@ -8,7 +8,7 @@ export default function Logo({
   readonly className?: string;
 }) {
   return (
-    <div className="flex items-center justify-center">
+    <div className="">
       <Image
         src="/logo/logoSvg.svg"
         alt="LS4IT logo"

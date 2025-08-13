@@ -1,10 +1,12 @@
-import Image from "next/image"
-import dynamic from "next/dynamic"
-import { Button } from "@/components/ui/button"
-import { values } from "../../public/aboutData"
-const ScrollAnimation = dynamic(() => import('./scroll-animation'));
-import company from '../../public/company.webp'
-import NewsletterSignup from './newsletter'
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import Link from "next/link";
+import NewsletterSignup from "./newsletter";
+import company from "../../public/company.webp";
+import dynamic from "next/dynamic";
+import { values } from "../../public/aboutData";
+
+const ScrollAnimation = dynamic(() => import("./scroll-animation"));
 
 export default function AboutPage() {
   return (
@@ -35,24 +37,35 @@ export default function AboutPage() {
                 </h2>
                 <div className="space-y-4 text-muted-foreground">
                   <p>
-                    LS4IT (Lateral 4 System for Innovation Technology) is a pioneering technical textile manufacturer headquartered in Ajman, UAE. We design and produce cutting-edge fabrics engineered for extreme performance, capable of withstanding the harshest climates and most demanding applications.
+                    LS4IT (Lateral 4 System for Innovation Technology) is a
+                    pioneering technical textile manufacturer headquartered in
+                    Ajman, UAE. We design and produce cutting-edge fabrics
+                    engineered for extreme performance, capable of withstanding
+                    the harshest climates and most demanding applications.
                   </p>
                   <p>
-                    Our expertise lies in merging material innovation with precision manufacturing to create fabrics that excel in defense, industrial, and outdoor environments. Whether it's the relentless heat of desert terrain, the constant exposure of marine settings, LS4IT fabrics are built to endure, protect, and perform.
+                    Our expertise lies in merging material innovation with
+                    precision manufacturing to create fabrics that excel in
+                    defense, industrial, and outdoor environments. Whether it's
+                    the relentless heat of desert terrain, the constant exposure
+                    of marine settings, LS4IT fabrics are built to endure,
+                    protect, and perform.
                   </p>
                   <p>
-                    We don’t just manufacture textiles — we deliver solutions that enhance safety, sustainability, and operational efficiency for industries worldwide.
+                    We don’t just manufacture textiles — we deliver solutions
+                    that enhance safety, sustainability, and operational
+                    efficiency for industries worldwide.
                   </p>
                 </div>
                 <div className="md:mt-8 mt-4 flex flex-wrap gap-4">
                   <Button className="bg-primary hover:bg-primary/90 text-white">
-                    Our Services
+                    <Link href="/#our-services">Our Services</Link>
                   </Button>
                   <Button
                     variant="outline"
                     className="border-primary text-primary hover:bg-primary/10"
                   >
-                    Contact Us
+                    <Link href="/#contact">Contact Us</Link>
                   </Button>
                 </div>
               </div>
@@ -82,7 +95,12 @@ export default function AboutPage() {
                   Our Vision
                 </h3>
                 <p className="text-muted-foreground">
-                  Our vision is to be recognized globally as the benchmark for technical textile innovation. A company where science, craftsmanship, and responsibility come together to create materials that redefine industry standards. We aspire to not only supply fabrics, but to inspire progress across defense, industrial, and outdoor sectors.
+                  Our vision is to be recognized globally as the benchmark for
+                  technical textile innovation. A company where science,
+                  craftsmanship, and responsibility come together to create
+                  materials that redefine industry standards. We aspire to not
+                  only supply fabrics, but to inspire progress across defense,
+                  industrial, and outdoor sectors.
                 </p>
               </div>
             </ScrollAnimation>
@@ -92,7 +110,12 @@ export default function AboutPage() {
                   Our Mission
                 </h3>
                 <p className="text-muted-foreground">
-                  Our mission is to push the boundaries of textile technology, delivering fabrics that empower our clients to operate with confidence in any environment available. We strive to create products that merge high performance with environmental responsibility, ensuring that strength never comes at the cost of sustainability.
+                  Our mission is to push the boundaries of textile technology,
+                  delivering fabrics that empower our clients to operate with
+                  confidence in any environment available. We strive to create
+                  products that merge high performance with environmental
+                  responsibility, ensuring that strength never comes at the cost
+                  of sustainability.
                 </p>
               </div>
             </ScrollAnimation>
@@ -107,7 +130,11 @@ export default function AboutPage() {
             <ScrollAnimation animation="fade-in-up">
               <h2 className="mb-4 text-3xl font-bold text-primary sm:text-4xl">Fabric Technologies</h2>
               <p className="mx-auto max-w-3xl text-muted-foreground">
-                At LS4IT, innovation begins at the fiber level. Instead of applying performance features as afterthoughts, we integrate technology directly into the fabric structure, ensuring durability, consistency, and maximum efficiency in real-world use.
+                At LS4IT, innovation begins at the fiber level. Instead of
+                applying performance features as afterthoughts, we integrate
+                technology directly into the fabric structure, ensuring
+                durability, consistency, and maximum efficiency in real-world
+                use.
               </p>
             </ScrollAnimation>
           </div>
@@ -140,8 +167,8 @@ export default function AboutPage() {
         </div>
       </section>
       <section className="-mb-16 mt-20">
-        <NewsletterSignup/>
+        <NewsletterSignup />
       </section>
     </>
-  )
+  );
 }

@@ -1,22 +1,3 @@
-"use client";
-
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import {
-  ChevronRight,
-  CloudRain,
-  Heart,
-  Layers,
-  Menu,
-  Shield,
-  Sparkles,
-  Sun,
-  ThermometerSun,
-} from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -26,87 +7,25 @@ import {
   NavigationMenuTrigger,
   NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
 
-import { Button } from "@/components/ui/button";
+import { Category } from "@/lib/types";
+import { ChevronRightIcon } from "lucide-react";
 import Link from "next/link";
 import Logo from "./logo";
 import MetallicButton from "./common/metallic-button";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
+import MobileMenu from "./mobile-menu";
+import { getAllCategories } from "@/app/services";
 
-export default function SiteHeader() {
-  const router = useRouter();
-  const [open, setOpen] = useState(false);
-
-  const products = [
-    {
-      title: "Military & Defense",
-      items: [
-        { label: "Combat Uniforms", href: "/products/military" },
-        { label: "Tactical Gear", href: "/products/tactical" },
-      ],
-      technologies: ["SunTech", "Fire-Resistant", "Waterproof"],
-    },
-    {
-      title: "Industrial & Workwear",
-      items: [
-        { label: "Heat Resistant", href: "/products/heat-resistant" },
-        { label: "High-Visibility", href: "/products/hi-vis" },
-      ],
-      technologies: ["Fire-Resistant", "Breathable"],
-    },
-    {
-      title: "Medical & Healthcare",
-      items: [
-        { label: "Medical Gowns", href: "/products/medical" },
-        { label: "Protective Covers", href: "/products/protective" },
-      ],
-      technologies: ["Antibacterial", "Wash-Durable"],
-    },
-    {
-      title: "Outdoor & Automotive",
-      items: [
-        { label: "Tent Fabric", href: "/products/tent" },
-        { label: "Car Covers", href: "/products/car" },
-      ],
-      technologies: ["Waterproof", "UV-Block"],
-    },
-  ];
+export default async function SiteHeader() {
+  const { categories } = (await getAllCategories()) as {
+    categories: Category[];
+  };
 
   const primaryLinks = [
     { label: "Our Services", href: "/#our-services" },
     { label: "Technologies", href: "/technology" },
     { label: "About", href: "/about" },
   ];
-
-  const getCategoryIcon = (title: string) => {
-    switch (title) {
-      case "Technical Fabrics":
-        return Layers;
-      case "Specialized Applications":
-        return Sparkles;
-      default:
-        return Layers;
-    }
-  };
-
-  const getItemIcon = (label: string) => {
-    if (label.includes("Heat")) return ThermometerSun;
-    if (label.includes("Waterproof")) return CloudRain;
-    if (label.includes("Abrasion") || label.includes("Protective"))
-      return Shield;
-    if (label.includes("Military")) return Shield;
-    if (label.includes("Medical")) return Heart;
-    if (label.includes("Outdoor") || label.includes("Tent")) return Sun;
-    return ChevronRight;
-  };
 
   return (
     <header className="sticky top-0 z-[99] w-full border-b bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
@@ -153,50 +72,38 @@ export default function SiteHeader() {
               </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <div className="w-[480px] max-w-[90vw] p-2 grid gap-3 md:grid-cols-2">
-                  {products.map((category) => {
-                    const CategoryIcon = getCategoryIcon(category.title);
+                  {categories.map((cat) => {
                     return (
                       <div
-                        key={category.title}
+                        key={cat.name}
                         className="rounded-lg border bg-white p-2 hover:shadow-sm transition"
                       >
                         {/* Fabric Type */}
-                        <div className="flex items-center gap-1.5 mb-1">
-                          <CategoryIcon className="h-3 w-3 text-slate-500" />
+                        <Link
+                          href={`/products/${cat.slug}`}
+                          className="cursor-pointer"
+                        >
                           <h3 className="text-sm font-semibold text-slate-900">
-                            {category.title}
+                            {cat.name}
                           </h3>
-                        </div>
+                        </Link>
 
                         {/* Applications */}
-                        <ul className="space-y-1 mb-2">
-                          {category.items.map((item) => {
-                            const ItemIcon = getItemIcon(item.label);
+                        <ul className="space-y-1 mt-1">
+                          {cat.subCategories?.map((sub) => {
                             return (
-                              <li key={item.label}>
+                              <li key={sub.name}>
                                 <Link
-                                  href={item.href}
-                                  className="group flex items-center gap-1.5 rounded-md px-1 py-0.5 text-xs text-slate-700 hover:bg-slate-50 hover:text-slate-900 transition"
+                                  href={`/products/${cat.slug}#${sub.slug}`}
+                                  className="flex items-center gap-1.5 rounded-md px-1 py-0.5 text-xs text-muted-foreground hover:bg-slate-50 hover:text-muted-foreground transition"
                                 >
-                                  <ItemIcon className="h-3 w-3 text-slate-500 group-hover:text-slate-700 transition" />
-                                  {item.label}
+                                  <ChevronRightIcon className="h-3 w-3 text-slate-500" />
+                                  {sub.name}
                                 </Link>
                               </li>
                             );
                           })}
                         </ul>
-
-                        {/* Technologies */}
-                        <div className="flex flex-wrap gap-1 mt-auto">
-                          {category.technologies?.map((tech) => (
-                            <span
-                              key={tech}
-                              className="text-[10px] bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
                       </div>
                     );
                   })}
@@ -223,92 +130,14 @@ export default function SiteHeader() {
 
         {/* Desktop CTA */}
         <div className="hidden md:block">
-          <MetallicButton
-            onClick={() => router.push("/#contact")}
-            className="ml-3"
-          >
-            Contact Us
+          <MetallicButton className="ml-3">
+            <Link href="/#contact">Contact Us</Link>
           </MetallicButton>
         </div>
 
         {/* Mobile Menu */}
         <div className="ml-auto md:hidden">
-          <Sheet open={open} onOpenChange={setOpen}>
-            <SheetTrigger asChild>
-              <Button variant="outline" size="icon" aria-label="Open menu">
-                <Menu className="h-5 w-5" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-80 px-4">
-              <SheetHeader className="mb-2">
-                <SheetTitle>
-                  <span className="sr-only">Navigation</span>
-                  <div className="flex items-center gap-2">
-                    <Logo size={36} className={"absolute mt-16 ml-10"} />
-                  </div>
-                </SheetTitle>
-              </SheetHeader>
-
-              <nav className="grid gap-3 mt-6">
-                {primaryLinks.map((l) => (
-                  <Link
-                    key={l.label}
-                    href={l.href}
-                    onClick={() => setOpen(false)}
-                    className="text-base text-slate-800 hover:text-slate-900"
-                  >
-                    {l.label}
-                  </Link>
-                ))}
-
-                <div className="mt-2">
-                  <div className="text-xs uppercase tracking-wide text-slate-500 mb-1">
-                    Products
-                  </div>
-                  <Accordion type="multiple" className="w-full">
-                    {products.map((category, idx) => (
-                      <AccordionItem
-                        key={category.title}
-                        value={`cat-${idx}`}
-                        className="[&>h3]:m-0"
-                      >
-                        <AccordionTrigger className="text-left text-slate-800">
-                          {category.title}
-                        </AccordionTrigger>
-                        <AccordionContent>
-                          <ul className="grid gap-2">
-                            {category.items.map((item) => (
-                              <li key={item.label}>
-                                <Link
-                                  href={item.href}
-                                  onClick={() => setOpen(false)}
-                                  className="text-sm text-muted-foreground hover:text-slate-900"
-                                >
-                                  {item.label}
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
-                        </AccordionContent>
-                      </AccordionItem>
-                    ))}
-                  </Accordion>
-                </div>
-
-                <div className="pt-2">
-                  <MetallicButton
-                    onClick={() => {
-                      setOpen(false);
-                      router.push("/#contact");
-                    }}
-                    className="w-full"
-                  >
-                    Contact Us
-                  </MetallicButton>
-                </div>
-              </nav>
-            </SheetContent>
-          </Sheet>
+          <MobileMenu categories={categories} primaryLinks={primaryLinks} />
         </div>
       </div>
     </header>

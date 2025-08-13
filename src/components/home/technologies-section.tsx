@@ -48,7 +48,7 @@ const techs: Tech[] = [
     key: "antibacterial",
     name: "Antibacterial",
     desc: "Embedded silver-ion protection for durable antimicrobial performance.",
-    img: "/technology/images/antibactCover.webp",
+    img: "/technology/images/antiBactCover.webp",
     icon: Bacteria,
     bullets: ["99.9% bacterial reduction", "Odor control", "Wash-durable"],
   },
