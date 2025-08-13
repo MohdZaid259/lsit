@@ -82,7 +82,7 @@ export default function SiteHeader() {
 
   const primaryLinks = [
     { label: "Our Services", href: "/#our-services" },
-    { label: "Technologies", href: "/#technologies" },
+    { label: "Technologies", href: "/technology" },
     { label: "About", href: "/about" },
   ];
 
@@ -138,7 +138,7 @@ export default function SiteHeader() {
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
                 <Link
-                  href="/#technologies"
+                  href="/technology"
                   className="px-4 py-2 text-sm font-semibold text-muted-foreground hover:text-slate-900 transition-colors"
                 >
                   Technologies

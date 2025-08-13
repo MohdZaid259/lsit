@@ -12,12 +12,12 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="relative bg-primary text-white">
         <div className="absolute inset-0 bg-[url('/coverImage/aboutCover.jpg')] bg-cover bg-center [mask-image:linear-gradient(to_right,rgba(0,0,0,0)_0%,rgba(0,0,0,0)_30%,rgba(0,0,0,0.7)_100%)] [mask-repeat:no-repeat] [mask-size:cover]" />
-        <div className="container relative px-4 py-20  sm:px-6 lg:px-16">
+        <div className="container relative px-4 py-8 md:py-20 sm:px-6 lg:px-16">
           <div className="max-w-3xl">
-            <h1 className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl">
+            <h1 className="mb-4 text-3xl md:text-4xl font-bold tracking-tight">
               About Our Company
             </h1>
-            <p className="mb-8 text-lg text-white/80 sm:text-xl">
+            <p className="md:mb-8 mb-2 text-lg text-white/80 sm:text-xl">
               Engineering fabrics that protect, perform, and endure — no matter the environment
             </p>
           </div>
@@ -25,12 +25,12 @@ export default function AboutPage() {
       </section>
 
       {/* Company Overview */}
-      <section className="py-16 md:mx-16 md:py-24">
+      <section className="py-8 md:mx-16 mx-0 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <ScrollAnimation animation="fade-in-left">
               <div>
-                <h2 className="mb-6 text-3xl font-bold text-navy-blue sm:text-4xl">
+                <h2 className="mb-6 text-3xl font-bold text-primary sm:text-4xl">
                   Our Story
                 </h2>
                 <div className="space-y-4 text-muted-foreground">
@@ -44,7 +44,7 @@ export default function AboutPage() {
                     We don’t just manufacture textiles — we deliver solutions that enhance safety, sustainability, and operational efficiency for industries worldwide.
                   </p>
                 </div>
-                <div className="mt-8 flex flex-wrap gap-4">
+                <div className="md:mt-8 mt-4 flex flex-wrap gap-4">
                   <Button className="bg-primary hover:bg-primary/90 text-white">
                     Our Services
                   </Button>
@@ -58,7 +58,7 @@ export default function AboutPage() {
               </div>
             </ScrollAnimation>
             <ScrollAnimation animation="fade-in-right">
-              <div className="relative h-[400px] overflow-hidden rounded-xl">
+              <div className="relative h-[250px] md:h-[400px] overflow-hidden rounded-xl">
                 <Image
                   src={company.src}
                   alt="Company History"
@@ -73,12 +73,12 @@ export default function AboutPage() {
       </section>
 
       {/* Vision & Mission */}
-      <section className="bg-primary/10 py-16 md:py-24">
+      <section className="bg-primary/10 py-8 md:py-24">
         <div className="mx-0 md:mx-16 px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2">
             <ScrollAnimation animation="fade-in-left">
-              <div className="rounded-xl bg-white p-8 shadow-sm">
-                <h3 className="mb-4 text-2xl font-bold text-navy-blue">
+              <div className="rounded-xl bg-white md:p-8 p-4 shadow-sm">
+                <h3 className="mb-4 text-2xl font-bold text-primary">
                   Our Vision
                 </h3>
                 <p className="text-muted-foreground">
@@ -87,8 +87,8 @@ export default function AboutPage() {
               </div>
             </ScrollAnimation>
             <ScrollAnimation animation="fade-in-right">
-              <div className="rounded-xl bg-white p-8 shadow-sm">
-                <h3 className="mb-4 text-2xl font-bold text-navy-blue">
+              <div className="rounded-xl bg-white md:p-8 p-4 shadow-sm">
+                <h3 className="mb-4 text-2xl font-bold text-primary">
                   Our Mission
                 </h3>
                 <p className="text-muted-foreground">
@@ -101,11 +101,11 @@ export default function AboutPage() {
       </section>
 
       {/* Our Values */}
-      <section className="py-16 mx-0 md:mx-16 md:py-24 pb-0 md:pb-8">
+      <section className="py-8 mx-0 md:mx-16 md:py-16 pb-0 md:pb-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <ScrollAnimation animation="fade-in-up">
-              <h2 className="mb-4 text-3xl font-bold text-navy-blue sm:text-4xl">Fabric Technologies</h2>
+              <h2 className="mb-4 text-3xl font-bold text-primary sm:text-4xl">Fabric Technologies</h2>
               <p className="mx-auto max-w-3xl text-muted-foreground">
                 At LS4IT, innovation begins at the fiber level. Instead of applying performance features as afterthoughts, we integrate technology directly into the fabric structure, ensuring durability, consistency, and maximum efficiency in real-world use.
               </p>
@@ -131,7 +131,7 @@ export default function AboutPage() {
               >
                 <div className="rounded-xl border border-primary/40 p-6 relative">
                     <img src={value.icon.src} className="w-10 pb-2 md:pb-0 mx-4 md:mx-0 -mt-2 md:-mt-0 md:absolute md:p-[1px] md:right-3 md:top-3"/>
-                  <h3 className="mb-2 text-xl font-semibold text-navy-blue">{value.title}</h3>
+                  <h3 className="mb-2 text-xl font-semibold text-primary">{value.title}</h3>
                   <p className="text-muted-foreground">{value.description}</p>
                 </div>
               </ScrollAnimation>

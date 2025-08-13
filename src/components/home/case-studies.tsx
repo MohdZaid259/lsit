@@ -1,8 +1,6 @@
 "use client";
-
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
-
 import { Button } from "@/components/ui/button";
 import { SafeImage } from "../ui/safe-image";
 import Section from "@/components/common/section";
@@ -12,30 +10,31 @@ import useEmblaCarousel from "embla-carousel-react";
 const slides = [
   {
     title: "The Future Of Industrial Fabrics",
-    img: "/blog/future.jpg",
-    text: "From sun-ray reflective coatings to antibacterial textiles, discover how LS4IT is evolving industrial fabrics.",
+    image: "/blog/future.jpg",
+    excerpt: "Industrial fabrics are no longer just about strength and durability. They now incorporate innovations such as sun-ray reflective coatings to keep surfaces cooler, antibacterial textiles that enhance hygiene in high-contact areas, and advanced weaves designed for extreme environments. LS4IT leads this transformation by combining cutting-edge technology with industry expertise, shaping the future of industrial applications.",
   },
   {
     title: "7 Reasons To Choose LS4IT Fabrics",
-    img: "/blog/quality.avif",
-    text: "Leading Industries prefer advanced technical fabrics — from durability to performance",
+    image: "/blog/quality.avif",
+    excerpt: "From exceptional durability that withstands harsh conditions to superior performance in demanding industries, LS4IT fabrics stand out for multiple reasons. These include resistance to wear and tear, innovative material technology, consistent quality assurance, eco-friendly production processes, and global supply capabilities. Choosing LS4IT means choosing reliability, performance, and long-term value.",
   },
   {
     title: "Applications of High-Performance Fabrics",
-    img: "/blog/choose.jpg",
-    text: "From automotive to defense, high-performance fabrics are reshaping industries.",
+    image: "/blog/choose.jpg",
+    excerpt: "High-performance fabrics are at the heart of innovation across multiple sectors. In automotive, they enhance safety and comfort; in defense, they provide lightweight yet durable protection; in architecture, they offer weather resistance with aesthetic appeal. Their unique material properties allow them to adapt to extreme conditions, making them a preferred choice for mission-critical projects.",
   },
   {
-    title: "Why Certification Matters in Industrial Fabrics",
-    img: "/blog/certificate.jpg",
-    text: "Learn why ISO and CE are critical in ensuring quality, safety, and global compliance in industrial fabrics.",
+    title: "Why Certification Matters in Industrial Fabrics?",
+    image: "/blog/certificate.jpg",
+    excerpt: "When it comes to industrial fabrics, certifications like ISO and CE are more than just paperwork — they are proof of quality, safety, and global compliance. ISO standards ensure manufacturing consistency, while CE marking signifies conformity with European regulations. For industries where failure isn’t an option, certification provides the assurance that materials meet the highest benchmarks.",
   },
   {
-    title: "Choosing Right Industrial Fabric Supplier",
-    img: "/blog/supplier.jpg",
-    text: "The right industrial fabric supplier can make or break your projects. Here's what to look when sourcing fabrics.",
+    title: "Choosing The Right Industrial Fabric Supplier?",
+    image: "/blog/supplier.jpg",
+    excerpt: "Selecting the right supplier can determine the success or failure of your project. Beyond price, factors such as technical expertise, product range, manufacturing standards, delivery reliability, and after-sales support play a critical role. A trusted supplier not only meets specifications but also offers guidance to select the most suitable fabric for your unique requirements.",
   },
 ];
+
 
 export default function CaseStudies() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
@@ -95,7 +94,7 @@ export default function CaseStudies() {
                 <div className="grid lg:grid-cols-2 gap-6 items-stretch">
                   <div className="relative aspect-[16/10] lg:aspect-auto lg:min-h-[360px] rounded-xl overflow-hidden">
                     <SafeImage
-                      src={s.img || ""}
+                      src={s.image || ""}
                       alt={s.title}
                       fill
                       sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
@@ -107,7 +106,7 @@ export default function CaseStudies() {
                     <h3 className="text-xl md:text-2xl font-semibold">
                       {s.title}
                     </h3>
-                    <p className="mt-3 text-slate-600">{s.text}</p>
+                    <p className="mt-3 text-slate-600">{s.excerpt}</p>
                     <div className="mt-6">
                       <div className="h-1 w-full rounded bg-slate-200/80 overflow-hidden">
                         <motion.div

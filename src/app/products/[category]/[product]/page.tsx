@@ -1,5 +1,4 @@
 import { getAllProducts, getProductBySubCategorySlug } from "@/app/services";
-
 import { Breadcrumbs } from "@/components/products/breadcrumbs";
 import Link from "next/link";
 import type { Metadata } from "next";

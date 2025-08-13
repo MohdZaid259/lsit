@@ -41,7 +41,7 @@ export default function NewsletterSignup({
           backgroundImage: "url('/coverImage/newsCover.png')",
         }}
       />
-      <div className="relative mx-auto max-w-7xl px-4 py-10 md:py-14">
+      <div className="relative mx-0 sm:mx-4 max-w-7xl px-4 py-10 md:py-14">
         <div className="grid items-center gap-8 md:grid-cols-2">
           {/* Text */}
           <div>

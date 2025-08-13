@@ -69,8 +69,8 @@ export default function Certifications() {
                   <SafeImage
                     src={certs[2].img || ""}
                     alt={`${certs[2].name} certification`}
-                    width={52}
-                    height={52}
+                    width={certs[2].name === "NFPA" ? 72 : 52}
+                    height={certs[2].name === "NFPA" ? 72 : 52}
                   />
                 </button>
 
@@ -84,8 +84,8 @@ export default function Certifications() {
                         <SafeImage
                           src={c.img || ""}
                           alt={`${c.name} certification`}
-                          width={52}
-                          height={52}
+                          width={c.name === "NFPA" ? 72 : 52}
+                          height={c.name === "NFPA" ? 72 : 52}
                         />
                       </button>
                     </DialogTrigger>
