@@ -2,7 +2,6 @@
 
 import { Clock, Globe, MapPin, Sparkles, Users } from "lucide-react";
 import { motion, useInView } from "framer-motion";
-
 import Section from "@/components/common/section";
 import dynamic from "next/dynamic";
 import { useRef } from "react";
@@ -35,73 +34,75 @@ export default function GlobalOperations() {
 
   // Create arcs between key locations to show connections
   const globeData = [
-    // Middle East connections
-    {
-      order: 1,
-      startLat: 24.2992,
-      startLng: 54.6972,
-      endLat: 25.3548,
-      endLng: 51.1839,
-      arcAlt: 0.1,
-      color: "#f59e0b",
-    },
-    {
-      order: 2,
-      startLat: 23.8859,
-      startLng: 45.0792,
-      endLat: 29.3117,
-      endLng: 47.4818,
-      arcAlt: 0.15,
-      color: "#f59e0b",
-    },
-    {
-      order: 3,
-      startLat: 26.8206,
-      startLng: 30.8025,
-      endLat: 38.9637,
-      endLng: 35.2433,
-      arcAlt: 0.2,
-      color: "#f59e0b",
-    },
-    // International connections
-    {
-      order: 4,
-      startLat: 51.1657,
-      startLng: 10.4515,
-      endLat: 37.0902,
-      endLng: -95.7129,
-      arcAlt: 0.3,
-      color: "#3b82f6",
-    },
-    {
-      order: 5,
-      startLat: 56.1304,
-      startLng: -106.3468,
-      endLat: 37.0902,
-      endLng: -95.7129,
-      arcAlt: 0.2,
-      color: "#3b82f6",
-    },
-    // Cross-regional connections
-    {
-      order: 6,
-      startLat: 24.2992,
-      startLng: 54.6972,
-      endLat: 51.1657,
-      endLng: 10.4515,
-      arcAlt: 0.4,
-      color: "#06b6d4",
-    },
-    {
-      order: 7,
-      startLat: 23.8859,
-      startLng: 45.0792,
-      endLat: 37.0902,
-      endLng: -95.7129,
-      arcAlt: 0.5,
-      color: "#06b6d4",
-    },
-  ];
+  // Arabian Gulf Hub connections (orange)
+  {
+    order: 1,
+    startLat: 24.2992, // UAE
+    startLng: 54.6972,
+    endLat: 25.3548, // Qatar
+    endLng: 51.1839,
+    arcAlt: 0.1,
+    color: "#f59e0b",
+  },
+  {
+    order: 2,
+    startLat: 23.8859, // Saudi Arabia
+    startLng: 45.0792,
+    endLat: 29.3117, // Kuwait
+    endLng: 47.4818,
+    arcAlt: 0.15,
+    color: "#f59e0b",
+  },
+  {
+    order: 3,
+    startLat: 25.9304, // Bahrain
+    startLng: 50.6378,
+    endLat: 21.4735, // Oman
+    endLng: 55.9754,
+    arcAlt: 0.2,
+    color: "#f59e0b",
+  },
+
+  // Eastern Mediterranean Hub connections (teal)
+  {
+    order: 4,
+    startLat: 26.8206, // Egypt
+    startLng: 30.8025,
+    endLat: 30.5852, // Jordan
+    endLng: 36.2384,
+    arcAlt: 0.15,
+    color: "#006edc",
+  },
+  {
+    order: 5,
+    startLat: 30.5852, // Jordan
+    startLng: 36.2384,
+    endLat: 33.8547, // Lebanon
+    endLng: 35.8623,
+    arcAlt: 0.15,
+    color: "#006edc",
+  },
+  {
+    order: 6,
+    startLat: 33.2232, // Iraq
+    startLng: 43.6793,
+    endLat: 34.8021, // Syria
+    endLng: 38.9968,
+    arcAlt: 0.2,
+    color: "#006edc",
+  },
+  {
+    order: 7,
+    startLat: 15.5529, // Yemen
+    startLng: 48.5164,
+    endLat: 23.8859, // Saudi Arabia (connects hub to hub visually)
+    endLng: 45.0792,
+    arcAlt: 0.25,
+    color: "#006edc",
+  },
+];
+
+
 
   const globeConfig = {
     pointSize: 4,
@@ -274,17 +275,14 @@ export default function GlobalOperations() {
               transition={{ duration: 0.6, delay: 1.1 }}
               className="group flex items-center gap-4 md:p-4 p-3 rounded-2xl border bg-gradient-to-r from-amber-50 via-orange-50 to-amber-50 hover:shadow-lg transition-all duration-300"
             >
-              <div className="w-4 h-4 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 shadow-lg group-hover:scale-125 transition-transform duration-300" />
+              <div className="w-4 h-4 rounded-full bg-[#f59e0b] shadow-lg group-hover:scale-125 transition-transform duration-300" />
               <div className="flex-1">
                 <div className="font-semibold text-slate-900 group-hover:text-amber-700 transition-colors">
-                  Middle East Hub
+                  Arabian Gulf Network
                 </div>
                 <div className="text-sm text-slate-600">
-                  10 countries across Gulf & Levant region
+                  Dynamic economies across the GCC and Arabian Peninsula.
                 </div>
-              </div>
-              <div className="text-2xl opacity-60 group-hover:opacity-100 transition-opacity">
-                🏛️
               </div>
             </motion.div>
 
@@ -294,17 +292,14 @@ export default function GlobalOperations() {
               transition={{ duration: 0.6, delay: 1.2 }}
               className="group flex items-center gap-4 md:p-5 p-3 rounded-2xl border bg-gradient-to-r from-blue-50 via-indigo-50 to-blue-50 hover:shadow-lg transition-all duration-300"
             >
-              <div className="w-4 h-4 rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 shadow-lg group-hover:scale-125 transition-transform duration-300" />
+              <div className="w-4 h-4 rounded-full bg-[#006edc] shadow-lg group-hover:scale-125 transition-transform duration-300" />
               <div className="flex-1">
                 <div className="font-semibold text-slate-900 group-hover:text-blue-700 transition-colors">
-                  Global Markets
+                  Levant & North Africa
                 </div>
                 <div className="text-sm text-slate-600">
-                  3 countries in key international markets
+                  Strategic markets spanning the Levant and North Africa.
                 </div>
-              </div>
-              <div className="text-2xl opacity-60 group-hover:opacity-100 transition-opacity">
-                🌍
               </div>
             </motion.div>
           </div>
