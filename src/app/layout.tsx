@@ -24,6 +24,9 @@ export const metadata: Metadata = {
       "LS4IT – Advanced Technical Textile Solutions",
     template: "%s | LS4IT",
   },
+  icons: {
+    icon: "/logo/logoSvg.svg",
+  },
   description:
     "LS4IT is a pioneering manufacturer of high-performance technical textiles for extreme environments, specializing in fire-resistant, UV-protected, waterproof, and breathable fabrics for defense, industrial, and outdoor sectors.",
   keywords: [

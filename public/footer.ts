@@ -60,7 +60,7 @@ export const privacyPolicy = `
   <address>
     <strong>LS4IT</strong><br />
     Ajman, UAE<br />
-    Email: <a href="mailto:info@lsit.com">info@lsit.com</a><br />
+    Email: <a href="mailto:info@ls4it.com">info@ls4it.com</a><br />
     Phone: 971 52 666997
   </address>
 </section>
@@ -120,7 +120,7 @@ export const termsOfService = `
   <address>
     <strong>LS4IT</strong><br />
     Ajman, UAE<br />
-    Email: <a href="mailto:info@lsit.com">info@lsit.com</a><br />
+    Email: <a href="mailto:info@ls4it.com">info@ls4it.com</a><br />
     Phone: +971 52 666997
   </address>
 </section>

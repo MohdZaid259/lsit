@@ -29,7 +29,7 @@ export default function TechnologyPage() {
                   </h2>
                   <div className="space-y-4 text-muted-foreground">
                     <p>
-                      From scorching heat to freezing cold — SUNTECH, PRIMERRA, and X15 TECH deliver unmatched thermal performance, protection, and durability.
+                      From scorching heat to freezing cold — Summer Shield, PRIMERRA, and X15 TECH deliver unmatched thermal performance, protection, and durability.
                     </p>
                     <p>
                       We engineer fabrics that cool surfaces by up to 20°C, insulate in extreme cold, and resist water, wind, and UV. Trusted by military, medical, and outdoor industries worldwide, our solutions combine innovation, sustainability, and style.
@@ -82,7 +82,7 @@ export default function TechnologyPage() {
                   <Sun className="h-8 w-8 text-orange-500" />
                   <Badge variant="secondary">Passive Cooling</Badge>
                 </div>
-                <CardTitle className="text-2xl">SUNTECH</CardTitle>
+                <CardTitle className="text-2xl">Summer Shield</CardTitle>
                 <CardDescription>
                   Revolutionary passive cooling technology with up to 20°C surface temperature reduction
                 </CardDescription>

@@ -10,10 +10,10 @@ const contactInfo = [
     icon: Mail,
     content: (
       <a
-        href="mailto:hello@suntechfabrics.com"
+        href="mailto:info@ls4it.com"
         className="hover:text-muted-foreground"
       >
-        info@lsit.com
+        info@ls4it.com
       </a>
     ),
   },

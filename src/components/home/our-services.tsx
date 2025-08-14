@@ -3,20 +3,14 @@ import {
   ChevronRight,
   Cpu,
   Droplets,
-  Factory,
   FileCheck2,
-  FlaskConical,
-  MessageSquare,
-  Ruler,
+  Flame,
   Shield,
   Sun,
   Tent,
-  Truck,
 } from "lucide-react";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import Link from "next/link";
 import Reveal from "../common/reveal";
 import { SafeImage } from "../ui/safe-image";
@@ -25,17 +19,17 @@ import Section from "@/components/common/section";
 export default function OurServices() {
   const services = [
     {
-      key: "tech",
-      title: "Technology in Fabric",
-      desc: "From fiber selection to advanced coatings, we engineer performance at the yarn and finish level with measurable results.",
-      icon: FlaskConical,
-      image: "/service/future.jpg",
+      key: "fire",
+      title: "Firefighting & Protective Fabrics",
+      desc: "Advanced flame-resistant textiles engineered for emergency response, industrial safety, and extreme heat environments—balancing protection, comfort, and durability.",
+      icon: Flame,
+      image: "/service/fire.jpg",
       highlights: [
-        { icon: Cpu, text: "Smart/IoT-ready fabrics" },
-        { icon: Shield, text: "FR, antibacterial, UV protection" },
-        { icon: Droplets, text: "Waterproof + breathable membranes" },
+        { icon: Cpu, text: "NFPA & EN469 certified performance" },
+        { icon: Shield, text: "High thermal resistance with lightweight comfort" },
+        { icon: Droplets, text: "Water, chemical, and abrasion protection" },
       ],
-      cta: { label: "Explore Technologies", href: "/technology" },
+      cta: { label: "Explore Fire Fabrics", href: "/technology" },
     },
     {
       key: "tent",

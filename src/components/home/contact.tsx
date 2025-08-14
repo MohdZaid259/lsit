@@ -108,10 +108,10 @@ export default function Contact() {
             <div className="flex items-center gap-1 text-slate-800">
               <Mail className="h-4 w-4 text-slate-500" />
               <a
-                href="mailto:info@lsit.com"
+                href="mailto:info@ls4it.com"
                 className="tracking-wider hover:underline"
               >
-                info@lsit.com
+                info@ls4it.com
               </a>
             </div>
             <div className="mt-3 flex items-center gap-1 text-slate-800">
