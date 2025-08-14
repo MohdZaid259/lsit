@@ -1,5 +1,4 @@
 import { Mail, MapPin, Phone } from "lucide-react";
-
 import { Category } from "@/lib/types";
 import Link from "next/link";
 import Logo from "./logo";
@@ -139,15 +138,21 @@ export default async function SiteFooter() {
             Technology. All rights reserved.
           </div>
           <div className="sm:ml-auto flex items-center gap-4">
-            {["Privacy", "Terms", "Sitemap"].map((item) => (
-              <Link
-                key={item}
-                href={`/${item.toLowerCase()}`}
-                className="hover:text-slate-800 hover:underline"
-              >
-                {item}
-              </Link>
-            ))}
+            {["Privacy", "Terms", "Sitemap"].map((item) => {
+              const path =
+                item === "Sitemap"
+                  ? "/sitemap.xml"
+                  : `/${item.toLowerCase()}`;
+              return (
+                <Link
+                  key={item}
+                  href={path}
+                  className="hover:text-slate-800 hover:underline"
+                >
+                  {item}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </div>
