@@ -1,11 +1,121 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Sun, Shield, Snowflake } from "lucide-react"
-import ScrollAnimation from "@/components/scroll-animation"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Sun, Shield, Snowflake, Droplets, Wind, Flame, Thermometer, ShieldCheck } from "lucide-react";
+import ScrollAnimation from "@/components/scroll-animation";
 
 export default function TechnologyPage() {
+  const technologies = [
+    {
+      img: "/technology/pages/suntech.png",
+      icon: <Sun className="h-8 w-8 text-orange-500" />,
+      badge: "Passive Cooling",
+      title: "Summer Shield",
+      description: "Passive cooling fabric technology delivering up to 20°C surface temperature reduction.",
+      bulletColor: "bg-blue-500",
+      bullets: [
+        "Reflects heat via infrared radiation",
+        "Works with any yarn composition",
+        "Water-repellent & breathable",
+        "Flame retardant"
+      ]
+    },
+    {
+      img: "/technology/pages/insulation.png",
+      icon: <Shield className="h-8 w-8 text-green-500" />,
+      badge: "Adjustable Insulation",
+      title: "PRIMERRA",
+      description: "SMC nano-tube insulation with customizable warmth and comfort.",
+      bulletColor: "bg-green-500",
+      bullets: [
+        "Antibacterial silver-dot treatment",
+        "Ultrasonically welded seams",
+        "150–450g weight range",
+        "Breathable & washable"
+      ]
+    },
+    {
+      img: "/technology/pages/graphene_2.png",
+      icon: <Snowflake className="h-8 w-8 text-purple-500" />,
+      badge: "Advanced Materials",
+      title: "X15 TECH",
+      description: "Graphene-enhanced polymers for urban heat control and sustainability.",
+      bulletColor: "bg-purple-500",
+      bullets: [
+        "Multilayer graphene/polymer options",
+        "Heat island mitigation",
+        "Passive operation, no energy needed",
+        "Lightweight & sustainable"
+      ]
+    },
+    {
+      img: "/technology/pages/waterproof.jpg",
+      icon: <Droplets className="h-8 w-8 text-sky-500" />,
+      badge: "Waterproof Protection",
+      title: "HydroGuard",
+      description: "High-performance membranes designed to block water penetration while keeping fabrics lightweight.",
+      bulletColor: "bg-sky-500",
+      bullets: [
+        "100% waterproof barrier",
+        "Maintains flexibility & comfort",
+        "Long-lasting in harsh weather"
+      ]
+    },
+    {
+      img: "/technology/pages/breathable.jpg",
+      icon: <Wind className="h-8 w-8 text-cyan-500" />,
+      badge: "Breathable Comfort",
+      title: "AeroWeave",
+      description: "Engineered for airflow without sacrificing protection.",
+      bulletColor: "bg-cyan-500",
+      bullets: [
+        "Optimized moisture vapor transmission",
+        "Quick-dry technology",
+        "Ideal for active/outdoor use"
+      ]
+    },
+    {
+      img: "/technology/pages/fireproof.jpg",
+      icon: <Flame className="h-8 w-8 text-red-500" />,
+      badge: "Fireproof Safety",
+      title: "FlameShield",
+      description: "Heat- and flame-resistant fabrics for extreme protection.",
+      bulletColor: "bg-red-500",
+      bullets: [
+        "Meets NFPA & EN safety standards",
+        "Thermal barrier without bulk",
+        "Resistant to sparks & flames"
+      ]
+    },
+    {
+      img: "/technology/pages/insulation.jpg",
+      icon: <Thermometer className="h-8 w-8 text-amber-500" />,
+      badge: "Thermal Insulation",
+      title: "ThermoCore",
+      description: "Advanced fibers for year-round temperature control.",
+      bulletColor: "bg-amber-500",
+      bullets: [
+        "Superior heat retention in cold climates",
+        "Lightweight, non-bulky insulation",
+        "Breathable in variable conditions"
+      ]
+    },
+    {
+      img: "/technology/pages/antibacterial.jpg",
+      icon: <ShieldCheck className="h-8 w-8 text-emerald-500" />,
+      badge: "Antibacterial Protection",
+      title: "BioDefend",
+      description: "Textiles infused with long-lasting antibacterial agents.",
+      bulletColor: "bg-emerald-500",
+      bullets: [
+        "Inhibits bacterial growth & odor",
+        "Hypoallergenic & gentle on skin",
+        "Effective through multiple washes"
+      ]
+    }
+  ];
+
   return (
-    <>
+    <>      
       <section className="relative bg-primary text-white">
         <div className="absolute inset-0 bg-[url('/coverImage/techCover.png')] bg-cover bg-bottom  [mask-image:linear-gradient(to_right,rgba(0,0,0,0)_0%,rgba(0,0,0,0)_30%,rgba(0,0,0,0.7)_100%)] [mask-repeat:no-repeat] [mask-size:cover]" />
         <div className="container relative py-8 md:py-20 sm:px-6 px-4 lg:px-24">
@@ -62,132 +172,40 @@ export default function TechnologyPage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-primary mb-4">Our Technologies</h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Three breakthrough textile technologies engineered for superior performance in the most demanding
-              environments.
+              Eight breakthrough textile technologies engineered for superior performance in the most demanding environments.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* SUNTECH Card */}
-            <Card className="shadow-xl">
-              <CardHeader>
-                <div className="mb-4">
-                  <img
-                    src="/technology/pages/suntech.png"
-                    alt="SUNTECH passive cooling technology"
-                    className="w-full h-48 object-cover rounded-lg"
-                  />
-                </div>
-                <div className="flex items-center justify-between mb-0">
-                  <Sun className="h-8 w-8 text-orange-500" />
-                  <Badge variant="secondary">Passive Cooling</Badge>
-                </div>
-                <CardTitle className="text-2xl">Summer Shield</CardTitle>
-                <CardDescription>
-                  Revolutionary passive cooling technology with up to 20°C surface temperature reduction
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  <li className="flex items-center text-sm">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
-                    Reflects heat as infrared radiation
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
-                    Works with any yarn composition
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
-                    Water-repellent & breathable
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
-                    Antibacterial & flame retardant
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            {/* PRIMERRA Card */}
-            <Card className="shadow-xl">
-              <CardHeader>
-                <div className="mb-4">
-                  <img
-                    src="/technology/pages/insulation.png"
-                    alt="PRIMERRA advanced insulation technology"
-                    className="w-full h-48 object-cover rounded-lg"
-                  />
-                </div>
-                <div className="flex items-center justify-between mb-0">
-                  <Shield className="h-8 w-8 text-green-500" />
-                  <Badge variant="secondary">Adjustable Insulation</Badge>
-                </div>
-                <CardTitle className="text-2xl">PRIMERRA</CardTitle>
-                <CardDescription>SMC nano-tube filling with adjustable ultrathin insulation technology</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 ">
-                  <li className="flex items-center text-sm">
-                    <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                    Silver dot antibacterial treatment
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                    Ultrasonically welded seams
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                    Gram weights: 150-450g
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                    Breathable & washable
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            {/* X15 TECH Card */}
-            <Card className="shadow-xl">
-              <CardHeader>
-                <div className="mb-4">
-                  <img
-                    src="/technology/pages/graphene_2.png"
-                    alt="X15 TECH advanced materials technology"
-                    className="w-full h-48 object-cover rounded-lg"
-                  />
-                </div>
-                <div className="flex items-center justify-between mb-0">
-                  <Snowflake className="h-8 w-8 text-purple-500" />
-                  <Badge variant="secondary">Advanced Materials</Badge>
-                </div>
-                <CardTitle className="text-2xl">X15 TECH</CardTitle>
-                <CardDescription>
-                  Graphene-enhanced polymer films for urban heat mitigation and sustainability
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  <li className="flex items-center text-sm">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
-                    Multilayer graphene/polymer options
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
-                    Urban heat island mitigation
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
-                    Passive operation, no energy required
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
-                    Sustainable & lightweight
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+          <div className="grid md:grid-cols-4 gap-2">
+            {technologies.map((tech, index) => (
+              <Card key={index} className="shadow-xl">
+                <CardHeader className="">
+                  <div className="mb-4">
+                    <img
+                      src={tech.img}
+                      alt={tech.title}
+                      className="w-full h-48 object-cover rounded-lg"
+                    />
+                  </div>
+                  <div className="flex items-center justify-between mb-0">
+                    {tech.icon}
+                    <Badge variant="secondary">{tech.badge}</Badge>
+                  </div>
+                  <CardTitle className="text-2xl">{tech.title}</CardTitle>
+                  <CardDescription>{tech.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    {tech.bullets.map((point, i) => (
+                      <li key={i} className="flex items-center text-sm">
+                        <div className={`w-2 h-2 ${tech.bulletColor} rounded-full mr-3`}></div>
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -240,5 +258,5 @@ export default function TechnologyPage() {
         </div>
       </section>
     </>
-  )
+  );
 }

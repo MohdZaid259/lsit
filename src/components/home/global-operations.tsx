@@ -19,7 +19,6 @@ export default function GlobalOperations() {
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   const countries = [
-    // Middle East
     { name: "UAE", lat: 24.2992, lng: 54.6972, color: "#f59e0b" },
     { name: "Qatar", lat: 25.3548, lng: 51.1839, color: "#f59e0b" },
     { name: "Iraq", lat: 33.2232, lng: 43.6793, color: "#f59e0b" },
@@ -28,11 +27,9 @@ export default function GlobalOperations() {
     { name: "Kuwait", lat: 29.3117, lng: 47.4818, color: "#f59e0b" },
     { name: "Egypt", lat: 26.8206, lng: 30.8025, color: "#f59e0b" },
     { name: "Bahrain", lat: 25.9304, lng: 50.6378, color: "#f59e0b" },
-    { name: "Turkey", lat: 38.9637, lng: 35.2433, color: "#f59e0b" },
-    // International
-    { name: "Germany", lat: 51.1657, lng: 10.4515, color: "#3b82f6" },
-    { name: "Canada", lat: 56.1304, lng: -106.3468, color: "#3b82f6" },
-    { name: "USA", lat: 37.0902, lng: -95.7129, color: "#3b82f6" },
+    { name: "Jordan", lat: 30.5852, lng: 36.2384, color: "#f59e0b" },
+    { name: "Lebanon", lat: 33.8547, lng: 35.8623, color: "#f59e0b" },
+    { name: "Yemen", lat: 15.5529, lng: 48.5164, color: "#f59e0b" },
     { name: "Saudi" + String.fromCharCode(0x2007) + "Arabia", lat: 23.8859, lng: 45.0792, color: "#f59e0b" },
   ];
 
