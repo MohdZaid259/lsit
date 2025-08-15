@@ -76,7 +76,7 @@ export const termsOfService = `
   </p>
 
   <h2>1. Products &amp; Services</h2>
-  <p>We manufacture and supply fabrics and related products as described in our catalogs, quotations, and website.</p>
+  <p>We supply and distribute fabrics and related products as described in our catalogs, quotations, and website.</p>
   <p>All product descriptions, images, and specifications are for informational purposes only and may vary slightly due to production processes or material availability.</p>
 
   <h2>2. Orders &amp; Payments</h2>
@@ -100,7 +100,7 @@ export const termsOfService = `
   </ul>
 
   <h2>5. Intellectual Property</h2>
-  <p>All designs, patterns, trademarks, and brand materials of LS4IT are our exclusive property and may not be copied, reproduced, or used without written permission.</p>
+  <p>All designs, patterns, trademarks, and brand materials are exclusive property and may not be copied, reproduced, or used without written permission.</p>
 
   <h2>6. Limitation of Liability</h2>
   <p>To the fullest extent permitted by law, LS4IT shall not be liable for indirect, incidental, or consequential damages arising from the use of our products or services.</p>
