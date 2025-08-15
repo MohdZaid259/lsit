@@ -68,7 +68,6 @@ export const privacyPolicy = `
 
 export const termsOfService = `
 <section>
-  <h1>Terms &amp; Conditions</h1>
   <p><strong>Effective Date:</strong> 13 Aug, 2025</p>
   <p>
     Welcome to LS4IT (“we,” “our,” or “us”). By accessing or using our website, purchasing our products,
