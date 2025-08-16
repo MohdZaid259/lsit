@@ -35,13 +35,12 @@ const slides = [
   },
 ];
 
-
 export default function CaseStudies() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [progressKey, setProgressKey] = useState(0);
   const autoplayRef = useRef<number | null>(null);
-  const interval = 5000;
+  const interval = 30000;
 
   const scrollPrev = useCallback(
     () => emblaApi && emblaApi.scrollPrev(),
@@ -127,7 +126,7 @@ export default function CaseStudies() {
             ))}
           </div>
         </div>
-        <div className="absolute -top-14 right-0 flex items-center gap-2">
+        <div className="absolute hidden md:flex -top-14 right-0 items-center gap-2">
           <Button
             variant="outline"
             size="icon"
