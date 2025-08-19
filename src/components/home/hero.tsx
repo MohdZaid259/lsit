@@ -3,8 +3,11 @@ import Link from "next/link";
 import MetallicButton from "@/components/common/metallic-button";
 import Reveal from "@/components/common/reveal";
 import { SafeImage } from "../ui/safe-image";
+import { useTranslations } from "next-intl";
 
 export default function Hero() {
+  const t = useTranslations("home.hero");
+
   return (
     <section className="relative isolate overflow-hidden">
       <div className="relative h-screen min-h-[500px] -mt-16 w-full">
@@ -30,7 +33,7 @@ export default function Hero() {
                 className="text-3xl -mt-10 text-shadow-black text-shadow-2xs md:text-5xl lg:text-6xl font-bold md:font-extrabold tracking-wide text-white"
                 style={{ fontFamily: "var(--font-jakarta)" }}
               >
-                Technology‑Integrated Fabrics for Demanding Environments
+                {t("title")}
               </h1>
             </Reveal>
             <Reveal delay={0.05}>
@@ -38,18 +41,17 @@ export default function Hero() {
                 className="mt-4 text-shadow-black text-shadow-2xs text-lg md:text-xl text-gray-200 tracking-wide"
                 style={{ fontFamily: "var(--font-inter)", fontWeight: 400 }}
               >
-                Premium, engineered textiles with embedded electronics, sensing,
-                and performance coatings—manufactured at scale.
+                {t("description")}
               </p>
             </Reveal>
 
             <Reveal delay={0.1}>
               <div className="mt-6 flex w-56 flex-col sm:flex-row gap-3">
                 <MetallicButton>
-                  <Link href="/#technologies">Explore Technologies</Link>
+                  <Link href="/#technologies">{t("exploreBtn")}</Link>
                 </MetallicButton>
                 <Button variant="outline" className="">
-                  <Link href="/#contact">Speak to an Engineer</Link>
+                  <Link href="/#contact">{t("btn2")}</Link>
                 </Button>
               </div>
             </Reveal>
