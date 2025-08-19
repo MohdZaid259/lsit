@@ -19,9 +19,9 @@ const contactInfo = [
   {
     icon: Phone,
     content: (
-      <a href="tel:+97152666997" className="hover:text-muted-foreground">
+      <li className="hover:text-muted-foreground">
         0657 32450
-      </a>
+      </li>
     ),
   },
   {

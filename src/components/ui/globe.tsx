@@ -3,7 +3,6 @@
 import { Canvas, extend, useThree } from "@react-three/fiber";
 import { Color, Fog, PerspectiveCamera, Scene, Vector3 } from "three";
 import { useEffect, useRef, useState } from "react";
-
 import { OrbitControls } from "@react-three/drei";
 import ThreeGlobe from "three-globe";
 import countries from "@/data/globe.json";
