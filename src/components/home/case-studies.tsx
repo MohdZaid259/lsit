@@ -6,36 +6,39 @@ import { SafeImage } from "../ui/safe-image";
 import Section from "@/components/common/section";
 import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
-
-const slides = [
-  {
-    title: "The Future Of Industrial Fabrics",
-    image: "/blog/future.jpg",
-    excerpt: "Industrial fabrics are no longer just about strength and durability. They now incorporate innovations such as sun-ray reflective coatings to keep surfaces cooler, antibacterial textiles that enhance hygiene in high-contact areas, and advanced weaves designed for extreme environments. LS4IT leads this transformation by combining cutting-edge technology with industry expertise, shaping the future of industrial applications.",
-  },
-  {
-    title: "7 Reasons To Choose LS4IT Fabrics",
-    image: "/blog/quality.avif",
-    excerpt: "From exceptional durability that withstands harsh conditions to superior performance in demanding industries, LS4IT fabrics stand out for multiple reasons. These include resistance to wear and tear, innovative material technology, consistent quality assurance, eco-friendly production processes, and global supply capabilities. Choosing LS4IT means choosing reliability, performance, and long-term value.",
-  },
-  {
-    title: "Applications of High-Performance Fabrics",
-    image: "/blog/choose.jpg",
-    excerpt: "High-performance fabrics are at the heart of innovation across multiple sectors. In automotive, they enhance safety and comfort; in defense, they provide lightweight yet durable protection; in architecture, they offer weather resistance with aesthetic appeal. Their unique material properties allow them to adapt to extreme conditions, making them a preferred choice for mission-critical projects.",
-  },
-  {
-    title: "Why Certification Matters in Industrial Fabrics?",
-    image: "/blog/certificate.jpg",
-    excerpt: "When it comes to industrial fabrics, certifications like ISO and CE are more than just paperwork — they are proof of quality, safety, and global compliance. ISO standards ensure manufacturing consistency, while CE marking signifies conformity with European regulations. For industries where failure isn’t an option, certification provides the assurance that materials meet the highest benchmarks.",
-  },
-  {
-    title: "Choosing The Right Industrial Fabric Supplier?",
-    image: "/blog/supplier.jpg",
-    excerpt: "Selecting the right supplier can determine the success or failure of your project. Beyond price, factors such as technical expertise, product range, manufacturing standards, delivery reliability, and after-sales support play a critical role. A trusted supplier not only meets specifications but also offers guidance to select the most suitable fabric for your unique requirements.",
-  },
-];
+import { useTranslations } from "next-intl";
 
 export default function CaseStudies() {
+  const t = useTranslations("Home.CaseStudies");
+
+  const slides = [
+    {
+      title: t("slide1.title"),
+      image: "/blog/future.jpg",
+      excerpt: t("slide1.excerpt"),
+    },
+    {
+      title: t("slide2.title"),
+      image: "/blog/quality.avif",
+      excerpt: t("slide2.excerpt"),
+    },
+    {
+      title: t("slide3.title"),
+      image: "/blog/choose.jpg",
+      excerpt: t("slide3.excerpt"),
+    },
+    {
+      title: t("slide4.title"),
+      image: "/blog/certificate.jpg",
+      excerpt: t("slide4.excerpt"),
+    },
+    {
+      title: t("slide5.title"),
+      image: "/blog/supplier.jpg",
+      excerpt: t("slide5.excerpt"),
+    },
+  ];
+
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [progressKey, setProgressKey] = useState(0);
@@ -80,9 +83,9 @@ export default function CaseStudies() {
   return (
     <Section
       id="case-studies"
-      eyebrow="Case Studies"
-      title="Real-world deployments"
-      subtitle="Validated performance across environments and industries."
+      eyebrow={t("eyebrow")}
+      title={t("title")}
+      subtitle={t("subtitle")}
       className="md:mx-16 mx-0"
     >
       <div className="relative">

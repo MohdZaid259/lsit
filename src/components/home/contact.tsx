@@ -1,15 +1,17 @@
 "use client";
 
 import { Mail, MapPin, Phone } from "lucide-react";
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import type React from "react";
 import { SafeImage } from "../ui/safe-image";
 import Section from "../common/section";
 import { Textarea } from "@/components/ui/textarea";
+import { useTranslations } from "next-intl";
 
 export default function Contact() {
+  const t = useTranslations("Home.Contact");
+
   function handleSubmit(e: any) {
     e.preventDefault();
     const name = (document.getElementById("name") as HTMLInputElement)?.value;
@@ -21,10 +23,10 @@ export default function Contact() {
       ?.value;
 
     const subject = encodeURIComponent(
-      "New Technical Support Request from " + name
+      t("mailSubject", { name })
     );
     const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nCompany: ${company}\n\nMessage:\n${message}\n\n--\n`
+      `${t("form.name")}: ${name}\n${t("form.email")}: ${email}\n${t("form.phone")}: ${phone}\n${t("form.company")}: ${company}\n\n${t("form.message")}:\n${message}\n\n--\n`
     );
 
     const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=razvizaid259@gmail.com&su=${subject}&body=${body}`;
@@ -34,9 +36,9 @@ export default function Contact() {
   return (
     <Section
       id="contact"
-      eyebrow="Get in touch"
-      title="Let's discuss"
-      subtitle="Share your requirements—our engineering team will recommend the right construction."
+      eyebrow={t("eyebrow")}
+      title={t("title")}
+      subtitle={t("subtitle")}
       className="md:mx-16 mx-0 bg-transparent md:pb-16 pb-0 relative isolate overflow-hidden"
     >
       <div className="grid lg:grid-cols-[1fr_420px] gap-8">
@@ -47,18 +49,18 @@ export default function Contact() {
                 className="block text-sm text-slate-600 mb-1"
                 htmlFor="name"
               >
-                Name
+                {t("form.name")}
               </label>
-              <Input id="name" required placeholder="Jane Smith" />
+              <Input id="name" required placeholder={t("form.namePlaceholder")} />
             </div>
             <div>
               <label
                 htmlFor="company"
                 className="block text-sm text-slate-600 mb-1"
               >
-                Company
+                {t("form.company")}
               </label>
-              <Input id="company" required placeholder="Acme Corp" />
+              <Input id="company" required placeholder={t("form.companyPlaceholder")} />
             </div>
           </div>
           <div className="grid sm:grid-cols-2 gap-4">
@@ -67,13 +69,13 @@ export default function Contact() {
                 htmlFor="email"
                 className="block text-sm text-slate-600 mb-1"
               >
-                Email
+                {t("form.email")}
               </label>
               <Input
                 id="email"
                 required
                 type="email"
-                placeholder="jane@company.com"
+                placeholder={t("form.emailPlaceholder")}
               />
             </div>
             <div>
@@ -81,9 +83,9 @@ export default function Contact() {
                 htmlFor="phone"
                 className="block text-sm text-slate-600 mb-1"
               >
-                Phone
+                {t("form.phone")}
               </label>
-              <Input id="phone" placeholder="+1 555 123 4567" />
+              <Input id="phone" placeholder={t("form.phonePlaceholder")} />
             </div>
           </div>
           <div>
@@ -91,16 +93,16 @@ export default function Contact() {
               htmlFor="message"
               className="block text-sm text-slate-600 mb-1"
             >
-              Message
+              {t("form.message")}
             </label>
             <Textarea
               id="message"
               required
-              placeholder="Tell us about your use case and performance targets..."
+              placeholder={t("form.messagePlaceholder")}
             />
           </div>
           <div className="flex items-center justify-end py-4 md:py-0">
-            <Button onClick={handleSubmit}>Send message</Button>
+            <Button onClick={handleSubmit}>{t("form.sendBtn")}</Button>
           </div>
         </form>
         <aside className="space-y-4">

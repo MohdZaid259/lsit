@@ -5,6 +5,7 @@ import { motion, useInView } from "framer-motion";
 import Section from "@/components/common/section";
 import dynamic from "next/dynamic";
 import { useRef } from "react";
+import { useTranslations } from "next-intl";
 
 const World = dynamic(
   () => import("@/components/ui/globe").then((m) => m.World),
@@ -14,6 +15,7 @@ const World = dynamic(
 );
 
 export default function GlobalOperations() {
+  const t = useTranslations("Home.GlobalOperations");
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
@@ -32,7 +34,6 @@ export default function GlobalOperations() {
     { name: "Saudi" + String.fromCharCode(0x2007) + "Arabia", lat: 23.8859, lng: 45.0792, color: "#f59e0b" },
   ];
 
-  // Create arcs between key locations to show connections
   const globeData = [
   // Arabian Gulf Hub connections (orange)
   {
@@ -102,8 +103,6 @@ export default function GlobalOperations() {
   },
 ];
 
-
-
   const globeConfig = {
     pointSize: 4,
     globeColor: "#FFFFFF",
@@ -130,36 +129,36 @@ export default function GlobalOperations() {
   const stats = [
     {
       icon: MapPin,
-      label: "Countries",
-      value: "13+",
-      description: "Active operations",
+      label: t("stats.countries.label"),
+      value: t("stats.countries.value"),
+      description: t("stats.countries.description"),
       color: "from-amber-500 to-orange-500",
       iconBg: "bg-amber-100",
       iconColor: "text-amber-600",
     },
     {
       icon: Globe,
-      label: "Continents",
-      value: "3+",
-      description: "Global presence",
+      label: t("stats.continents.label"),
+      value: t("stats.continents.value"),
+      description: t("stats.continents.description"),
       color: "from-blue-500 to-indigo-500",
       iconBg: "bg-blue-100",
       iconColor: "text-blue-600",
     },
     {
       icon: Users,
-      label: "Clients",
-      value: "1000+",
-      description: "Worldwide",
+      label: t("stats.clients.label"),
+      value: t("stats.clients.value"),
+      description: t("stats.clients.description"),
       color: "from-green-500 to-emerald-500",
       iconBg: "bg-green-100",
       iconColor: "text-green-600",
     },
     {
       icon: Clock,
-      label: "Support",
-      value: "24/7",
-      description: "Around the clock",
+      label: t("stats.support.label"),
+      value: t("stats.support.value"),
+      description: t("stats.support.description"),
       color: "from-purple-500 to-violet-500",
       iconBg: "bg-purple-100",
       iconColor: "text-purple-600",
@@ -169,9 +168,9 @@ export default function GlobalOperations() {
   return (
     <Section
       id="global-operations"
-      eyebrow="Global Presence"
-      title="Operations across multiple continents"
-      subtitle="That's enough for time being, we can add our operations in strategic locations worldwide to serve our clients better."
+      eyebrow={t("eyebrow")}
+      title={t("title")}
+      subtitle={t("subtitle")}
       className="relative overflow-hidden md:mx-16 mx-2"
     >
       <div
@@ -199,7 +198,7 @@ export default function GlobalOperations() {
             <div className="flex items-center gap-2">
               <Sparkles className="w-5 h-5 text-blue-500" />
               <h3 className="text-lg font-semibold text-slate-900">
-                Our Global Locations
+                {t("locationsTitle")}
               </h3>
             </div>
             <div className="grid grid-cols-4 gap-x-4 gap-y-1 ">
@@ -278,10 +277,10 @@ export default function GlobalOperations() {
               <div className="w-4 h-4 rounded-full bg-[#f59e0b] shadow-lg group-hover:scale-125 transition-transform duration-300" />
               <div className="flex-1">
                 <div className="font-semibold text-slate-900 group-hover:text-amber-700 transition-colors">
-                  Arabian Gulf Network
+                  {t("arabianGulf.title")}
                 </div>
                 <div className="text-sm text-slate-600">
-                  Dynamic economies across the GCC and Arabian Peninsula.
+                  {t("arabianGulf.desc")}
                 </div>
               </div>
             </motion.div>
@@ -295,10 +294,10 @@ export default function GlobalOperations() {
               <div className="w-4 h-4 rounded-full bg-[#006edc] shadow-lg group-hover:scale-125 transition-transform duration-300" />
               <div className="flex-1">
                 <div className="font-semibold text-slate-900 group-hover:text-blue-700 transition-colors">
-                  Levant & North Africa
+                  {t("levant.title")}
                 </div>
                 <div className="text-sm text-slate-600">
-                  Strategic markets spanning the Levant and North Africa.
+                  {t("levant.desc")}
                 </div>
               </div>
             </motion.div>

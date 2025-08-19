@@ -16,16 +16,19 @@ import Logo from "./logo";
 import MetallicButton from "./common/metallic-button";
 import MobileMenu from "./mobile-menu";
 import { getAllCategories } from "@/services";
+import { useTranslations } from "next-intl";
 
 export default async function SiteHeader() {
+  const t = useTranslations("Header");
+
   const { categories } = (await getAllCategories()) as {
     categories: Category[];
   };
 
   const primaryLinks = [
-    { label: "About", href: "/about" },
-    { label: "Our Services", href: "/#our-services" },
-    { label: "Technologies", href: "/technology" },
+    { label: t("about"), href: "/about" },
+    { label: t("ourServices"), href: "/#our-services" },
+    { label: t("technologies"), href: "/technology" },
   ];
 
   return (
@@ -49,7 +52,7 @@ export default async function SiteHeader() {
                   href="/about"
                   className="px-4 py-2 text-sm font-semibold text-muted-foreground hover:text-slate-900 transition-colors"
                 >
-                  About
+                  {t("about")}
                 </Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
@@ -61,7 +64,7 @@ export default async function SiteHeader() {
                   href="/#our-services"
                   className="px-4 py-2 text-sm font-semibold text-muted-foreground hover:text-slate-900 transition-colors"
                 >
-                  Our Services
+                  {t("ourServices")}
                 </Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
@@ -73,7 +76,7 @@ export default async function SiteHeader() {
                   href="/technology"
                   className="px-4 py-2 text-sm font-semibold text-muted-foreground hover:text-slate-900 transition-colors"
                 >
-                  Technologies
+                  {t("technologies")}
                 </Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
@@ -81,7 +84,7 @@ export default async function SiteHeader() {
             {/* Products Mega Menu */}
             <NavigationMenuItem>
               <NavigationMenuTrigger className="px-4 py-2 text-sm font-semibold text-muted-foreground hover:text-slate-900 bg-transparent transition-colors">
-                Products
+                {t("products")}
               </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <div className="w-[480px] max-w-[90vw] p-2 grid gap-3 md:grid-cols-2">
@@ -133,7 +136,7 @@ export default async function SiteHeader() {
         <div className="hidden md:flex items-center gap-3">
           <Link href="/#contact" className="cursor-pointer">
             <MetallicButton className="cursor-pointer">
-              Contact Us
+              {t("contactUs")}
             </MetallicButton>
           </Link>
           <LocaleSwitcher />

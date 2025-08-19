@@ -1,9 +1,9 @@
 import { Mail, MapPin, Phone } from "lucide-react";
-
 import { Category } from "@/lib/types";
 import Link from "next/link";
 import Logo from "./logo";
 import { getAllCategories } from "@/services";
+import { useTranslations } from "next-intl";
 
 const contactInfo = [
   {
@@ -29,34 +29,37 @@ const contactInfo = [
 ];
 
 export default async function SiteFooter() {
+  const t = useTranslations("Footer");
+  const th = useTranslations("Header");
+  
   const { categories } = (await getAllCategories()) as {
     categories: Category[];
   };
 
   const footerLinks = [
     {
-      title: "Company",
+      title: t("company"),
       links: [
-        { label: "About", href: "/about" },
-        { label: "Our Services", href: "/#our-services" },
-        { label: "Case Studies", href: "/#case-studies" },
-        { label: "Contact", href: "/#contact" },
+        { label: th("about"), href: "/about" },
+        { label: th("ourServices"), href: "/#our-services" },
+        { label: t("caseStudies"), href: "/#case-studies" },
+        { label: th("contactUs"), href: "/#contact" },
       ],
     },
     {
-      title: "Product Categories",
+      title: t("productCategories"),
       links: categories.map((cat) => ({
         label: cat.name,
         href: `/products/${cat.slug}`,
       })),
     },
     {
-      title: "Resources",
+      title: t("resources"),
       links: [
-        { label: "Fabric Technologies", href: "/#technologies" },
-        { label: "Product Catalog", href: "/products" },
-        { label: "Certifications", href: "/#certifications" },
-        { label: "Why Choose Us", href: "/#why-us" },
+        { label: t("fabricTechnologies"), href: "/#technologies" },
+        { label: t("productCatalog"), href: "/products" },
+        { label: t("certifications"), href: "/#certifications" },
+        { label: t("whyChooseUs"), href: "/#why-us" },
       ],
     },
   ];
@@ -67,7 +70,7 @@ export default async function SiteFooter() {
       aria-labelledby="footer-heading"
     >
       <h2 id="footer-heading" className="sr-only">
-        Footer
+        {t("footer")}
       </h2>
 
       <div className="container mx-auto px-4 md:px-6 py-6 sm:py-12">
@@ -79,11 +82,10 @@ export default async function SiteFooter() {
             </Link>
             <div className="mt-10">
               <h1 className="text-xl font-bold text-black tracking-wide">
-                Lateral System for Innovation Technology
+                {t("brand")}
               </h1>
               <p className="mt-2 text-sm text-primary">
-                Engineering textiles for heat control, protection, and
-                all-weather performance.
+                {t("brandDesc")}
               </p>
             </div>
           </div>
@@ -113,7 +115,7 @@ export default async function SiteFooter() {
             {/* Contact */}
             <div>
               <div className="text-xs uppercase text-primary tracking-wide ">
-                Contact
+                {t("contact")}
               </div>
               <ul className="mt-3 space-y-2 text-sm">
                 {contactInfo.map(({ icon: Icon, content }, idx) => (
@@ -137,20 +139,19 @@ export default async function SiteFooter() {
         {/* Bottom bar */}
         <div className="mt-10 border-t pt-6 flex flex-col gap-3 sm:flex-row sm:items-center text-xs text-muted-foreground">
           <div>
-            © {new Date().getFullYear()} Lateral System For Innovation
-            Technology. All rights reserved.
+            © {new Date().getFullYear()} {t("brand")}. {t("rights")}
           </div>
           <div className="sm:ml-auto flex items-center gap-4">
-            {["Privacy", "Terms", "Sitemap"].map((item) => {
+            {["privacy", "terms", "sitemap"].map((item) => {
               const path =
-                item === "Sitemap" ? "/sitemap.xml" : `/${item.toLowerCase()}`;
+                item === "sitemap" ? "/sitemap.xml" : `/${item}`;
               return (
                 <Link
                   key={item}
                   href={path}
                   className="hover:text-slate-800 hover:underline"
                 >
-                  {item}
+                  {t(item)}
                 </Link>
               );
             })}

@@ -3,7 +3,6 @@ import "../globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Locale, NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-
 import { Metadata } from "next";
 import { ReactNode } from "react";
 import SiteFooter from "@/components/site-footer";
