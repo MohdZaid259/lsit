@@ -6,7 +6,7 @@ import { SafeImage } from "../ui/safe-image";
 import { useTranslations } from "next-intl";
 
 export default function Hero() {
-  const t = useTranslations("home.hero");
+  const t = useTranslations("Home.Hero");
 
   return (
     <section className="relative isolate overflow-hidden">

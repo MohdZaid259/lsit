@@ -11,6 +11,7 @@ import {
 import { Category } from "@/lib/types";
 import { ChevronRightIcon } from "lucide-react";
 import Link from "next/link";
+import LocaleSwitcher from "./common/locale-switcher";
 import Logo from "./logo";
 import MetallicButton from "./common/metallic-button";
 import MobileMenu from "./mobile-menu";
@@ -129,12 +130,13 @@ export default async function SiteHeader() {
         </NavigationMenu>
 
         {/* Desktop CTA */}
-        <div className="hidden md:block">
+        <div className="hidden md:flex items-center gap-3">
           <Link href="/#contact" className="cursor-pointer">
             <MetallicButton className="cursor-pointer">
               Contact Us
             </MetallicButton>
           </Link>
+          <LocaleSwitcher />
         </div>
 
         {/* Mobile Menu */}
