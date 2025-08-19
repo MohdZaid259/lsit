@@ -1,17 +1,15 @@
 import { Mail, MapPin, Phone } from "lucide-react";
+
 import { Category } from "@/lib/types";
 import Link from "next/link";
 import Logo from "./logo";
-import { getAllCategories } from "@/app/services";
+import { getAllCategories } from "@/services";
 
 const contactInfo = [
   {
     icon: Mail,
     content: (
-      <a
-        href="mailto:info@ls4it.com"
-        className="hover:text-muted-foreground"
-      >
+      <a href="mailto:info@ls4it.com" className="hover:text-muted-foreground">
         info@ls4it.com
       </a>
     ),
@@ -26,11 +24,7 @@ const contactInfo = [
   },
   {
     icon: MapPin,
-    content: (
-      <span>
-        AFZ Office 1038, Ajman Free Zone, UAE
-      </span>
-    ),
+    content: <span>AFZ Office 1038, Ajman Free Zone, UAE</span>,
   },
 ];
 
@@ -83,10 +77,15 @@ export default async function SiteFooter() {
             <Link href="/">
               <Logo className="absolute inset-0 -ml-6 -mt-2 md:-ml-6 md:-mt-6 md:size-44" />
             </Link>
-            <p className="md:mt-10 mt-16 text-sm text-primary">              <h1 className="text-xl font-bold text-black mb-2 tracking-wide">Lateral System for Innovation Technology</h1>
-              Engineering textiles for heat control, protection, and all-weather
-              performance.
-            </p>
+            <div className="mt-10">
+              <h1 className="text-xl font-bold text-black tracking-wide">
+                Lateral System for Innovation Technology
+              </h1>
+              <p className="mt-2 text-sm text-primary">
+                Engineering textiles for heat control, protection, and
+                all-weather performance.
+              </p>
+            </div>
           </div>
 
           {/* Links */}
@@ -122,7 +121,11 @@ export default async function SiteFooter() {
                     key={idx}
                     className="flex items-start gap-2 text-muted-foreground"
                   >
-                    <Icon className={`${Icon===MapPin?"h-8 w-8 sm:h-6 sm:w-6":"h-4 w-4"} text-slate-500 mt-0.5`} />
+                    <Icon
+                      className={`${
+                        Icon === MapPin ? "h-8 w-8 sm:h-6 sm:w-6" : "h-4 w-4"
+                      } text-slate-500 mt-0.5`}
+                    />
                     {content}
                   </li>
                 ))}
@@ -140,9 +143,7 @@ export default async function SiteFooter() {
           <div className="sm:ml-auto flex items-center gap-4">
             {["Privacy", "Terms", "Sitemap"].map((item) => {
               const path =
-                item === "Sitemap"
-                  ? "/sitemap.xml"
-                  : `/${item.toLowerCase()}`;
+                item === "Sitemap" ? "/sitemap.xml" : `/${item.toLowerCase()}`;
               return (
                 <Link
                   key={item}

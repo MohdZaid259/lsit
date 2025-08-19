@@ -14,7 +14,7 @@ import Link from "next/link";
 import Logo from "./logo";
 import MetallicButton from "./common/metallic-button";
 import MobileMenu from "./mobile-menu";
-import { getAllCategories } from "@/app/services";
+import { getAllCategories } from "@/services";
 
 export default async function SiteHeader() {
   const { categories } = (await getAllCategories()) as {
@@ -122,7 +122,6 @@ export default async function SiteHeader() {
                 </div>
               </NavigationMenuContent>
             </NavigationMenuItem>
-
           </NavigationMenuList>
 
           {/* Required viewport for proper popover rendering */}

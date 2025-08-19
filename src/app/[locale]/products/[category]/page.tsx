@@ -1,4 +1,4 @@
-import { getAllCategories, getProductsByCategorySlug } from "@/app/services";
+import { getAllCategories, getProductsByCategorySlug } from "@/services";
 import { Breadcrumbs } from "@/components/products/breadcrumbs";
 import { Category } from "@/lib/types";
 import Link from "next/link";

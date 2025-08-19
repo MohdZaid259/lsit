@@ -20,8 +20,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default:
-      "LS4IT – Advanced Technical Textile Solutions",
+    default: "LS4IT – Advanced Technical Textile Solutions",
     template: "%s | LS4IT",
   },
   icons: {
@@ -49,8 +48,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://LS4IT.com"),
   openGraph: {
     title: {
-      default:
-        "LS4IT - Advanced Technical Textile Solutions",
+      default: "LS4IT - Advanced Technical Textile Solutions",
       template: "%s | LS4IT",
     },
     description:
@@ -71,13 +69,12 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: {
-      default:
-        "LS4IT - Advanced Technical Textile Solutions",
+      default: "LS4IT - Advanced Technical Textile Solutions",
       template: "%s | LS4IT",
     },
     description:
       "High-performance fabrics for defense, outdoor, and industrial use. Fire-resistant, UV-protected, waterproof, and breathable.",
-  images: ["/public/logo/preview.jpg"],
+    images: ["/public/logo/preview.jpg"],
   },
   alternates: {
     canonical: "https://LS4IT.com",
