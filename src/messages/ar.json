@@ -204,6 +204,33 @@
     }
   },
 
+  "Product": {
+    "overview": "نظرة عامة",
+    "description": "نسيج عالي الأداء مصمم للمتانة والراحة والمطابقة في البيئات الصعبة.",
+    "fabric": "القماش",
+    "finish": "التشطيب",
+    "compliance": "المطابقة",
+    "useCase": "الاستخدام",
+    "notSpecified": "غير محدد",
+    "standard": "قياسي",
+    "defaultCompliance": "ISO 9001, ISO 14001",
+    "defaultUseCase": "استخدام عام",
+    "needDatasheet": "تحتاج إلى نشرات بيانات أو عينات؟",
+    "contactForSpecs": "تواصل مع فريقنا للحصول على المواصفات التفصيلية وتقارير المطابقة.",
+    "contactSales": "تواصل مع المبيعات"
+  },
+
+  "Products": {
+    "title": "المنتجات",
+    "subtitle": "تصفح الفئات واستكشف مجموعتنا.",
+    "categories": "الفئات",
+    "noCategories": "لا توجد فئات متاحة",
+    "noCategoriesDesc": "نعمل على إضافة المنتجات قريبًا. يرجى التحقق لاحقًا.",
+    "noProductsInSubcategory": "لا توجد منتجات في هذه الفئة الفرعية حتى الآن.",
+    "noSubcategories": "لا توجد فئات فرعية متاحة لهذه الفئة.",
+    "exploreCategory": "استكشف منتجات {name}."
+  },
+
   "Header": {
     "about": "من نحن",
     "ourServices": "خدماتنا",
@@ -358,6 +385,11 @@
         }
       ]
     }
+  },
+
+  "Breadcrumbs": {
+    "home": "الرئيسية",
+    "products": "المنتجات"
   },
 
   "NotFound": {

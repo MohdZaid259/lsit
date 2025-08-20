@@ -4,21 +4,26 @@ import { Category } from "@/lib/types";
 import Link from "next/link";
 import { SafeImage } from "@/components/ui/safe-image";
 import { notFound } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 export async function generateStaticParams() {
   const res = (await getAllCategories()) as { categories: { slug: string }[] };
   const cats = res?.categories || [];
-  return cats.map((c) => ({ category: c.slug }));
+  // Add locale to params for static generation
+  return cats.flatMap((c) => [
+    { category: c.slug, locale: "en" },
+    { category: c.slug, locale: "ar" },
+  ]);
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ category: string }>;
+  params: Promise<{ category: string; locale: "en" | "ar" }>;
 }) {
-  const { category: categoryParam } = await params;
+  const { category: categoryParam, locale } = await params;
 
-  const res = (await getProductsByCategorySlug(categoryParam)) as {
+  const res = (await getProductsByCategorySlug(categoryParam, locale)) as {
     category: Category;
   };
 
@@ -46,10 +51,11 @@ export async function generateMetadata({
 export default async function CategoryPage({
   params,
 }: {
-  readonly params: Promise<{ category: string }>;
+  readonly params: Promise<{ category: string; locale: "en" | "ar" }>;
 }) {
-  const { category: categoryParam } = await params;
-  const { category } = (await getProductsByCategorySlug(categoryParam)) as {
+  const t = useTranslations("Products");
+  const { category: categoryParam, locale } = await params;
+  const { category } = (await getProductsByCategorySlug(categoryParam, locale)) as {
     category: Category;
   };
 
@@ -59,7 +65,7 @@ export default async function CategoryPage({
 
   return (
     <div className="space-y-6">
-      <Breadcrumbs />
+      <Breadcrumbs locale={locale}/>
 
       {/* Category Header */}
       <header className="rounded-xl overflow-hidden border">
@@ -81,7 +87,7 @@ export default async function CategoryPage({
               {category.name}
             </h1>
             <p className="text-sm text-white">
-              {category.description || `Explore ${category.name} products.`}
+              {category.description || t("exploreCategory", { name: category.name })}
             </p>
           </div>
         </div>
@@ -142,14 +148,14 @@ export default async function CategoryPage({
                 </div>
               ) : (
                 <div className="text-sm text-muted-foreground border rounded-md p-4">
-                  No products yet in this subcategory.
+                  {t("noProductsInSubcategory")}
                 </div>
               )}
             </section>
           ))
         ) : (
           <div className="text-sm text-muted-foreground border rounded-md p-4">
-            No subcategories available for this category.
+            {t("noSubcategories")}
           </div>
         )}
       </div>

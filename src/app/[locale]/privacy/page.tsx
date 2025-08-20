@@ -1,5 +1,5 @@
 import React from 'react'
-import { privacyPolicy } from '../../../public/footer'
+import { privacyPolicy } from '../../../../public/footer'
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

@@ -1,12 +1,12 @@
 import { GraphQLClient, gql } from "graphql-request";
 
-const client = new GraphQLClient(process.env.HYGRAPH_API || "");
+const client = new GraphQLClient(process.env.HYGRAPH_API!);
 
 // Get all categories
-export async function getAllCategories() {
+export async function getAllCategories(locale: "en" | "ar" = "en") {
   const query = gql`
-    {
-      categories {
+    query GetAllCategories($locale: Locale!) {
+      categories(locales: [$locale, en]) {
         name
         slug
         image {
@@ -22,14 +22,17 @@ export async function getAllCategories() {
       }
     }
   `;
-  return client.request(query);
+  return client.request(query, { locale });
 }
 
 // Get all products for a specific category
-export async function getProductsByCategorySlug(slug: string) {
+export async function getProductsByCategorySlug(
+  slug: string,
+  locale: "en" | "ar" = "en"
+) {
   const query = gql`
-    query ProductsByCategory($slug: String!) {
-      category(where: { slug: $slug }) {
+    query ProductsByCategory($slug: String!, $locale: Locale!) {
+      category(where: { slug: $slug }, locales: [$locale, en]) {
         name
         slug
         description
@@ -51,14 +54,17 @@ export async function getProductsByCategorySlug(slug: string) {
       }
     }
   `;
-  return client.request(query, { slug });
+  return client.request(query, { slug, locale });
 }
 
-// get specific product by slug
-export async function getProductBySubCategorySlug(slug: string) {
+// Get specific product by slug
+export async function getProductBySubCategorySlug(
+  slug: string,
+  locale: "en" | "ar" = "en"
+) {
   const query = gql`
-    query ProductDetail($slug: String!) {
-      product(where: { slug: $slug }) {
+    query ProductDetail($slug: String!, $locale: Locale!) {
+      product(where: { slug: $slug }, locales: [$locale, en]) {
         name
         slug
         description
@@ -81,17 +87,18 @@ export async function getProductBySubCategorySlug(slug: string) {
       }
     }
   `;
-  return client.request(query, { slug });
+  return client.request(query, { slug, locale });
 }
 
-export async function getAllProducts() {
+// Get all products (names + slugs)
+export async function getAllProducts(locale: "en" | "ar" = "en") {
   const query = gql`
-    {
-      products {
+    query GetAllProducts($locale: Locale!) {
+      products(locales: [$locale, en]) {
         name
         slug
       }
     }
   `;
-  return client.request(query);
+  return client.request(query, { locale });
 }

@@ -3,7 +3,8 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { PackageX } from "lucide-react";
 import { SafeImage } from "@/components/ui/safe-image";
-import { getAllCategories } from "../services";
+import { getAllCategories } from "@/services";
+import { useTranslations } from "next-intl";
 
 export const dynamic = "force-static";
 
@@ -29,8 +30,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function ProductsPage() {
-  const data = (await getAllCategories()) as { categories: Category[] };
+export default async function ProductsPage({
+  params,
+}:{
+  readonly params: { locale: "en" | "ar" };
+}) {
+  const t = useTranslations("Products")
+  const locale = params.locale;
+  const data = (await getAllCategories(locale)) as { categories: Category[] };
 
   const categories = data.categories.map((cat) => ({
     key: cat.slug,
@@ -59,10 +66,10 @@ export default async function ProductsPage() {
 
           <div className="absolute bottom-4 left-4 right-4">
             <h1 className="text-2xl md:text-3xl font-semibold text-white">
-              Products
+              {t("title")}
             </h1>
             <p className="text-sm text-white">
-              Browse categories and explore our portfolio.
+              {t("subtitle")}
             </p>
           </div>
         </div>
@@ -104,10 +111,10 @@ export default async function ProductsPage() {
         <div className="flex flex-col items-center justify-center py-16 text-center border rounded-xl">
           <PackageX className="mb-6 h-16 w-16 text-muted-foreground" />
           <h2 className="text-lg font-medium text-foreground">
-            No categories available
+            {t("noCategories")}
           </h2>
           <p className="text-sm text-muted-foreground max-w-sm mt-2">
-            We’re working on adding products soon. Please check back later.
+            {t("noCategoriesDesc")}
           </p>
         </div>
       )}

@@ -22,14 +22,16 @@ export const metadata: Metadata = {
 
 export default function ProductsLayout({
   children,
+  params,
 }: {
   readonly children: React.ReactNode;
+  readonly params: { locale: "en" | "ar" }
 }) {
   return (
     <div className="px-4 md:px-6 py-6 md:mx-16 mx-0">
       {/* Responsive grid: sidebar + main; sidebar hidden < 720px */}
       <div className="grid gap-6 min-[720px]:grid-cols-[260px_1fr]">
-        <ProductsAside />
+        <ProductsAside locale={params.locale}/>
         {children}
       </div>
     </div>

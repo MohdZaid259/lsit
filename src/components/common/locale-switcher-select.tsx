@@ -1,19 +1,26 @@
 "use client";
 
-import { ChangeEvent, ReactNode, useTransition } from "react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { useTransition } from "react";
 import { usePathname, useRouter } from "@/i18n/navigation";
-
+import { Globe } from "lucide-react";
 import { useParams } from "next/navigation";
 
 type Props = {
-  children: ReactNode;
   defaultValue: string;
+  locales: { value: string; label: string }[];
   label: string;
 };
 
 export default function LocaleSwitcherSelect({
-  children,
   defaultValue,
+  locales,
   label,
 }: Readonly<Props>) {
   const router = useRouter();
@@ -21,8 +28,7 @@ export default function LocaleSwitcherSelect({
   const pathname = usePathname();
   const params = useParams();
 
-  function onSelectChange(event: ChangeEvent<HTMLSelectElement>) {
-    const nextLocale = event.target.value;
+  function onSelectChange(nextLocale: string) {
     startTransition(() => {
       router.replace(
         // @ts-expect-error -- Valid combo of pathname + params
@@ -33,16 +39,24 @@ export default function LocaleSwitcherSelect({
   }
 
   return (
-    <label className="relative inline-flex items-center gap-2 text-sm font-medium text-slate-700">
-      <span className="sr-only">{label}</span>
-      <select
-        className="py-2 px-1 w-full border rounded-md"
-        defaultValue={defaultValue}
-        disabled={isPending}
-        onChange={onSelectChange}
+    <Select defaultValue={defaultValue} onValueChange={onSelectChange}>
+      <SelectTrigger
+        className="w-full flex items-center gap-2 rounded-lg border border-slate-300 bg-white shadow-sm px-3 focus:ring-2 focus:ring-primary/70"
       >
-        {children}
-      </select>
-    </label>
+        <Globe className="w-6 h-6 text-slate-700" />
+        <div className="inline-block md:hidden"><SelectValue placeholder={label} /></div>
+      </SelectTrigger>
+      <SelectContent className="rounded-lg mt-2 shadow-lg border border-slate-200 bg-white">
+        {locales.map((locale) => (
+          <SelectItem
+            key={locale.value}
+            value={locale.value}
+            className="cursor-pointer hover:bg-slate-100 focus:bg-slate-100"
+          >
+            {locale.label}
+          </SelectItem>
+        ))}
+      </SelectContent>
+    </Select>
   );
 }

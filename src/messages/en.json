@@ -333,6 +333,33 @@
     }
   },
 
+  "Product": {
+    "overview": "Overview",
+    "description": "High-performance textile engineered for durability, comfort, and compliance in demanding environments.",
+    "fabric": "Fabric",
+    "finish": "Finish",
+    "compliance": "Compliance",
+    "useCase": "Use case",
+    "notSpecified": "Not specified",
+    "standard": "Standard",
+    "defaultCompliance": "ISO 9001, ISO 14001",
+    "defaultUseCase": "General use",
+    "needDatasheet": "Need datasheets or samples?",
+    "contactForSpecs": "Contact our team for detailed specifications and compliance reports.",
+    "contactSales": "Contact Sales"
+  },
+
+  "Products": {
+    "title": "Products",
+    "subtitle": "Browse categories and explore our portfolio.",
+    "categories": "Categories",
+    "noCategories": "No categories available",
+    "noCategoriesDesc": "We’re working on adding products soon. Please check back later.",
+    "noProductsInSubcategory": "No products yet in this subcategory.",
+    "noSubcategories": "No subcategories available for this category.",
+    "exploreCategory": "Explore {name} products."
+  },
+  
   "Header": {
     "about": "About",
     "ourServices": "Our Services",
@@ -358,6 +385,11 @@
     "privacy": "Privacy",
     "terms": "Terms",
     "sitemap": "Sitemap"
+  },
+
+  "Breadcrumbs": {
+    "home": "Home",
+    "products": "Products"
   },
 
   "Newsletter": {

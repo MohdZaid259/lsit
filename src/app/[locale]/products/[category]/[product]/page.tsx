@@ -6,13 +6,14 @@ import { Product } from "@/lib/types";
 import { ProductGallery } from "@/components/products/product-gallery";
 import { SafeImage } from "@/components/ui/safe-image";
 import { notFound } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 export async function generateStaticParams() {
   const res = (await getAllProducts()) as { products: Product[] };
-
   return (
     res.products.map((p: Product) => ({
       product: p.slug,
+      locale: 'en'
     })) || []
   );
 }
@@ -20,11 +21,11 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ product: string }>;
+  params: Promise<{ product: string; locale: "en" | "ar" }>;
 }): Promise<Metadata> {
-  const { product: productSlug } = await params;
+  const { product: productSlug, locale } = await params;
 
-  const { product } = (await getProductBySubCategorySlug(productSlug)) as {
+  const { product } = (await getProductBySubCategorySlug(productSlug, locale)) as {
     product: Product;
   };
 
@@ -54,11 +55,12 @@ export async function generateMetadata({
 export default async function ProductDetailPage({
   params,
 }: {
-  readonly params: Promise<{ product: string }>;
+  readonly params: Promise<{ product: string; locale: "en" | "ar" }>;
 }) {
-  const { product: ProductSlug } = await params;
+  const t = useTranslations("Product");
+  const { product: ProductSlug, locale } = await params;
 
-  const { product } = (await getProductBySubCategorySlug(ProductSlug)) as {
+  const { product } = (await getProductBySubCategorySlug(ProductSlug, locale)) as {
     product: Product;
   };
 
@@ -68,7 +70,7 @@ export default async function ProductDetailPage({
 
   return (
     <div className="space-y-6">
-      <Breadcrumbs />
+      <Breadcrumbs locale={locale} />
       <header className="rounded-xl overflow-hidden border">
         <div className="relative h-40 sm:h-48 md:h-72">
           <SafeImage
@@ -104,11 +106,10 @@ export default async function ProductDetailPage({
         <aside className="space-y-5">
           <div>
             <h2 className="text-base font-semibold text-foreground">
-              Overview
+              {t("overview")}
             </h2>
             <p className="mt-2 text-sm text-muted-foreground">
-              {product.description ||
-                "High-performance textile engineered for durability, comfort, and compliance in demanding environments."}
+              {t("description")}
             </p>
           </div>
 
@@ -119,7 +120,7 @@ export default async function ProductDetailPage({
               <div className="text-sm font-medium text-foreground">
                 {Array.isArray(product.fabric) && product.fabric.length > 0
                   ? product.fabric.join(", ")
-                  : "Not specified"}
+                  : t("notSpecified")}
               </div>
             </div>
 
@@ -127,7 +128,7 @@ export default async function ProductDetailPage({
             <div className="rounded-md border p-3">
               <div className="text-xs text-muted-foreground">Finish</div>
               <div className="text-sm font-medium text-foreground">
-                {product.finish || "Standard"}
+                {product.finish || t("standard")}
               </div>
             </div>
 
@@ -138,7 +139,7 @@ export default async function ProductDetailPage({
                 {Array.isArray(product.compliance) &&
                 product.compliance.length > 0
                   ? product.compliance.join(", ")
-                  : "ISO 9001, ISO 14001"}
+                  : t("defaultCompliance")}
               </div>
             </div>
 
@@ -148,24 +149,23 @@ export default async function ProductDetailPage({
               <div className="text-sm font-medium text-foreground">
                 {Array.isArray(product.useCase) && product.useCase.length > 0
                   ? product.useCase.join(", ")
-                  : "General use"}
+                  : t("defaultUseCase")}
               </div>
             </div>
           </div>
 
           <div className="rounded-md border p-4">
             <div className="text-sm font-semibold text-foreground">
-              Need datasheets or samples?
+              {t("needDatasheet")}
             </div>
             <p className="text-xs text-muted-foreground mt-1">
-              Contact our team for detailed specifications and compliance
-              reports.
+              {t("contactForSpecs")}
             </p>
             <Link
               href="/#contact"
               className="inline-flex mt-3 h-9 items-center justify-center rounded-md bg-primary px-3 text-primary-foreground hover:opacity-90 transition"
             >
-              Contact Sales
+              {t("contactSales")}
             </Link>
           </div>
         </aside>
