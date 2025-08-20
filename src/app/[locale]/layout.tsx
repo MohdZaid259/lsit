@@ -3,6 +3,7 @@ import "../globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Locale, NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+
 import { Metadata } from "next";
 import { ReactNode } from "react";
 import SiteFooter from "@/components/site-footer";
@@ -123,11 +124,11 @@ export default async function LocaleLayout({
         <NextIntlClientProvider>
           <VideoIntro />
 
-          <SiteHeader />
+          <SiteHeader locale={locale} />
           <main className="min-h-[100vh] bg-white text-muted-foreground">
             {children}
           </main>
-          <SiteFooter />
+          <SiteFooter locale={locale} />
           <Toaster />
         </NextIntlClientProvider>
       </body>

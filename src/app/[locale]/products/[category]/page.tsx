@@ -1,4 +1,5 @@
 import { getAllCategories, getProductsByCategorySlug } from "@/services";
+
 import { Breadcrumbs } from "@/components/products/breadcrumbs";
 import { Category } from "@/lib/types";
 import Link from "next/link";
@@ -55,7 +56,11 @@ export default async function CategoryPage({
 }) {
   const t = useTranslations("Products");
   const { category: categoryParam, locale } = await params;
-  const { category } = (await getProductsByCategorySlug(categoryParam, locale)) as {
+
+  const { category } = (await getProductsByCategorySlug(
+    categoryParam,
+    locale
+  )) as {
     category: Category;
   };
 
@@ -65,7 +70,7 @@ export default async function CategoryPage({
 
   return (
     <div className="space-y-6">
-      <Breadcrumbs locale={locale}/>
+      <Breadcrumbs locale={locale} />
 
       {/* Category Header */}
       <header className="rounded-xl overflow-hidden border">
@@ -87,7 +92,8 @@ export default async function CategoryPage({
               {category.name}
             </h1>
             <p className="text-sm text-white">
-              {category.description || t("exploreCategory", { name: category.name })}
+              {category.description ||
+                t("exploreCategory", { name: category.name })}
             </p>
           </div>
         </div>

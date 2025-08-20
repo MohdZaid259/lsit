@@ -18,10 +18,14 @@ import MobileMenu from "./mobile-menu";
 import { getAllCategories } from "@/services";
 import { useTranslations } from "next-intl";
 
-export default async function SiteHeader() {
+export default async function SiteHeader({
+  locale = "en",
+}: {
+  readonly locale: "en" | "ar";
+}) {
   const t = useTranslations("Header");
 
-  const { categories } = (await getAllCategories()) as {
+  const { categories } = (await getAllCategories(locale)) as {
     categories: Category[];
   };
 

@@ -1,7 +1,6 @@
-
+import type { Metadata } from "next";
 import { ProductsAside } from "@/components/products/products-aside";
 import type React from "react";
-import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   openGraph: {
@@ -20,18 +19,20 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ProductsLayout({
+export default async function ProductsLayout({
   children,
   params,
 }: {
   readonly children: React.ReactNode;
-  readonly params: { locale: "en" | "ar" }
+  readonly params: Promise<{ locale: "en" | "ar" }>;
 }) {
+  const { locale } = await params;
+
   return (
     <div className="px-4 md:px-6 py-6 md:mx-16 mx-0">
       {/* Responsive grid: sidebar + main; sidebar hidden < 720px */}
       <div className="grid gap-6 min-[720px]:grid-cols-[260px_1fr]">
-        <ProductsAside locale={params.locale}/>
+        <ProductsAside locale={locale} />
         {children}
       </div>
     </div>

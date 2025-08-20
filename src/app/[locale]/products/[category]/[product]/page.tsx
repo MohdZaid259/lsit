@@ -1,4 +1,5 @@
 import { getAllProducts, getProductBySubCategorySlug } from "@/services";
+
 import { Breadcrumbs } from "@/components/products/breadcrumbs";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -13,7 +14,7 @@ export async function generateStaticParams() {
   return (
     res.products.map((p: Product) => ({
       product: p.slug,
-      locale: 'en'
+      locale: "en",
     })) || []
   );
 }
@@ -25,7 +26,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { product: productSlug, locale } = await params;
 
-  const { product } = (await getProductBySubCategorySlug(productSlug, locale)) as {
+  const { product } = (await getProductBySubCategorySlug(
+    productSlug,
+    locale
+  )) as {
     product: Product;
   };
 
@@ -60,7 +64,10 @@ export default async function ProductDetailPage({
   const t = useTranslations("Product");
   const { product: ProductSlug, locale } = await params;
 
-  const { product } = (await getProductBySubCategorySlug(ProductSlug, locale)) as {
+  const { product } = (await getProductBySubCategorySlug(
+    ProductSlug,
+    locale
+  )) as {
     product: Product;
   };
 

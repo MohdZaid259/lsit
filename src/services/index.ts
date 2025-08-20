@@ -12,10 +12,10 @@ export async function getAllCategories(locale: "en" | "ar" = "en") {
         image {
           url
         }
-        subCategories {
+        subCategories(locales: [$locale, en]) {
           name
           slug
-          products {
+          products(locales: [$locale, en]) {
             name
           }
         }
@@ -94,7 +94,7 @@ export async function getProductBySubCategorySlug(
 export async function getAllProducts(locale: "en" | "ar" = "en") {
   const query = gql`
     query GetAllProducts($locale: Locale!) {
-      products(locales: [$locale, en]) {
+      products(first: 100, locales: [$locale, en]) {
         name
         slug
       }

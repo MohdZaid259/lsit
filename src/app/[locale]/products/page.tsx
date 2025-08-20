@@ -32,11 +32,11 @@ export const metadata: Metadata = {
 
 export default async function ProductsPage({
   params,
-}:{
-  readonly params: { locale: "en" | "ar" };
+}: {
+  readonly params: Promise<{ locale: "en" | "ar" }>;
 }) {
-  const t = useTranslations("Products")
-  const locale = params.locale;
+  const t = useTranslations("Products");
+  const { locale } = await params;
   const data = (await getAllCategories(locale)) as { categories: Category[] };
 
   const categories = data.categories.map((cat) => ({
@@ -68,9 +68,7 @@ export default async function ProductsPage({
             <h1 className="text-2xl md:text-3xl font-semibold text-white">
               {t("title")}
             </h1>
-            <p className="text-sm text-white">
-              {t("subtitle")}
-            </p>
+            <p className="text-sm text-white">{t("subtitle")}</p>
           </div>
         </div>
       </header>

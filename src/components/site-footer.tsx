@@ -1,4 +1,5 @@
 import { Mail, MapPin, Phone } from "lucide-react";
+
 import { Category } from "@/lib/types";
 import Link from "next/link";
 import Logo from "./logo";
@@ -28,11 +29,15 @@ const contactInfo = [
   },
 ];
 
-export default async function SiteFooter() {
+export default async function SiteFooter({
+  locale = "en",
+}: {
+  readonly locale: "en" | "ar";
+}) {
   const t = useTranslations("Footer");
   const th = useTranslations("Header");
-  
-  const { categories } = (await getAllCategories()) as {
+
+  const { categories } = (await getAllCategories(locale)) as {
     categories: Category[];
   };
 
@@ -84,9 +89,7 @@ export default async function SiteFooter() {
               <h1 className="text-xl font-bold text-black tracking-wide">
                 {t("brand")}
               </h1>
-              <p className="mt-2 text-sm text-primary">
-                {t("brandDesc")}
-              </p>
+              <p className="mt-2 text-sm text-primary">{t("brandDesc")}</p>
             </div>
           </div>
 
@@ -143,8 +146,7 @@ export default async function SiteFooter() {
           </div>
           <div className="sm:ml-auto flex items-center gap-4">
             {["privacy", "terms", "sitemap"].map((item) => {
-              const path =
-                item === "sitemap" ? "/sitemap.xml" : `/${item}`;
+              const path = item === "sitemap" ? "/sitemap.xml" : `/${item}`;
               return (
                 <Link
                   key={item}
