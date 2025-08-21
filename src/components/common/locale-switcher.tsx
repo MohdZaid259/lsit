@@ -1,4 +1,5 @@
 import { useLocale, useTranslations } from "next-intl";
+
 import LocaleSwitcherSelect from "./locale-switcher-select";
 import { routing } from "@/i18n/routing";
 
@@ -12,6 +13,10 @@ export default function LocaleSwitcher() {
   }));
 
   return (
-    <LocaleSwitcherSelect defaultValue={locale} locales={locales} label={t("label")}/>
+    <LocaleSwitcherSelect
+      defaultValue={locale}
+      locales={locales}
+      label={t("label")}
+    />
   );
 }
