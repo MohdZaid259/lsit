@@ -5,7 +5,7 @@ import { Category } from "@/lib/types";
 import Link from "next/link";
 import { SafeImage } from "@/components/ui/safe-image";
 import { notFound } from "next/navigation";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 export async function generateStaticParams() {
   const res = (await getAllCategories()) as { categories: { slug: string }[] };
@@ -20,7 +20,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ category: string; locale: "en" | "ar" }>;
+  params: { category: string; locale: "en" | "ar" };
 }) {
   const { category: categoryParam, locale } = await params;
 
@@ -52,11 +52,11 @@ export async function generateMetadata({
 export default async function CategoryPage({
   params,
 }: {
-  readonly params: Promise<{ category: string; locale: "en" | "ar" }>;
+  params: { category: string; locale: "en" | "ar" };
 }) {
-  const t = useTranslations("Products");
-  const { category: categoryParam, locale } = await params;
+  const { category: categoryParam, locale } = await params; 
 
+  const t = await getTranslations({ locale, namespace: "Products" });
   const { category } = (await getProductsByCategorySlug(
     categoryParam,
     locale

@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import { PackageX } from "lucide-react";
 import { SafeImage } from "@/components/ui/safe-image";
 import { getAllCategories } from "@/services";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server"
 
 export const dynamic = "force-static";
 
@@ -33,10 +33,11 @@ export const metadata: Metadata = {
 export default async function ProductsPage({
   params,
 }: {
-  readonly params: Promise<{ locale: "en" | "ar" }>;
+  params: { locale: "en" | "ar" };
 }) {
-  const t = useTranslations("Products");
-  const { locale } = await params;
+  const { locale } = await params; 
+
+  const t = await getTranslations({ locale, namespace: "Products" });
   const data = (await getAllCategories(locale)) as { categories: Category[] };
 
   const categories = data.categories.map((cat) => ({

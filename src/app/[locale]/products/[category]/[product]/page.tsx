@@ -7,7 +7,7 @@ import { Product } from "@/lib/types";
 import { ProductGallery } from "@/components/products/product-gallery";
 import { SafeImage } from "@/components/ui/safe-image";
 import { notFound } from "next/navigation";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 export async function generateStaticParams() {
   const res = (await getAllProducts()) as { products: Product[] };
@@ -22,7 +22,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ product: string; locale: "en" | "ar" }>;
+  params: { product: string; locale: "en" | "ar" };
 }): Promise<Metadata> {
   const { product: productSlug, locale } = await params;
 
@@ -59,13 +59,13 @@ export async function generateMetadata({
 export default async function ProductDetailPage({
   params,
 }: {
-  readonly params: Promise<{ product: string; locale: "en" | "ar" }>;
+  params: { product: string; locale: "en" | "ar" };
 }) {
-  const t = useTranslations("Product");
-  const { product: ProductSlug, locale } = await params;
-
+  const { product: productSlug, locale } = await params; 
+  
+  const t = await getTranslations({ locale, namespace: "Product" });
   const { product } = (await getProductBySubCategorySlug(
-    ProductSlug,
+    productSlug,
     locale
   )) as {
     product: Product;
