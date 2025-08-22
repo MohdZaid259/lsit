@@ -7,10 +7,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useTransition } from "react";
 import { usePathname, useRouter } from "@/i18n/navigation";
+
 import { Globe } from "lucide-react";
 import { useParams } from "next/navigation";
+import { useTransition } from "react";
 
 type Props = {
   defaultValue: string;
@@ -40,11 +41,11 @@ export default function LocaleSwitcherSelect({
 
   return (
     <Select defaultValue={defaultValue} onValueChange={onSelectChange}>
-      <SelectTrigger
-        className="w-full flex items-center gap-2 rounded-lg border border-slate-300 bg-white shadow-sm px-3 focus:ring-2 focus:ring-primary/70"
-      >
+      <SelectTrigger className="w-full flex items-center gap-2 rounded-lg border border-slate-300 bg-white shadow-sm px-3 focus:ring-2 focus:ring-primary/70">
         <Globe className="w-6 h-6 text-slate-700" />
-        <div className="inline-block md:hidden"><SelectValue placeholder={label} /></div>
+        <div className="inline-block md:hidden">
+          <SelectValue placeholder={label} />
+        </div>
       </SelectTrigger>
       <SelectContent className="z-[999] rounded-lg mt-2 shadow-lg border border-slate-200 bg-white">
         {locales.map((locale) => (
