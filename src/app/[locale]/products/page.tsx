@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { Category } from "@/lib/types";
 import Link from "next/link";
 import { Metadata } from "next";
@@ -5,8 +7,6 @@ import { PackageX } from "lucide-react";
 import { SafeImage } from "@/components/ui/safe-image";
 import { getAllCategories } from "@/services";
 import { getTranslations } from "next-intl/server"
-
-export const dynamic = "force-static";
 
 export const metadata: Metadata = {
   title: "Products",
@@ -30,11 +30,13 @@ export const metadata: Metadata = {
   },
 };
 
+interface CategoryProps {
+  params: Promise<{ locale: "en" | "ar" }>;
+}
+
 export default async function ProductsPage({
   params,
-}: {
-  params: { locale: "en" | "ar" };
-}) {
+}: CategoryProps) {
   const { locale } = await params; 
 
   const t = await getTranslations({ locale, namespace: "Products" });

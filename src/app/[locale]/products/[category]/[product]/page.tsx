@@ -1,5 +1,6 @@
-import { getAllProducts, getProductBySubCategorySlug } from "@/services";
+export const dynamic = "force-dynamic";
 
+import { getAllProducts, getProductBySubCategorySlug } from "@/services";
 import { Breadcrumbs } from "@/components/products/breadcrumbs";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -12,55 +13,20 @@ import { getTranslations } from "next-intl/server";
 export async function generateStaticParams() {
   const res = (await getAllProducts()) as { products: Product[] };
   return (
-    res.products.map((p: Product) => ({
-      product: p.slug,
-      locale: "en",
-    })) || []
+    res.products.flatMap((p) => [
+      { product: p.slug, locale: "en" },
+      { product: p.slug, locale: "ar" },
+    ])
   );
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { product: string; locale: "en" | "ar" };
-}): Promise<Metadata> {
-  const { product: productSlug, locale } = await params;
-
-  const { product } = (await getProductBySubCategorySlug(
-    productSlug,
-    locale
-  )) as {
-    product: Product;
-  };
-
-  if (!product) {
-    return {
-      title: "Product Not Found",
-    };
-  }
-
-  return {
-    title: `${product.name}`,
-    description:
-      product.description ||
-      `Learn more about ${product.name} from our premium product catalog.`,
-    openGraph: {
-      title: product.name,
-      description:
-        product.description ||
-        `Discover more about ${product.name} in our collection.`,
-      images: product.gallery?.length
-        ? product.gallery.map((img) => ({ url: img.url }))
-        : [],
-    },
-  };
+interface ProjectDetailsProps {
+  params: Promise<{ product: string; locale: "en" | "ar" }>;
 }
 
 export default async function ProductDetailPage({
   params,
-}: {
-  params: { product: string; locale: "en" | "ar" };
-}) {
+}: ProjectDetailsProps) {
   const { product: productSlug, locale } = await params; 
   
   const t = await getTranslations({ locale, namespace: "Product" });

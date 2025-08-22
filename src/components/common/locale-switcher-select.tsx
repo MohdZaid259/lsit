@@ -46,7 +46,7 @@ export default function LocaleSwitcherSelect({
         <Globe className="w-6 h-6 text-slate-700" />
         <div className="inline-block md:hidden"><SelectValue placeholder={label} /></div>
       </SelectTrigger>
-      <SelectContent className="rounded-lg mt-2 shadow-lg border border-slate-200 bg-white">
+      <SelectContent className="z-[999] rounded-lg mt-2 shadow-lg border border-slate-200 bg-white">
         {locales.map((locale) => (
           <SelectItem
             key={locale.value}

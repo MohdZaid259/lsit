@@ -4,8 +4,30 @@ import Link from "next/link";
 import NewsletterSignup from "./newsletter";
 import company from "../../public/company.webp";
 import dynamic from "next/dynamic";
-import { values } from "../../public/aboutData";
 import { useTranslations } from "next-intl";
+import antibacterial from '/public/technology/icons/antibacterial.jpg'
+import climate from '/public/technology/icons/climate.jpg'
+import weather from '/public/technology/icons/weather.jpg'
+import reflective from '/public/technology/icons/reflective.png'
+import military from '/public/technology/icons/military.jpg'
+
+const values = [
+    {
+      icon: reflective
+    },
+    {
+      icon: antibacterial
+    },
+    {
+      icon: climate
+    },
+    {
+      icon: military
+    },
+    {
+      icon: weather
+    }
+  ]
 
 const ScrollAnimation = dynamic(() => import("./scroll-animation"));
 

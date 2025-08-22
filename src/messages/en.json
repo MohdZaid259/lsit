@@ -197,9 +197,11 @@
       "title": "Fabric Technologies",
       "desc": "At LS4IT, innovation begins at the fiber level. Instead of applying performance features as afterthoughts, we integrate technology directly into the fabric structure, ensuring durability, consistency, and maximum efficiency in real-world use.",
       "items": [
-        { "title": "Value 1", "desc": "Description for value 1." },
-        { "title": "Value 2", "desc": "Description for value 2." },
-        { "title": "Value 3", "desc": "Description for value 3." }
+        { "title": "Reflective Fiber Technology", "desc": "Enhances visibility and safety for applications like car covers, military uniforms, and police gear, even in low-light or high-risk conditions." },
+        { "title": "Antibacterial & Antimicrobial", "desc": "Integrated into fabrics for surgeon gowns, doctor coats, and medical scrubs, preventing bacterial growth and maintaining hygiene over extended use." },
+        { "title": "Climate-Control Performance", "desc": "Uses passive cooling and UV-reflective properties to reduce heat buildup in tents, protective uniforms, enhancing comfort in extreme temperatures." },
+        { "title": "Industrial-Grade Protection", "desc": "Durable fibers resistant to abrasion, tearing, and environmental wear, tailored for industrial worker uniforms operating in high-stress conditions." },
+        { "title": "All-Weather Resistance", "desc": "Fabrics engineered to be waterproof yet breathable, capable of performing in desert heat, heavy rain, and freezing cold without compromising flexibility." }
       ]
     }
   },
@@ -412,5 +414,13 @@
   "LocaleSwitcher": {
     "label": "Change language",
     "locale": "{locale, select, ar {🇸🇦 العربية} en {🇺🇸 English} other {Unknown}}"
+  },
+
+  "Privacy": {
+    "label":"something dummy ppoliyc"
+  },
+
+  "Terms": {
+    "label":"something dummy terms"
   }
 }

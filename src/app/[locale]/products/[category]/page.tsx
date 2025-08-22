@@ -1,11 +1,13 @@
-import { getAllCategories, getProductsByCategorySlug } from "@/services";
+export const dynamic = "force-dynamic";
 
+import { getAllCategories, getProductsByCategorySlug } from "@/services";
 import { Breadcrumbs } from "@/components/products/breadcrumbs";
 import { Category } from "@/lib/types";
 import Link from "next/link";
 import { SafeImage } from "@/components/ui/safe-image";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
+import { Metadata } from "next";
 
 export async function generateStaticParams() {
   const res = (await getAllCategories()) as { categories: { slug: string }[] };
@@ -19,9 +21,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}: {
-  params: { category: string; locale: "en" | "ar" };
-}) {
+}: CategoryDetailsProps): Promise<Metadata> {
   const { category: categoryParam, locale } = await params;
 
   const res = (await getProductsByCategorySlug(categoryParam, locale)) as {
@@ -49,11 +49,13 @@ export async function generateMetadata({
   };
 }
 
+interface CategoryDetailsProps {
+  params: Promise<{ category: string; locale: "en" | "ar" }>;
+}
+
 export default async function CategoryPage({
   params,
-}: {
-  params: { category: string; locale: "en" | "ar" };
-}) {
+}: CategoryDetailsProps) {
   const { category: categoryParam, locale } = await params; 
 
   const t = await getTranslations({ locale, namespace: "Products" });
