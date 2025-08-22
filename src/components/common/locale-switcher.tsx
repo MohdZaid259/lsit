@@ -1,9 +1,13 @@
+'use client'
 import { useLocale, useTranslations } from "next-intl";
-
 import LocaleSwitcherSelect from "./locale-switcher-select";
 import { routing } from "@/i18n/routing";
+import { usePathname } from "next/navigation";
 
 export default function LocaleSwitcher() {
+  const pathname = usePathname();
+
+  const isProductPage = pathname.includes("/products");
   const t = useTranslations("LocaleSwitcher");
   const locale = useLocale();
 
@@ -13,10 +17,12 @@ export default function LocaleSwitcher() {
   }));
 
   return (
-    <LocaleSwitcherSelect
+    <div className={`${isProductPage?'invisible':'visible'}`}> 
+      <LocaleSwitcherSelect
       defaultValue={locale}
       locales={locales}
       label={t("label")}
     />
+    </div>
   );
 }

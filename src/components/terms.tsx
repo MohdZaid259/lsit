@@ -1,63 +1,62 @@
+import { useTranslations } from 'next-intl'
 import React from 'react'
 
 function Terms() {
+  const t = useTranslations('Terms')
   return (
     <div className="mx-2 md:mx-16 my-4">
-      <h1 className="font-bold text-3xl mb-4">Terms of Service</h1>
+      <h1 className="font-bold text-3xl mb-4">{t("title")}</h1>
+
       <section>
-        <p><strong>Effective Date:</strong> 13 Aug, 2025</p>
-        <p>
-          Welcome to LS4IT (“we,” “our,” or “us”). By accessing or using our website, purchasing our products,
-          or engaging in business with us, you agree to be bound by these Terms &amp; Conditions. If you do not agree,
-          please do not use our services.
-        </p>
+        <p><strong>{t("effective_date")}</strong></p>
+        <p className="mb-6">{t("intro")}</p>
 
-        <h2>1. Products &amp; Services</h2>
-        <p>We supply and distribute fabrics and related products as described in our catalogs, quotations, and website.</p>
-        <p>All product descriptions, images, and specifications are for informational purposes only and may vary slightly due to production processes or material availability.</p>
+        <h2 className="font-semibold text-xl mt-6 mb-2">{t("1_title")}</h2>
+        <p>{t("1_text1")}</p>
+        <p>{t("1_text2")}</p>
 
-        <h2>2. Orders &amp; Payments</h2>
-        <ul>
-          <li>Orders are accepted subject to product availability and confirmation of payment terms.</li>
-          <li>Prices are stated in AED unless otherwise agreed, and may be subject to applicable taxes, duties, or shipping charges.</li>
-          <li>Payment terms will be communicated in writing. Delayed payments may incur interest or late fees as per applicable laws.</li>
+        <h2 className="font-semibold text-xl mt-6 mb-2">{t("2_title")}</h2>
+        <ul className="list-disc pl-6 space-y-2">
+          <li>{t("2_items.availability")}</li>
+          <li>{t("2_items.prices")}</li>
+          <li>{t("2_items.terms")}</li>
         </ul>
 
-        <h2>3. Shipping &amp; Delivery</h2>
-        <ul>
-          <li>We will make every effort to deliver orders within agreed timelines, but delivery dates are estimates and not guaranteed.</li>
-          <li>Risk of loss or damage passes to the buyer upon delivery to the shipping carrier or upon customer pickup.</li>
-          <li>Any shipping issues or damages must be reported within 7 days of delivery.</li>
+        <h2 className="font-semibold text-xl mt-6 mb-2">{t("3_title")}</h2>
+        <ul className="list-disc pl-6 space-y-2">
+          <li>{t("3_items.effort")}</li>
+          <li>{t("3_items.risk")}</li>
+          <li>{t("3_items.report")}</li>
         </ul>
 
-        <h2>4. Returns &amp; Exchanges</h2>
-        <ul>
-          <li>Returns are accepted only if agreed upon in writing and if products are unused, in original condition, and returned within 30 days of receipt.</li>
-          <li>Customized or made-to-order fabrics are non-returnable except in cases of manufacturing defects.</li>
+        <h2 className="font-semibold text-xl mt-6 mb-2">{t("4_title")}</h2>
+        <ul className="list-disc pl-6 space-y-2">
+          <li>{t("4_items.return_policy")}</li>
+          <li>{t("4_items.custom")}</li>
         </ul>
 
-        <h2>5. Intellectual Property</h2>
-        <p>All designs, patterns, trademarks, and brand materials are exclusive property and may not be copied, reproduced, or used without written permission.</p>
+        <h2 className="font-semibold text-xl mt-6 mb-2">{t("5_title")}</h2>
+        <p>{t("5_text")}</p>
 
-        <h2>6. Limitation of Liability</h2>
-        <p>To the fullest extent permitted by law, LS4IT shall not be liable for indirect, incidental, or consequential damages arising from the use of our products or services.</p>
-        <p>Our total liability for any claim will not exceed the total amount paid for the specific order in dispute.</p>
+        <h2 className="font-semibold text-xl mt-6 mb-2">{t("6_title")}</h2>
+        <p>{t("6_text1")}</p>
+        <p>{t("6_text2")}</p>
 
-        <h2>7. Force Majeure</h2>
-        <p>We are not responsible for delays or failures in performance caused by events beyond our reasonable control, including natural disasters, strikes, supply shortages, transport delays, or government actions.</p>
+        <h2 className="font-semibold text-xl mt-6 mb-2">{t("7_title")}</h2>
+        <p>{t("7_text")}</p>
 
-        <h2>8. Governing Law</h2>
-        <p>These Terms &amp; Conditions shall be governed by and interpreted in accordance with the laws of Ajman UAE, without regard to conflict of law principles.</p>
+        <h2 className="font-semibold text-xl mt-6 mb-2">{t("8_title")}</h2>
+        <p>{t("8_text")}</p>
 
-        <h2>9. Changes to Terms</h2>
-        <p>We may update these Terms &amp; Conditions from time to time. The latest version will be posted on our website with a revised effective date.</p>
+        <h2 className="font-semibold text-xl mt-6 mb-2">{t("9_title")}</h2>
+        <p>{t("9_text")}</p>
 
-        <h2>10. Contact Information</h2>
-        <address>
-          <strong>LS4IT</strong><br />
-          Ajman, UAE<br />
-          Email: <a href="mailto:info@ls4it.com">info@ls4it.com</a><br />
-          Phone: +971 52 666997
+        <h2 className="font-semibold text-xl mt-6 mb-2">{t("10_title")}</h2>
+        <address className="not-italic leading-relaxed">
+          <strong>{t("10_address.company")}</strong><br />
+          {t("10_address.location")}<br />
+          {t("10_address.email")}<br />
+          {t("10_address.phone")}
         </address>
       </section>
     </div>

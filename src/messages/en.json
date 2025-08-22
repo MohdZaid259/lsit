@@ -417,10 +417,121 @@
   },
 
   "Privacy": {
-    "label":"something dummy ppoliyc"
+  "title": "Privacy Policy",
+  "effective_date": "Effective Date: 13 Aug 2025",
+  "intro": "LS4IT (“we,” “our,” or “us”) values your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, store, and protect the information we receive from visitors, customers, and business partners in the course of our operations.",
+
+  "1_title": "1. Information We Collect",
+  "1_items": {
+    "personal": "Personal Information: Name, contact details (phone number, email address, mailing address), and other information you voluntarily provide when contacting us or placing an order.",
+    "business": "Business Information: Company name, billing address, and tax-related information when engaging in business transactions.",
+    "usage": "Website Usage Information: Data such as IP addresses, browser type, device type, pages visited, and cookies when you use our website.",
+    "order": "Order & Transaction Information: Records of fabric orders, invoices, payment details (processed securely via third-party payment processors), and delivery information."
   },
 
-  "Terms": {
-    "label":"something dummy terms"
+  "2_title": "2. How We Use Your Information",
+  "2_items": {
+    "orders": "To process and fulfill orders.",
+    "communication": "To communicate with you regarding inquiries, quotations, and customer support.",
+    "updates": "To send updates about our products, services, and company news (if you have opted in).",
+    "compliance": "To comply with legal and tax obligations.",
+    "improve": "To improve our website, services, and customer experience."
+  },
+
+  "3_title": "3. Sharing of Information",
+  "3_intro": "We do not sell, rent, or trade your personal information. We may share information in the following limited circumstances:",
+  "3_items": {
+    "providers": "Service Providers: With trusted third-party vendors who assist us with payment processing, shipping, IT services, or marketing, under strict confidentiality agreements.",
+    "legal": "Legal Requirements: When required by law, regulation, or legal process.",
+    "transfer": "Business Transfers: In the event of a merger, acquisition, or sale of company assets, your data may be transferred to the new ownership."
+  },
+
+  "4_title": "4. Data Retention",
+  "4_text": "We will retain your information only as long as necessary to fulfill the purposes outlined in this policy or as required by applicable laws.",
+
+  "5_title": "5. Data Security",
+  "5_text": "We implement industry-standard technical and organizational measures to safeguard your personal information against unauthorized access, use, or disclosure.",
+
+  "6_title": "6. Your Rights",
+  "6_intro": "Depending on your location, you may have rights under applicable data protection laws, such as:",
+  "6_items": {
+    "access": "Accessing the personal information we hold about you.",
+    "correction": "Requesting corrections to inaccurate or incomplete information.",
+    "deletion": "Requesting deletion of your data (subject to legal and contractual obligations).",
+    "optout": "Opting out of marketing communications at any time."
+  },
+
+  "7_title": "7. Cookies & Tracking Technologies",
+  "7_text": "Our website may use cookies and similar technologies to enhance user experience, analyze website performance, and provide tailored content. You can manage cookie settings through your browser.",
+
+  "8_title": "8. Third-Party Links",
+  "8_text": "Our website may contain links to third-party websites. We are not responsible for the privacy practices or content of these sites.",
+
+  "9_title": "9. Changes to This Privacy Policy",
+  "9_text": "We may update this Privacy Policy from time to time. Any changes will be posted on our website with a revised effective date.",
+
+  "10_title": "10. Contact Us",
+  "10_address": {
+    "company": "LS4IT",
+    "location": "Ajman, UAE",
+    "email": "Email: info@ls4it.com",
+    "phone": "Phone: 971 52 666997"
   }
+},
+
+"Terms":{
+  "title": "Terms of Service",
+  "effective_date": "Effective Date: 13 Aug, 2025",
+  "intro": "Welcome to LS4IT (“we,” “our,” or “us”). By accessing or using our website, purchasing our products, or engaging in business with us, you agree to be bound by these Terms & Conditions. If you do not agree, please do not use our services.",
+
+  "1_title": "1. Products & Services",
+  "1_text1": "We supply and distribute fabrics and related products as described in our catalogs, quotations, and website.",
+  "1_text2": "All product descriptions, images, and specifications are for informational purposes only and may vary slightly due to production processes or material availability.",
+
+  "2_title": "2. Orders & Payments",
+  "2_items": {
+    "availability": "Orders are accepted subject to product availability and confirmation of payment terms.",
+    "prices": "Prices are stated in AED unless otherwise agreed, and may be subject to applicable taxes, duties, or shipping charges.",
+    "terms": "Payment terms will be communicated in writing. Delayed payments may incur interest or late fees as per applicable laws."
+  },
+
+  "3_title": "3. Shipping & Delivery",
+  "3_items": {
+    "effort": "We will make every effort to deliver orders within agreed timelines, but delivery dates are estimates and not guaranteed.",
+    "risk": "Risk of loss or damage passes to the buyer upon delivery to the shipping carrier or upon customer pickup.",
+    "report": "Any shipping issues or damages must be reported within 7 days of delivery."
+  },
+
+  "4_title": "4. Returns & Exchanges",
+  "4_items": {
+    "return_policy": "Returns are accepted only if agreed upon in writing and if products are unused, in original condition, and returned within 30 days of receipt.",
+    "custom": "Customized or made-to-order fabrics are non-returnable except in cases of manufacturing defects."
+  },
+
+  "5_title": "5. Intellectual Property",
+  "5_text": "All designs, patterns, trademarks, and brand materials are exclusive property and may not be copied, reproduced, or used without written permission.",
+
+  "6_title": "6. Limitation of Liability",
+  "6_text1": "To the fullest extent permitted by law, LS4IT shall not be liable for indirect, incidental, or consequential damages arising from the use of our products or services.",
+  "6_text2": "Our total liability for any claim will not exceed the total amount paid for the specific order in dispute.",
+
+  "7_title": "7. Force Majeure",
+  "7_text": "We are not responsible for delays or failures in performance caused by events beyond our reasonable control, including natural disasters, strikes, supply shortages, transport delays, or government actions.",
+
+  "8_title": "8. Governing Law",
+  "8_text": "These Terms & Conditions shall be governed by and interpreted in accordance with the laws of Ajman UAE, without regard to conflict of law principles.",
+
+  "9_title": "9. Changes to Terms",
+  "9_text": "We may update these Terms & Conditions from time to time. The latest version will be posted on our website with a revised effective date.",
+
+  "10_title": "10. Contact Information",
+  "10_address": {
+    "company": "LS4IT",
+    "location": "Ajman, UAE",
+    "email": "Email: info@ls4it.com",
+    "phone": "Phone: +971 52 666997"
+  }
+}
+
+
 }
