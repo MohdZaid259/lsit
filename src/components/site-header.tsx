@@ -15,14 +15,14 @@ import Logo from "./logo";
 import MetallicButton from "./common/metallic-button";
 import MobileMenu from "./mobile-menu";
 import { getAllCategories } from "@/services";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 export default async function SiteHeader({
   locale = "en",
 }: {
   readonly locale: "en" | "ar";
 }) {
-  const t = useTranslations("Header");
+  const t = await getTranslations("Header");
 
   const { categories } = (await getAllCategories(locale)) as {
     categories: Category[];
