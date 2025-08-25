@@ -1,7 +1,7 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 
 import { Category } from "@/lib/types";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Logo from "./logo";
 import { getAllCategories } from "@/services";
 import { useTranslations } from "next-intl";

@@ -6,10 +6,11 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { useParams, useRouter } from "next/navigation";
+import { Link, useRouter } from "@/i18n/navigation";
+
 import { FolderOpen } from "lucide-react";
-import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { useParams } from "next/navigation";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 

@@ -1,33 +1,33 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import NewsletterSignup from "./newsletter";
 import company from "../../public/company.webp";
 import dynamic from "next/dynamic";
 import { useTranslations } from "next-intl";
-import antibacterial from '/public/technology/icons/antibacterial.jpg'
-import climate from '/public/technology/icons/climate.jpg'
-import weather from '/public/technology/icons/weather.jpg'
-import reflective from '/public/technology/icons/reflective.png'
-import military from '/public/technology/icons/military.jpg'
+import antibacterial from "/public/technology/icons/antibacterial.jpg";
+import climate from "/public/technology/icons/climate.jpg";
+import weather from "/public/technology/icons/weather.jpg";
+import reflective from "/public/technology/icons/reflective.png";
+import military from "/public/technology/icons/military.jpg";
 
 const values = [
-    {
-      icon: reflective
-    },
-    {
-      icon: antibacterial
-    },
-    {
-      icon: climate
-    },
-    {
-      icon: military
-    },
-    {
-      icon: weather
-    }
-  ]
+  {
+    icon: reflective,
+  },
+  {
+    icon: antibacterial,
+  },
+  {
+    icon: climate,
+  },
+  {
+    icon: military,
+  },
+  {
+    icon: weather,
+  },
+];
 
 const ScrollAnimation = dynamic(() => import("./scroll-animation"));
 
@@ -102,9 +102,7 @@ export default function AboutPage() {
                 <h3 className="mb-4 text-2xl font-bold text-primary">
                   {t("vision.title")}
                 </h3>
-                <p className="text-muted-foreground">
-                  {t("vision.desc")}
-                </p>
+                <p className="text-muted-foreground">{t("vision.desc")}</p>
               </div>
             </ScrollAnimation>
             <ScrollAnimation animation="fade-in-right">
@@ -112,9 +110,7 @@ export default function AboutPage() {
                 <h3 className="mb-4 text-2xl font-bold text-primary">
                   {t("mission.title")}
                 </h3>
-                <p className="text-muted-foreground">
-                  {t("mission.desc")}
-                </p>
+                <p className="text-muted-foreground">{t("mission.desc")}</p>
               </div>
             </ScrollAnimation>
           </div>
@@ -153,9 +149,16 @@ export default function AboutPage() {
                 }
               >
                 <div className="rounded-xl border border-primary/40 p-6 relative">
-                  <img src={value.icon.src} className="w-10 pb-2 md:pb-0 mx-4 md:mx-0 -mt-2 md:-mt-0 md:absolute md:p-[1px] md:right-3 md:top-3"/>
-                  <h3 className="mb-2 text-xl font-semibold text-primary">{t(`values.items.${index}.title`)}</h3>
-                  <p className="text-muted-foreground">{t(`values.items.${index}.desc`)}</p>
+                  <img
+                    src={value.icon.src}
+                    className="w-10 pb-2 md:pb-0 mx-4 md:mx-0 -mt-2 md:-mt-0 md:absolute md:p-[1px] md:right-3 md:top-3"
+                  />
+                  <h3 className="mb-2 text-xl font-semibold text-primary">
+                    {t(`values.items.${index}.title`)}
+                  </h3>
+                  <p className="text-muted-foreground">
+                    {t(`values.items.${index}.desc`)}
+                  </p>
                 </div>
               </ScrollAnimation>
             ))}

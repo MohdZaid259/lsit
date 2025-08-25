@@ -1,10 +1,8 @@
-"use client";
-
 import NotFoundContent from "@/components/common/not-found";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
-export default function LocaleNotFound() {
-  const t = useTranslations("NotFound");
+export default async function LocaleNotFound() {
+  const t = await getTranslations("NotFound");
 
   return (
     <NotFoundContent

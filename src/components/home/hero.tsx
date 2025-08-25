@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import MetallicButton from "@/components/common/metallic-button";
 import Reveal from "@/components/common/reveal";
 import { SafeImage } from "../ui/safe-image";

@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Reveal from "../common/reveal";
 import { SafeImage } from "../ui/safe-image";
 import Section from "@/components/common/section";
@@ -88,7 +88,9 @@ export default function OurServices() {
                       {t(`${s.key}.title`)}
                     </h3>
                   </div>
-                  <p className="mt-2 text-sm text-slate-600">{t(`${s.key}.desc`)}</p>
+                  <p className="mt-2 text-sm text-slate-600">
+                    {t(`${s.key}.desc`)}
+                  </p>
 
                   <ul className="mt-4 space-y-2">
                     {s.highlights.map((h, i) => {

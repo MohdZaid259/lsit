@@ -1,8 +1,10 @@
-'use client'
+"use client";
+
 import { useLocale, useTranslations } from "next-intl";
+
 import LocaleSwitcherSelect from "./locale-switcher-select";
 import { routing } from "@/i18n/routing";
-import { usePathname } from "next/navigation";
+import { usePathname } from "@/i18n/navigation";
 
 export default function LocaleSwitcher() {
   const pathname = usePathname();
@@ -17,12 +19,12 @@ export default function LocaleSwitcher() {
   }));
 
   return (
-    <div className={`${isProductPage?'invisible':'visible'}`}> 
+    <div className={``}>
       <LocaleSwitcherSelect
-      defaultValue={locale}
-      locales={locales}
-      label={t("label")}
-    />
+        defaultValue={locale}
+        locales={locales}
+        label={t("label")}
+      />
     </div>
   );
 }
