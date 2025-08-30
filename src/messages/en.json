@@ -1,0 +1,537 @@
+{
+  "Home": {
+    "Hero": {
+      "title": "Technology‑Integrated Fabrics for Demanding Environments",
+      "description": "Premium, engineered textiles with embedded electronics, sensing, and performance coatings—manufactured at scale.",
+      "exploreBtn": "Explore Technologies",
+      "btn2": "Speak to an Engineer"
+    },
+    "OurServices": {
+      "eyebrow": "Our Services",
+      "title": "End-to-end textile engineering for real-world performance",
+      "subtitle": "We specialize in advanced fabric technologies, automotive heat-management textiles, and rugged tent/outdoor membranes.",
+      "fire": {
+        "title": "Firefighting & Protective Fabrics",
+        "desc": "Advanced flame-resistant textiles engineered for emergency response, industrial safety, and extreme heat environments—balancing protection, comfort, and durability.",
+        "highlight1": "NFPA & EN469 certified performance",
+        "highlight2": "High thermal resistance with lightweight comfort",
+        "highlight3": "Water, chemical, and abrasion protection",
+        "cta": "Explore Fire Fabrics"
+      },
+      "tent": {
+        "title": "Tent and Outdoor Fabrics",
+        "desc": "Rugged membranes and blends for tents, canopies, and shelters—balanced breathability, weatherproofing, and strength.",
+        "highlight1": "20K/15K waterproof/breathable",
+        "highlight2": "Tear + mildew resistance",
+        "highlight3": "High UV stability",
+        "cta": "Explore Tent Fabrics"
+      },
+      "car": {
+        "title": "Automotive and Car Fabrics",
+        "desc": "Thermal-reflective shades and interior textiles especially designed for advanced heat management, durability, and compliance.",
+        "highlight1": "IR/UV heat reduction",
+        "highlight2": "Abrasion and fade resistance",
+        "highlight3": "OEM-grade compliance",
+        "cta": "View Car Solutions"
+      }
+    },
+    "CaseStudies": {
+      "eyebrow": "Case Studies",
+      "title": "Real-world deployments",
+      "subtitle": "Validated performance across environments and industries.",
+      "slide1": {
+        "title": "The Future Of Industrial Fabrics",
+        "excerpt": "Industrial fabrics are no longer just about strength and durability. They now incorporate innovations such as sun-ray reflective coatings to keep surfaces cooler, antibacterial textiles that enhance hygiene in high-contact areas, and advanced weaves designed for extreme environments. LS4IT leads this transformation by combining cutting-edge technology with industry expertise, shaping the future of industrial applications."
+      },
+      "slide2": {
+        "title": "7 Reasons To Choose LS4IT Fabrics",
+        "excerpt": "From exceptional durability that withstands harsh conditions to superior performance in demanding industries, LS4IT fabrics stand out for multiple reasons. These include resistance to wear and tear, innovative material technology, consistent quality assurance, eco-friendly production processes, and global supply capabilities. Choosing LS4IT means choosing reliability, performance, and long-term value."
+      },
+      "slide3": {
+        "title": "Applications of High-Performance Fabrics",
+        "excerpt": "High-performance fabrics are at the heart of innovation across multiple sectors. In automotive, they enhance safety and comfort; in defense, they provide lightweight yet durable protection; in architecture, they offer weather resistance with aesthetic appeal. Their unique material properties allow them to adapt to extreme conditions, making them a preferred choice for mission-critical projects."
+      },
+      "slide4": {
+        "title": "Why Certification Matters in Industrial Fabrics?",
+        "excerpt": "When it comes to industrial fabrics, certifications like ISO and CE are more than just paperwork — they are proof of quality, safety, and global compliance. ISO standards ensure manufacturing consistency, while CE marking signifies conformity with European regulations. For industries where failure isn’t an option, certification provides the assurance that materials meet the highest benchmarks."
+      },
+      "slide5": {
+        "title": "Choosing The Right Industrial Fabric Supplier?",
+        "excerpt": "Selecting the right supplier can determine the success or failure of your project. Beyond price, factors such as technical expertise, product range, manufacturing standards, delivery reliability, and after-sales support play a critical role. A trusted supplier not only meets specifications but also offers guidance to select the most suitable fabric for your unique requirements."
+      }
+    },
+    "Technologies": {
+      "eyebrow": "Fabric Technologies",
+      "title": "Our advanced fabric technologies",
+      "subtitle": "Explore each platform’s texture and benefits.",
+      "sunray": {
+        "name": "SunRay Reflective",
+        "desc": "High-reflectance outer layer to reduce heat gain under extreme sun.",
+        "bullet1": "IR reflectivity ≥ 85%",
+        "bullet2": "UV-block UPF 50+",
+        "bullet3": "Improved thermal comfort"
+      },
+      "fire": {
+        "name": "Fire-Resistant",
+        "desc": "Inherently flame-retardant fibers and coatings for high-temperature safety.",
+        "bullet1": "Meets NFPA 2112",
+        "bullet2": "Self-extinguishing",
+        "bullet3": "Low smoke index"
+      },
+      "antibacterial": {
+        "name": "Antibacterial",
+        "desc": "Embedded silver-ion protection for durable antimicrobial performance.",
+        "bullet1": "99.9% bacterial reduction",
+        "bullet2": "Odor control",
+        "bullet3": "Wash-durable"
+      },
+      "allweather": {
+        "name": "All-Weather",
+        "desc": "Water-repellent, breathable membranes for year-round protection.",
+        "bullet1": "20K/15K waterproof/breathable",
+        "bullet2": "Hydrophobic finish"
+      }
+    },
+    "Certifications": {
+      "eyebrow": "Certifications",
+      "title": "Proven compliance, trusted globally",
+      "subtitle": "Rigorous third‑party verification and standards adherence for critical applications.",
+      "marqueeLabel": "Certification logos scrolling",
+      "iso": {
+        "name": "ISO 9001",
+        "desc": "Quality management system certified."
+      },
+      "ce": {
+        "name": "CE",
+        "desc": "Conforms with EU health, safety, and environmental protection standards."
+      },
+      "nfpa": {
+        "name": "NFPA",
+        "desc": "Meets NFPA 2112 flame-resistant garment standard."
+      },
+      "oeko": {
+        "name": "OEKO-TEX",
+        "desc": "Tested for harmful substances."
+      }
+    },
+    "GlobalOperations": {
+      "eyebrow": "Global Presence",
+      "title": "Operations across multiple continents",
+      "subtitle": "We operate in strategic locations worldwide to serve our clients better.",
+      "locationsTitle": "Our Global Locations",
+      "stats": {
+        "countries": {
+          "label": "Countries",
+          "value": "13+",
+          "description": "Active operations"
+        },
+        "continents": {
+          "label": "Continents",
+          "value": "3+",
+          "description": "Global presence"
+        },
+        "clients": {
+          "label": "Clients",
+          "value": "1000+",
+          "description": "Worldwide"
+        },
+        "support": {
+          "label": "Support",
+          "value": "24/7",
+          "description": "Around the clock"
+        }
+      },
+      "arabianGulf": {
+        "title": "Arabian Gulf Network",
+        "desc": "Dynamic economies across the GCC and Arabian Peninsula."
+      },
+      "levant": {
+        "title": "Levant & North Africa",
+        "desc": "Strategic markets spanning the Levant and North Africa."
+      }
+    },
+    "Contact": {
+      "eyebrow": "Get in touch",
+      "title": "Let's discuss",
+      "subtitle": "Share your requirements—our engineering team will recommend the right construction.",
+      "mailSubject": "New Technical Support Request from {name}",
+      "form": {
+        "name": "Name",
+        "namePlaceholder": "Jane Smith",
+        "company": "Company",
+        "companyPlaceholder": "Acme Corp",
+        "email": "Email",
+        "emailPlaceholder": "jane@company.com",
+        "phone": "Phone",
+        "phonePlaceholder": "+1 555 123 4567",
+        "message": "Message",
+        "messagePlaceholder": "Tell us about your use case and performance targets...",
+        "sendBtn": "Send message"
+      }
+    }
+  },
+
+  "About": {
+    "hero": {
+      "title": "About Our Company",
+      "subtitle": "Engineering fabrics that protect, perform, and endure — no matter the environment"
+    },
+    "story": {
+      "title": "Our Story",
+      "p1": "LS4IT (Lateral 4 System for Innovation Technology) is a pioneering technical textile manufacturer headquartered in Ajman, UAE. We design and produce cutting-edge fabrics engineered for extreme performance, capable of withstanding the harshest climates and most demanding applications.",
+      "p2": "Our expertise lies in merging material innovation with precision manufacturing to create fabrics that excel in defense, industrial, and outdoor environments. Whether it's the relentless heat of desert terrain, the constant exposure of marine settings, LS4IT fabrics are built to endure, protect, and perform.",
+      "p3": "We don’t just manufacture textiles — we deliver solutions that enhance safety, sustainability, and operational efficiency for industries worldwide.",
+      "cta1": "Our Services",
+      "cta2": "Contact Us",
+      "imgAlt": "Company History"
+    },
+    "vision": {
+      "title": "Our Vision",
+      "desc": "Our vision is to be recognized globally as the benchmark for technical textile innovation. A company where science, craftsmanship, and responsibility come together to create materials that redefine industry standards. We aspire to not only supply fabrics, but to inspire progress across defense, industrial, and outdoor sectors."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "desc": "Our mission is to push the boundaries of textile technology, delivering fabrics that empower our clients to operate with confidence in any environment available. We strive to create products that merge high performance with environmental responsibility, ensuring that strength never comes at the cost of sustainability."
+    },
+    "values": {
+      "title": "Fabric Technologies",
+      "desc": "At LS4IT, innovation begins at the fiber level. Instead of applying performance features as afterthoughts, we integrate technology directly into the fabric structure, ensuring durability, consistency, and maximum efficiency in real-world use.",
+      "items": [
+        { "title": "Reflective Fiber Technology", "desc": "Enhances visibility and safety for applications like car covers, military uniforms, and police gear, even in low-light or high-risk conditions." },
+        { "title": "Antibacterial & Antimicrobial", "desc": "Integrated into fabrics for surgeon gowns, doctor coats, and medical scrubs, preventing bacterial growth and maintaining hygiene over extended use." },
+        { "title": "Climate-Control Performance", "desc": "Uses passive cooling and UV-reflective properties to reduce heat buildup in tents, protective uniforms, enhancing comfort in extreme temperatures." },
+        { "title": "Industrial-Grade Protection", "desc": "Durable fibers resistant to abrasion, tearing, and environmental wear, tailored for industrial worker uniforms operating in high-stress conditions." },
+        { "title": "All-Weather Resistance", "desc": "Fabrics engineered to be waterproof yet breathable, capable of performing in desert heat, heavy rain, and freezing cold without compromising flexibility." }
+      ]
+    }
+  },
+
+  "Technology": {
+    "Header": {
+      "title": "Technology-First Textiles",
+      "subtitle": "Advanced textile solutions featuring passive cooling up to -20°C surface reduction, adjustable ultrathin insulation, and military-grade protection for demanding applications.",
+      "overview": {
+        "title": "Advanced Textile Technologies for Extreme Conditions",
+        "p1": "From scorching heat to freezing cold — Summer Shield, PRIMERRA, and X15 TECH deliver unmatched thermal performance, protection, and durability.",
+        "p2": "We engineer fabrics that cool surfaces by up to 20°C, insulate in extreme cold, and resist water, wind, and UV. Trusted by military, medical, and outdoor industries worldwide, our solutions combine innovation, sustainability, and style.",
+        "bullets": [
+          { "title": "Passive Cooling: ", "desc": "Reflects sunlight & releases heat efficiently." },
+          { "title": "Ultra-Thin Insulation: ", "desc": "Adjustable warmth without bulk." },
+          { "title": "All-Weather Protection: ", "desc": "Waterproof, windproof, UV-blocking." },
+          { "title": "Certified Quality: ", "desc": "OEKO-TEX®, SGS, EN standards." }
+        ],
+        "imgAlt": "Advanced textile technologies showcase"
+      }
+    },
+    "Cards": {
+      "title": "Our Technologies",
+      "subtitle": "Eight breakthrough textile technologies engineered for superior performance in the most demanding environments.",
+      "technologies": [
+        {
+          "badge": "Passive Cooling",
+          "title": "Summer Shield",
+          "description": "Passive cooling fabric technology delivering up to 20°C surface temperature reduction.",
+          "bullets": [
+            "Reflects heat via infrared radiation",
+            "Works with any yarn composition",
+            "Water-repellent & breathable",
+            "Flame retardant"
+          ]
+        },
+        {
+          "badge": "Adjustable Insulation",
+          "title": "PRIMERRA",
+          "description": "SMC nano-tube insulation with customizable warmth and comfort.",
+          "bullets": [
+            "Antibacterial silver-dot treatment",
+            "Ultrasonically welded seams",
+            "150–450g weight range",
+            "Breathable & washable"
+          ]
+        },
+        {
+          "badge": "Advanced Materials",
+          "title": "X15 TECH",
+          "description": "Graphene-enhanced polymers for urban heat control and sustainability.",
+          "bullets": [
+            "Multilayer graphene/polymer options",
+            "Heat island mitigation",
+            "Passive operation, no energy needed",
+            "Lightweight & sustainable"
+          ]
+        },
+        {
+          "badge": "Waterproof Protection",
+          "title": "HydroGuard",
+          "description": "High-performance membranes designed to block water penetration while keeping fabrics lightweight.",
+          "bullets": [
+            "100% waterproof barrier",
+            "Maintains flexibility & comfort",
+            "Long-lasting in harsh weather"
+          ]
+        },
+        {
+          "badge": "Breathable Comfort",
+          "title": "AeroWeave",
+          "description": "Engineered for airflow without sacrificing protection.",
+          "bullets": [
+            "Optimized moisture vapor transmission",
+            "Quick-dry technology",
+            "Ideal for active/outdoor use"
+          ]
+        },
+        {
+          "badge": "Fireproof Safety",
+          "title": "FlameShield",
+          "description": "Heat- and flame-resistant fabrics for extreme protection.",
+          "bullets": [
+            "Meets NFPA & EN safety standards",
+            "Thermal barrier without bulk",
+            "Resistant to sparks & flames"
+          ]
+        },
+        {
+          "badge": "Thermal Insulation",
+          "title": "ThermoCore",
+          "description": "Advanced fibers for year-round temperature control.",
+          "bullets": [
+            "Superior heat retention in cold climates",
+            "Lightweight, non-bulky insulation",
+            "Breathable in variable conditions"
+          ]
+        },
+        {
+          "badge": "Antibacterial Protection",
+          "title": "BioDefend",
+          "description": "Textiles infused with long-lasting antibacterial agents.",
+          "bullets": [
+            "Inhibits bacterial growth & odor",
+            "Hypoallergenic & gentle on skin",
+            "Effective through multiple washes"
+          ]
+        }
+      ]
+    },
+    "Applications": {
+      "title": "Applications",
+      "subtitle": "Our technologies serve diverse industries requiring superior thermal management and protection.",
+      "cards": [
+        {
+          "title": "Military & Tactical",
+          "desc": "Advanced protection for defense applications",
+          "imgAlt": "Military and tactical applications"
+        },
+        {
+          "title": "Car Parking Shades",
+          "desc": "Protection from sun and heat for vehicles",
+          "imgAlt": "Event and commercial tents"
+        },
+        {
+          "title": "Performance Apparel",
+          "desc": "Next-generation clothing technology",
+          "imgAlt": "Performance apparel and clothing"
+        }
+      ]
+    }
+  },
+
+  "Product": {
+    "overview": "Overview",
+    "description": "High-performance textile engineered for durability, comfort, and compliance in demanding environments.",
+    "fabric": "Fabric",
+    "finish": "Finish",
+    "compliance": "Compliance",
+    "useCase": "Use case",
+    "notSpecified": "Not specified",
+    "standard": "Standard",
+    "defaultCompliance": "ISO 9001, ISO 14001",
+    "defaultUseCase": "General use",
+    "needDatasheet": "Need datasheets or samples?",
+    "contactForSpecs": "Contact our team for detailed specifications and compliance reports.",
+    "contactSales": "Contact Sales"
+  },
+
+  "Products": {
+    "title": "Products",
+    "subtitle": "Browse categories and explore our portfolio.",
+    "categories": "Categories",
+    "noCategories": "No categories available",
+    "noCategoriesDesc": "We’re working on adding products soon. Please check back later.",
+    "noProductsInSubcategory": "No products yet in this subcategory.",
+    "noSubcategories": "No subcategories available for this category.",
+    "exploreCategory": "Explore {name} products."
+  },
+  
+  "Header": {
+    "about": "About",
+    "ourServices": "Our Services",
+    "technologies": "Technologies",
+    "products": "Products",
+    "contactUs": "Contact Us"
+  },
+
+  "Footer": {
+    "footer": "Footer",
+    "brand": "Lateral System for Innovation Technology",
+    "brandDesc": "Engineering textiles for heat control, protection, and all-weather performance.",
+    "company": "Company",
+    "productCategories": "Product Categories",
+    "resources": "Resources",
+    "caseStudies": "Case Studies",
+    "fabricTechnologies": "Fabric Technologies",
+    "productCatalog": "Product Catalog",
+    "certifications": "Certifications",
+    "whyChooseUs": "Why Choose Us",
+    "contact": "Contact",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "sitemap": "Sitemap"
+  },
+
+  "Breadcrumbs": {
+    "home": "Home",
+    "products": "Products"
+  },
+
+  "Newsletter": {
+    "title": "Stay Ahead with",
+    "innovations": "Innovations",
+    "desc": "Get the latest updates on our advanced textile technologies, industry insights, exclusive product launches.",
+    "emailPlaceholder": "Enter your email address here",
+    "signUp": "Sign Up",
+    "signingUp": "Signing Up...",
+    "privacy": "We respect your privacy. Unsubscribe anytime."
+  },
+
+  "NotFound": {
+    "title": "Page Not Found",
+    "description": "We couldn’t find the page you’re looking for. LS4IT is all about innovation in fabrics—let’s get you back to where the magic happens.",
+    "home": "Back to Home",
+    "contact": "Contact Us"
+  },
+
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, ar {🇸🇦 العربية} en {🇺🇸 English} other {Unknown}}"
+  },
+
+  "Privacy": {
+  "title": "Privacy Policy",
+  "effective_date": "Effective Date: 13 Aug 2025",
+  "intro": "LS4IT (“we,” “our,” or “us”) values your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, store, and protect the information we receive from visitors, customers, and business partners in the course of our operations.",
+
+  "1_title": "1. Information We Collect",
+  "1_items": {
+    "personal": "Personal Information: Name, contact details (phone number, email address, mailing address), and other information you voluntarily provide when contacting us or placing an order.",
+    "business": "Business Information: Company name, billing address, and tax-related information when engaging in business transactions.",
+    "usage": "Website Usage Information: Data such as IP addresses, browser type, device type, pages visited, and cookies when you use our website.",
+    "order": "Order & Transaction Information: Records of fabric orders, invoices, payment details (processed securely via third-party payment processors), and delivery information."
+  },
+
+  "2_title": "2. How We Use Your Information",
+  "2_items": {
+    "orders": "To process and fulfill orders.",
+    "communication": "To communicate with you regarding inquiries, quotations, and customer support.",
+    "updates": "To send updates about our products, services, and company news (if you have opted in).",
+    "compliance": "To comply with legal and tax obligations.",
+    "improve": "To improve our website, services, and customer experience."
+  },
+
+  "3_title": "3. Sharing of Information",
+  "3_intro": "We do not sell, rent, or trade your personal information. We may share information in the following limited circumstances:",
+  "3_items": {
+    "providers": "Service Providers: With trusted third-party vendors who assist us with payment processing, shipping, IT services, or marketing, under strict confidentiality agreements.",
+    "legal": "Legal Requirements: When required by law, regulation, or legal process.",
+    "transfer": "Business Transfers: In the event of a merger, acquisition, or sale of company assets, your data may be transferred to the new ownership."
+  },
+
+  "4_title": "4. Data Retention",
+  "4_text": "We will retain your information only as long as necessary to fulfill the purposes outlined in this policy or as required by applicable laws.",
+
+  "5_title": "5. Data Security",
+  "5_text": "We implement industry-standard technical and organizational measures to safeguard your personal information against unauthorized access, use, or disclosure.",
+
+  "6_title": "6. Your Rights",
+  "6_intro": "Depending on your location, you may have rights under applicable data protection laws, such as:",
+  "6_items": {
+    "access": "Accessing the personal information we hold about you.",
+    "correction": "Requesting corrections to inaccurate or incomplete information.",
+    "deletion": "Requesting deletion of your data (subject to legal and contractual obligations).",
+    "optout": "Opting out of marketing communications at any time."
+  },
+
+  "7_title": "7. Cookies & Tracking Technologies",
+  "7_text": "Our website may use cookies and similar technologies to enhance user experience, analyze website performance, and provide tailored content. You can manage cookie settings through your browser.",
+
+  "8_title": "8. Third-Party Links",
+  "8_text": "Our website may contain links to third-party websites. We are not responsible for the privacy practices or content of these sites.",
+
+  "9_title": "9. Changes to This Privacy Policy",
+  "9_text": "We may update this Privacy Policy from time to time. Any changes will be posted on our website with a revised effective date.",
+
+  "10_title": "10. Contact Us",
+  "10_address": {
+    "company": "LS4IT",
+    "location": "Ajman, UAE",
+    "email": "Email: info@ls4it.com",
+    "phone": "Phone: 971 52 666997"
+  }
+},
+
+"Terms":{
+  "title": "Terms of Service",
+  "effective_date": "Effective Date: 13 Aug, 2025",
+  "intro": "Welcome to LS4IT (“we,” “our,” or “us”). By accessing or using our website, purchasing our products, or engaging in business with us, you agree to be bound by these Terms & Conditions. If you do not agree, please do not use our services.",
+
+  "1_title": "1. Products & Services",
+  "1_text1": "We supply and distribute fabrics and related products as described in our catalogs, quotations, and website.",
+  "1_text2": "All product descriptions, images, and specifications are for informational purposes only and may vary slightly due to production processes or material availability.",
+
+  "2_title": "2. Orders & Payments",
+  "2_items": {
+    "availability": "Orders are accepted subject to product availability and confirmation of payment terms.",
+    "prices": "Prices are stated in AED unless otherwise agreed, and may be subject to applicable taxes, duties, or shipping charges.",
+    "terms": "Payment terms will be communicated in writing. Delayed payments may incur interest or late fees as per applicable laws."
+  },
+
+  "3_title": "3. Shipping & Delivery",
+  "3_items": {
+    "effort": "We will make every effort to deliver orders within agreed timelines, but delivery dates are estimates and not guaranteed.",
+    "risk": "Risk of loss or damage passes to the buyer upon delivery to the shipping carrier or upon customer pickup.",
+    "report": "Any shipping issues or damages must be reported within 7 days of delivery."
+  },
+
+  "4_title": "4. Returns & Exchanges",
+  "4_items": {
+    "return_policy": "Returns are accepted only if agreed upon in writing and if products are unused, in original condition, and returned within 30 days of receipt.",
+    "custom": "Customized or made-to-order fabrics are non-returnable except in cases of manufacturing defects."
+  },
+
+  "5_title": "5. Intellectual Property",
+  "5_text": "All designs, patterns, trademarks, and brand materials are exclusive property and may not be copied, reproduced, or used without written permission.",
+
+  "6_title": "6. Limitation of Liability",
+  "6_text1": "To the fullest extent permitted by law, LS4IT shall not be liable for indirect, incidental, or consequential damages arising from the use of our products or services.",
+  "6_text2": "Our total liability for any claim will not exceed the total amount paid for the specific order in dispute.",
+
+  "7_title": "7. Force Majeure",
+  "7_text": "We are not responsible for delays or failures in performance caused by events beyond our reasonable control, including natural disasters, strikes, supply shortages, transport delays, or government actions.",
+
+  "8_title": "8. Governing Law",
+  "8_text": "These Terms & Conditions shall be governed by and interpreted in accordance with the laws of Ajman UAE, without regard to conflict of law principles.",
+
+  "9_title": "9. Changes to Terms",
+  "9_text": "We may update these Terms & Conditions from time to time. The latest version will be posted on our website with a revised effective date.",
+
+  "10_title": "10. Contact Information",
+  "10_address": {
+    "company": "LS4IT",
+    "location": "Ajman, UAE",
+    "email": "Email: info@ls4it.com",
+    "phone": "Phone: +971 52 666997"
+  }
+}
+
+
+}

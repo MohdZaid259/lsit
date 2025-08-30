@@ -6,12 +6,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { useParams, useRouter } from "next/navigation";
+import { Link, useRouter } from "@/i18n/navigation";
 
 import { FolderOpen } from "lucide-react";
-import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { useParams } from "next/navigation";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 interface SubCategory {
   key: string;
@@ -26,6 +27,7 @@ interface Category {
 export function ProductsAsideClient({
   className = "",
   categories,
+  locale,
 }: {
   readonly className?: string;
   readonly categories: {
@@ -33,7 +35,9 @@ export function ProductsAsideClient({
     slug: string;
     subCategories?: { name: string; slug: string }[];
   }[];
+  readonly locale: "en" | "ar";
 }) {
+  const t = useTranslations("Products");
   const params = useParams();
   const router = useRouter();
   const activeCategoryKey = params?.category as string | undefined;
@@ -58,19 +62,19 @@ export function ProductsAsideClient({
         "sticky top-25 self-start",
         className
       )}
-      aria-label="Product categories"
+      aria-label={t("categories")}
     >
       <div className="rounded-xl border bg-card">
         <div className="px-4 py-3 border-b">
           <div className="text-sm font-semibold text-foreground">
-            Categories
+            {t("categories")}
           </div>
         </div>
         <nav className="p-2">
           {cats.length === 0 ? (
             <div className="flex flex-col items-center justify-center py-6 text-muted-foreground text-sm">
               <FolderOpen className="w-6 h-6 mb-2" />
-              No categories available
+              {t("noCategories")}
             </div>
           ) : (
             <Accordion

@@ -1,17 +1,16 @@
 import { Mail, MapPin, Phone } from "lucide-react";
+
 import { Category } from "@/lib/types";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Logo from "./logo";
-import { getAllCategories } from "@/app/services";
+import { getAllCategories } from "@/services";
+import { getTranslations } from "next-intl/server";
 
 const contactInfo = [
   {
     icon: Mail,
     content: (
-      <a
-        href="mailto:info@ls4it.com"
-        className="hover:text-muted-foreground"
-      >
+      <a href="mailto:info@ls4it.com" className="hover:text-muted-foreground">
         info@ls4it.com
       </a>
     ),
@@ -26,43 +25,46 @@ const contactInfo = [
   },
   {
     icon: MapPin,
-    content: (
-      <span>
-        AFZ Office 1038, Ajman Free Zone, UAE
-      </span>
-    ),
+    content: <span>AFZ Office 1038, Ajman Free Zone, UAE</span>,
   },
 ];
 
-export default async function SiteFooter() {
-  const { categories } = (await getAllCategories()) as {
+export default async function SiteFooter({
+  locale = "en",
+}: {
+  readonly locale: "en" | "ar";
+}) {
+  const t = await getTranslations("Footer");
+  const th = await getTranslations("Header");
+
+  const { categories } = (await getAllCategories(locale)) as {
     categories: Category[];
   };
 
   const footerLinks = [
     {
-      title: "Company",
+      title: t("company"),
       links: [
-        { label: "About", href: "/about" },
-        { label: "Our Services", href: "/#our-services" },
-        { label: "Case Studies", href: "/#case-studies" },
-        { label: "Contact", href: "/#contact" },
+        { label: th("about"), href: "/about" },
+        { label: th("ourServices"), href: "/#our-services" },
+        { label: t("caseStudies"), href: "/#case-studies" },
+        { label: th("contactUs"), href: "/#contact" },
       ],
     },
     {
-      title: "Product Categories",
+      title: t("productCategories"),
       links: categories.map((cat) => ({
         label: cat.name,
         href: `/products/${cat.slug}`,
       })),
     },
     {
-      title: "Resources",
+      title: t("resources"),
       links: [
-        { label: "Fabric Technologies", href: "/#technologies" },
-        { label: "Product Catalog", href: "/products" },
-        { label: "Certifications", href: "/#certifications" },
-        { label: "Why Choose Us", href: "/#why-us" },
+        { label: t("fabricTechnologies"), href: "/#technologies" },
+        { label: t("productCatalog"), href: "/products" },
+        { label: t("certifications"), href: "/#certifications" },
+        { label: t("whyChooseUs"), href: "/#why-us" },
       ],
     },
   ];
@@ -73,7 +75,7 @@ export default async function SiteFooter() {
       aria-labelledby="footer-heading"
     >
       <h2 id="footer-heading" className="sr-only">
-        Footer
+        {t("footer")}
       </h2>
 
       <div className="container mx-auto px-4 md:px-6 py-6 sm:py-12">
@@ -83,10 +85,12 @@ export default async function SiteFooter() {
             <Link href="/">
               <Logo className="absolute inset-0 -ml-6 -mt-2 md:-ml-6 md:-mt-6 md:size-44" />
             </Link>
-            <p className="md:mt-10 mt-16 text-sm text-primary">              <h1 className="text-xl font-bold text-black mb-2 tracking-wide">Lateral System for Innovation Technology</h1>
-              Engineering textiles for heat control, protection, and all-weather
-              performance.
-            </p>
+            <div className="mt-10">
+              <h1 className="text-xl font-bold text-black tracking-wide">
+                {t("brand")}
+              </h1>
+              <p className="mt-2 text-sm text-primary">{t("brandDesc")}</p>
+            </div>
           </div>
 
           {/* Links */}
@@ -114,7 +118,7 @@ export default async function SiteFooter() {
             {/* Contact */}
             <div>
               <div className="text-xs uppercase text-primary tracking-wide ">
-                Contact
+                {t("contact")}
               </div>
               <ul className="mt-3 space-y-2 text-sm">
                 {contactInfo.map(({ icon: Icon, content }, idx) => (
@@ -122,7 +126,11 @@ export default async function SiteFooter() {
                     key={idx}
                     className="flex items-start gap-2 text-muted-foreground"
                   >
-                    <Icon className={`${Icon===MapPin?"h-8 w-8 sm:h-6 sm:w-6":"h-4 w-4"} text-slate-500 mt-0.5`} />
+                    <Icon
+                      className={`${
+                        Icon === MapPin ? "h-8 w-8 sm:h-6 sm:w-6" : "h-4 w-4"
+                      } text-slate-500 mt-0.5`}
+                    />
                     {content}
                   </li>
                 ))}
@@ -134,22 +142,18 @@ export default async function SiteFooter() {
         {/* Bottom bar */}
         <div className="mt-10 border-t pt-6 flex flex-col gap-3 sm:flex-row sm:items-center text-xs text-muted-foreground">
           <div>
-            © {new Date().getFullYear()} Lateral System For Innovation
-            Technology. All rights reserved.
+            © {new Date().getFullYear()} {t("brand")}. {t("rights")}
           </div>
           <div className="sm:ml-auto flex items-center gap-4">
-            {["Privacy", "Terms", "Sitemap"].map((item) => {
-              const path =
-                item === "Sitemap"
-                  ? "/sitemap.xml"
-                  : `/${item.toLowerCase()}`;
+            {["privacy", "terms", "sitemap"].map((item) => {
+              const path = item === "sitemap" ? "/sitemap.xml" : `/${item}`;
               return (
                 <Link
                   key={item}
                   href={path}
                   className="hover:text-slate-800 hover:underline"
                 >
-                  {item}
+                  {t(item)}
                 </Link>
               );
             })}

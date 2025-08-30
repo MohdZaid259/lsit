@@ -1,26 +1,37 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { useParams } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 export function Breadcrumbs({
   className = "",
+  locale,
 }: {
   readonly className?: string;
+  readonly locale: "en" | "ar";
 }) {
-  const params = useParams<{ category?: string; product?: string }>();
+  const t = useTranslations("Breadcrumbs");
+  const params = useParams<{
+    category?: string;
+    product?: string;
+    locale?: string;
+  }>();
+
+  // Use locale from prop or params
+  const currentLocale = locale || (params.locale as "en" | "ar") || "en";
 
   // Start with base crumbs
   const items = [
-    { label: "Home", href: "/" },
-    { label: "Products", href: "/products" },
+    { label: t("home"), href: `/${currentLocale}` },
+    { label: t("products"), href: `/${currentLocale}/products` },
   ];
 
   if (params.category) {
     items.push({
       label: decodeURIComponent(params.category),
-      href: `/products/${params.category}`,
+      href: `/${currentLocale}/products/${params.category}`,
     });
   }
 

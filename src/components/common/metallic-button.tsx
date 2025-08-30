@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import type { ButtonHTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/i18n/navigation";
 
 type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   className?: string;

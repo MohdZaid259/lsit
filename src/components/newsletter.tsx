@@ -5,12 +5,14 @@ import { Input } from "@/components/ui/input";
 import type React from "react";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 export default function NewsletterSignup({
   className = "",
 }: {
   className?: string;
 }) {
+  const t = useTranslations("Newsletter");
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -46,16 +48,14 @@ export default function NewsletterSignup({
           {/* Text */}
           <div>
             <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
-              Stay Ahead with{" "}
+              {t("title")}{" "}
               <span className="font-bold ml-1 text-teal-500 tracking-wider">
                 LS4IT
               </span>{" "}
-              Innovations
+              {t("innovations")}
             </h2>
             <p className="mt-3 max-w-prose text-sm text-white/70 md:text-base">
-              {
-                "Get the latest updates on our advanced textile technologies, industry insights, exclusive product launches."
-              }
+              {t("desc")}
             </p>
           </div>
 
@@ -65,7 +65,7 @@ export default function NewsletterSignup({
               <Input
                 id="email"
                 type="email"
-                placeholder="Enter your email address here"
+                placeholder={t("emailPlaceholder")}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className={cn(
@@ -80,11 +80,11 @@ export default function NewsletterSignup({
                   "bg-teal-600 text-white hover:bg-teal-500"
                 )}
               >
-                {loading ? "Signing Up..." : "Sign Up"}
+                {loading ? t("signingUp") : t("signUp")}
               </Button>
             </div>
             <p className="mt-2  float-right text-xs text-white/60">
-              {"We respect your privacy. Unsubscribe anytime."}
+              {t("privacy")}
             </p>
           </form>
         </div>

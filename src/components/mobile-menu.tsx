@@ -14,12 +14,14 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+
 import { Button } from "@/components/ui/button";
 import { Category } from "@/lib/types";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import LocaleSwitcher from "./common/locale-switcher";
 import Logo from "./logo";
 import MetallicButton from "./common/metallic-button";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/i18n/navigation";
 import { useState } from "react";
 
 export default function MobileMenu({
@@ -87,6 +89,8 @@ export default function MobileMenu({
               ))}
             </Accordion>
           </div>
+
+          <LocaleSwitcher />
 
           <div className="pt-2">
             <MetallicButton

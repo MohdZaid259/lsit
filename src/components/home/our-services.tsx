@@ -11,51 +11,48 @@ import {
 } from "lucide-react";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Reveal from "../common/reveal";
 import { SafeImage } from "../ui/safe-image";
 import Section from "@/components/common/section";
+import { useTranslations } from "next-intl";
 
 export default function OurServices() {
+  const t = useTranslations("Home.OurServices");
+
   const services = [
     {
       key: "fire",
-      title: "Firefighting & Protective Fabrics",
-      desc: "Advanced flame-resistant textiles engineered for emergency response, industrial safety, and extreme heat environments—balancing protection, comfort, and durability.",
       icon: Flame,
       image: "/service/fire.jpg",
       highlights: [
-        { icon: Cpu, text: "NFPA & EN469 certified performance" },
-        { icon: Shield, text: "High thermal resistance with lightweight comfort" },
-        { icon: Droplets, text: "Water, chemical, and abrasion protection" },
+        { icon: Cpu, text: t("fire.highlight1") },
+        { icon: Shield, text: t("fire.highlight2") },
+        { icon: Droplets, text: t("fire.highlight3") },
       ],
-      cta: { label: "Explore Fire Fabrics", href: "/technology" },
+      cta: { label: t("fire.cta"), href: "/technology" },
     },
     {
       key: "tent",
-      title: "Tent and Outdoor Fabrics",
-      desc: "Rugged membranes and blends for tents, canopies, and shelters—balanced breathability, weatherproofing, and strength.",
       icon: Tent,
       image: "/service/tentFabric.webp",
       highlights: [
-        { icon: Droplets, text: "20K/15K waterproof/breathable" },
-        { icon: Shield, text: "Tear + mildew resistance" },
-        { icon: Sun, text: "High UV stability" },
+        { icon: Droplets, text: t("tent.highlight1") },
+        { icon: Shield, text: t("tent.highlight2") },
+        { icon: Sun, text: t("tent.highlight3") },
       ],
-      cta: { label: "Explore Tent Fabrics", href: "/products" },
+      cta: { label: t("tent.cta"), href: "/products" },
     },
     {
       key: "car",
-      title: "Automotive and Car Fabrics",
-      desc: "Thermal-reflective shades and interior textiles especially designed for advanced heat management, durability, and compliance.",
       icon: Car,
       image: "/service/shadeCover.png",
       highlights: [
-        { icon: Sun, text: "IR/UV heat reduction" },
-        { icon: Shield, text: "Abrasion and fade resistance" },
-        { icon: FileCheck2, text: "OEM-grade compliance" },
+        { icon: Sun, text: t("car.highlight1") },
+        { icon: Shield, text: t("car.highlight2") },
+        { icon: FileCheck2, text: t("car.highlight3") },
       ],
-      cta: { label: "View Car Solutions", href: "/products" },
+      cta: { label: t("car.cta"), href: "/products" },
     },
   ];
 
@@ -63,9 +60,9 @@ export default function OurServices() {
     <Section
       className="md:mx-16 mx-0"
       id="our-services"
-      eyebrow="Our Services"
-      title="End-to-end textile engineering for real-world performance"
-      subtitle="We specialize in advanced fabric technologies, automotive heat-management textiles, and rugged tent/outdoor membranes."
+      eyebrow={t("eyebrow")}
+      title={t("title")}
+      subtitle={t("subtitle")}
     >
       {/* Services grid */}
       <div className="grid gap-6 md:grid-cols-3">
@@ -78,7 +75,7 @@ export default function OurServices() {
                 <div className="relative w-full h-50">
                   <SafeImage
                     src={s.image || ""}
-                    alt={s.title}
+                    alt={t(`${s.key}.title`)}
                     fill
                     className="object-cover"
                   />
@@ -88,10 +85,12 @@ export default function OurServices() {
                   <div className="flex items-center gap-2">
                     <Icon className="h-5 w-5 text-slate-600" />
                     <h3 className="text-lg font-semibold text-slate-900">
-                      {s.title}
+                      {t(`${s.key}.title`)}
                     </h3>
                   </div>
-                  <p className="mt-2 text-sm text-slate-600">{s.desc}</p>
+                  <p className="mt-2 text-sm text-slate-600">
+                    {t(`${s.key}.desc`)}
+                  </p>
 
                   <ul className="mt-4 space-y-2">
                     {s.highlights.map((h, i) => {

@@ -1,24 +1,30 @@
-import { getAllCategories, getProductsByCategorySlug } from "@/app/services";
+export const dynamic = "force-dynamic";
+
+import { getAllCategories, getProductsByCategorySlug } from "@/services";
 import { Breadcrumbs } from "@/components/products/breadcrumbs";
 import { Category } from "@/lib/types";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { SafeImage } from "@/components/ui/safe-image";
 import { notFound } from "next/navigation";
+import { getTranslations } from "next-intl/server";
+import { Metadata } from "next";
 
 export async function generateStaticParams() {
   const res = (await getAllCategories()) as { categories: { slug: string }[] };
   const cats = res?.categories || [];
-  return cats.map((c) => ({ category: c.slug }));
+  // Add locale to params for static generation
+  return cats.flatMap((c) => [
+    { category: c.slug, locale: "en" },
+    { category: c.slug, locale: "ar" },
+  ]);
 }
 
 export async function generateMetadata({
   params,
-}: {
-  params: Promise<{ category: string }>;
-}) {
-  const { category: categoryParam } = await params;
+}: CategoryDetailsProps): Promise<Metadata> {
+  const { category: categoryParam, locale } = await params;
 
-  const res = (await getProductsByCategorySlug(categoryParam)) as {
+  const res = (await getProductsByCategorySlug(categoryParam, locale)) as {
     category: Category;
   };
 
@@ -43,13 +49,18 @@ export async function generateMetadata({
   };
 }
 
-export default async function CategoryPage({
-  params,
-}: {
-  readonly params: Promise<{ category: string }>;
-}) {
-  const { category: categoryParam } = await params;
-  const { category } = (await getProductsByCategorySlug(categoryParam)) as {
+interface CategoryDetailsProps {
+  params: Promise<{ category: string; locale: "en" | "ar" }>;
+}
+
+export default async function CategoryPage({ params }: CategoryDetailsProps) {
+  const { category: categoryParam, locale } = await params;
+
+  const t = await getTranslations({ locale, namespace: "Products" });
+  const { category } = (await getProductsByCategorySlug(
+    categoryParam,
+    locale
+  )) as {
     category: Category;
   };
 
@@ -59,7 +70,7 @@ export default async function CategoryPage({
 
   return (
     <div className="space-y-6">
-      <Breadcrumbs />
+      <Breadcrumbs locale={locale} />
 
       {/* Category Header */}
       <header className="rounded-xl overflow-hidden border">
@@ -81,7 +92,8 @@ export default async function CategoryPage({
               {category.name}
             </h1>
             <p className="text-sm text-white">
-              {category.description || `Explore ${category.name} products.`}
+              {category.description ||
+                t("exploreCategory", { name: category.name })}
             </p>
           </div>
         </div>
@@ -142,14 +154,14 @@ export default async function CategoryPage({
                 </div>
               ) : (
                 <div className="text-sm text-muted-foreground border rounded-md p-4">
-                  No products yet in this subcategory.
+                  {t("noProductsInSubcategory")}
                 </div>
               )}
             </section>
           ))
         ) : (
           <div className="text-sm text-muted-foreground border rounded-md p-4">
-            No subcategories available for this category.
+            {t("noSubcategories")}
           </div>
         )}
       </div>
