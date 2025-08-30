@@ -82,8 +82,8 @@ export default async function SiteFooter({
         <div className="grid gap-10 md:grid-cols-12">
           {/* Brand */}
           <div className="md:col-span-4 flex flex-col items-start">
-            <Link href="/">
-              <Logo className="absolute inset-0 -ml-6 -mt-7 md:-ml-6 md:-mt-6 md:size-44" />
+            <Link href="/" className="mb-6 md:mb-0">
+              <Logo className="absolute inset-0 -ml-6 -mt-4 md:-ml-6 md:-mt-6 md:size-44" />
             </Link>
             <div className="mt-10">
               <h1 className="text-xl font-bold text-black tracking-wide">
