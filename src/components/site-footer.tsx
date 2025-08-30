@@ -83,7 +83,7 @@ export default async function SiteFooter({
           {/* Brand */}
           <div className="md:col-span-4 flex flex-col items-start">
             <Link href="/">
-              <Logo className="absolute inset-0 -ml-6 -mt-2 md:-ml-6 md:-mt-6 md:size-44" />
+              <Logo className="absolute inset-0 -ml-6 -mt-7 md:-ml-6 md:-mt-6 md:size-44" />
             </Link>
             <div className="mt-10">
               <h1 className="text-xl font-bold text-black tracking-wide">

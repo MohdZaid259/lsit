@@ -2,14 +2,14 @@
   "Home": {
     "Hero": {
       "title": "Technology‑Integrated Fabrics for Demanding Environments",
-      "description": "Premium, engineered textiles with embedded electronics, sensing, and performance coatings—manufactured at scale.",
+      "description": "Premium, engineered textiles with embedded sensing and performance coatings—produced at scale.",
       "exploreBtn": "Explore Technologies",
       "btn2": "Speak to an Engineer"
     },
     "OurServices": {
       "eyebrow": "Our Services",
-      "title": "End-to-end textile engineering for real-world performance",
-      "subtitle": "We specialize in advanced fabric technologies, automotive heat-management textiles, and rugged tent/outdoor membranes.",
+      "title": "Textile engineering for real-world performance",
+      "subtitle": "We specialize in advanced fabric technologies, heat-management textiles, and rugged tent/outdoor membranes.",
       "fire": {
         "title": "Firefighting & Protective Fabrics",
         "desc": "Advanced flame-resistant textiles engineered for emergency response, industrial safety, and extreme heat environments—balancing protection, comfort, and durability.",
@@ -27,7 +27,7 @@
         "cta": "Explore Tent Fabrics"
       },
       "car": {
-        "title": "Automotive and Car Fabrics",
+        "title": "Vehicle and Car Fabrics",
         "desc": "Thermal-reflective shades and interior textiles especially designed for advanced heat management, durability, and compliance.",
         "highlight1": "IR/UV heat reduction",
         "highlight2": "Abrasion and fade resistance",
@@ -49,15 +49,15 @@
       },
       "slide3": {
         "title": "Applications of High-Performance Fabrics",
-        "excerpt": "High-performance fabrics are at the heart of innovation across multiple sectors. In automotive, they enhance safety and comfort; in defense, they provide lightweight yet durable protection; in architecture, they offer weather resistance with aesthetic appeal. Their unique material properties allow them to adapt to extreme conditions, making them a preferred choice for mission-critical projects."
+        "excerpt": "High-performance fabrics are at the heart of innovation across multiple sectors. They enhance safety and comfort; in defense, they provide lightweight yet durable protection; in architecture, they offer weather resistance with aesthetic appeal. Their unique material properties allow them to adapt to extreme conditions, making them a preferred choice for mission-critical projects."
       },
       "slide4": {
         "title": "Why Certification Matters in Industrial Fabrics?",
-        "excerpt": "When it comes to industrial fabrics, certifications like ISO and CE are more than just paperwork — they are proof of quality, safety, and global compliance. ISO standards ensure manufacturing consistency, while CE marking signifies conformity with European regulations. For industries where failure isn’t an option, certification provides the assurance that materials meet the highest benchmarks."
+        "excerpt": "When it comes to industrial fabrics, certifications like ISO and CE are more than just paperwork — they are proof of quality, safety, and global compliance. ISO standards ensure consistency, while CE marking signifies conformity with European regulations. For industries where failure isn’t an option, certification provides the assurance that materials meet the highest benchmarks."
       },
       "slide5": {
         "title": "Choosing The Right Industrial Fabric Supplier?",
-        "excerpt": "Selecting the right supplier can determine the success or failure of your project. Beyond price, factors such as technical expertise, product range, manufacturing standards, delivery reliability, and after-sales support play a critical role. A trusted supplier not only meets specifications but also offers guidance to select the most suitable fabric for your unique requirements."
+        "excerpt": "Selecting the right supplier can determine the success or failure of your project. Beyond price, factors such as technical expertise, product range, standards, delivery reliability, and after-sales support play a critical role. A trusted supplier not only meets specifications but also offers guidance to select the most suitable fabric for your unique requirements."
       }
     },
     "Technologies": {
@@ -178,9 +178,9 @@
     },
     "story": {
       "title": "Our Story",
-      "p1": "LS4IT (Lateral 4 System for Innovation Technology) is a pioneering technical textile manufacturer headquartered in Ajman, UAE. We design and produce cutting-edge fabrics engineered for extreme performance, capable of withstanding the harshest climates and most demanding applications.",
-      "p2": "Our expertise lies in merging material innovation with precision manufacturing to create fabrics that excel in defense, industrial, and outdoor environments. Whether it's the relentless heat of desert terrain, the constant exposure of marine settings, LS4IT fabrics are built to endure, protect, and perform.",
-      "p3": "We don’t just manufacture textiles — we deliver solutions that enhance safety, sustainability, and operational efficiency for industries worldwide.",
+      "p1": "LS4IT (Lateral 4 System for Innovation Technology) is a pioneering technical textile headquartered in Ajman, UAE. We design and produce cutting-edge fabrics engineered for extreme performance, capable of withstanding the harshest climates and most demanding applications.",
+      "p2": "Our expertise lies in merging material innovation with precision to create fabrics that excel in defense, industrial, and outdoor environments. Whether it's the relentless heat of desert terrain, the constant exposure of marine settings, LS4IT fabrics are built to endure, protect, and perform.",
+      "p3": "We don’t just distribute textiles — we deliver solutions that enhance safety, sustainability, and operational efficiency for industries worldwide.",
       "cta1": "Our Services",
       "cta2": "Contact Us",
       "imgAlt": "Company History"
@@ -198,7 +198,7 @@
       "desc": "At LS4IT, innovation begins at the fiber level. Instead of applying performance features as afterthoughts, we integrate technology directly into the fabric structure, ensuring durability, consistency, and maximum efficiency in real-world use.",
       "items": [
         { "title": "Reflective Fiber Technology", "desc": "Enhances visibility and safety for applications like car covers, military uniforms, and police gear, even in low-light or high-risk conditions." },
-        { "title": "Antibacterial & Antimicrobial", "desc": "Integrated into fabrics for surgeon gowns, doctor coats, and medical scrubs, preventing bacterial growth and maintaining hygiene over extended use." },
+        { "title": "Antibacterial & Antimicrobial", "desc": "Integrated into fabrics for surgeon gowns, doctor coats, medical scrubs, bedsheets, and curtains, preventing bacterial growth and maintaining hygiene over extended use." },
         { "title": "Climate-Control Performance", "desc": "Uses passive cooling and UV-reflective properties to reduce heat buildup in tents, protective uniforms, enhancing comfort in extreme temperatures." },
         { "title": "Industrial-Grade Protection", "desc": "Durable fibers resistant to abrasion, tearing, and environmental wear, tailored for industrial worker uniforms operating in high-stress conditions." },
         { "title": "All-Weather Resistance", "desc": "Fabrics engineered to be waterproof yet breathable, capable of performing in desert heat, heavy rain, and freezing cold without compromising flexibility." }
@@ -505,7 +505,7 @@
   "4_title": "4. Returns & Exchanges",
   "4_items": {
     "return_policy": "Returns are accepted only if agreed upon in writing and if products are unused, in original condition, and returned within 30 days of receipt.",
-    "custom": "Customized or made-to-order fabrics are non-returnable except in cases of manufacturing defects."
+    "custom": "Customized or made-to-order fabrics are non-returnable except in cases of any defects."
   },
 
   "5_title": "5. Intellectual Property",
@@ -532,6 +532,4 @@
     "phone": "Phone: +971 52 666997"
   }
 }
-
-
 }
