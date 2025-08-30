@@ -1,10 +1,10 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 
 import { Category } from "@/lib/types";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Logo from "./logo";
 import { getAllCategories } from "@/services";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 const contactInfo = [
   {
@@ -34,8 +34,8 @@ export default async function SiteFooter({
 }: {
   readonly locale: "en" | "ar";
 }) {
-  const t = useTranslations("Footer");
-  const th = useTranslations("Header");
+  const t = await getTranslations("Footer");
+  const th = await getTranslations("Header");
 
   const { categories } = (await getAllCategories(locale)) as {
     categories: Category[];

@@ -2,7 +2,6 @@ import "../globals.css";
 
 import { Geist, Geist_Mono } from "next/font/google";
 import { Locale, NextIntlClientProvider, hasLocale } from "next-intl";
-import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { Metadata } from "next";
 import { ReactNode } from "react";
@@ -12,6 +11,7 @@ import { Toaster } from "sonner";
 import VideoIntro from "@/components/video-intro";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { setRequestLocale } from "next-intl/server";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

@@ -1,12 +1,12 @@
 export const dynamic = "force-dynamic";
 
 import { Category } from "@/lib/types";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { Metadata } from "next";
 import { PackageX } from "lucide-react";
 import { SafeImage } from "@/components/ui/safe-image";
 import { getAllCategories } from "@/services";
-import { getTranslations } from "next-intl/server"
+import { getTranslations } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Products",
@@ -34,10 +34,8 @@ interface CategoryProps {
   params: Promise<{ locale: "en" | "ar" }>;
 }
 
-export default async function ProductsPage({
-  params,
-}: CategoryProps) {
-  const { locale } = await params; 
+export default async function ProductsPage({ params }: CategoryProps) {
+  const { locale } = await params;
 
   const t = await getTranslations({ locale, namespace: "Products" });
   const data = (await getAllCategories(locale)) as { categories: Category[] };

@@ -2,7 +2,7 @@ export const dynamic = "force-dynamic";
 
 import { getAllProducts, getProductBySubCategorySlug } from "@/services";
 import { Breadcrumbs } from "@/components/products/breadcrumbs";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import type { Metadata } from "next";
 import { Product } from "@/lib/types";
 import { ProductGallery } from "@/components/products/product-gallery";
@@ -12,12 +12,10 @@ import { getTranslations } from "next-intl/server";
 
 export async function generateStaticParams() {
   const res = (await getAllProducts()) as { products: Product[] };
-  return (
-    res.products.flatMap((p) => [
-      { product: p.slug, locale: "en" },
-      { product: p.slug, locale: "ar" },
-    ])
-  );
+  return res.products.flatMap((p) => [
+    { product: p.slug, locale: "en" },
+    { product: p.slug, locale: "ar" },
+  ]);
 }
 
 interface ProjectDetailsProps {
@@ -27,8 +25,8 @@ interface ProjectDetailsProps {
 export default async function ProductDetailPage({
   params,
 }: ProjectDetailsProps) {
-  const { product: productSlug, locale } = await params; 
-  
+  const { product: productSlug, locale } = await params;
+
   const t = await getTranslations({ locale, namespace: "Product" });
   const { product } = (await getProductBySubCategorySlug(
     productSlug,

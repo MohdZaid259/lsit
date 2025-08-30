@@ -2,7 +2,6 @@ import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
   NavigationMenuViewport,
@@ -10,20 +9,20 @@ import {
 
 import { Category } from "@/lib/types";
 import { ChevronRightIcon } from "lucide-react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import LocaleSwitcher from "./common/locale-switcher";
 import Logo from "./logo";
 import MetallicButton from "./common/metallic-button";
 import MobileMenu from "./mobile-menu";
 import { getAllCategories } from "@/services";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 export default async function SiteHeader({
   locale = "en",
 }: {
   readonly locale: "en" | "ar";
 }) {
-  const t = useTranslations("Header");
+  const t = await getTranslations("Header");
 
   const { categories } = (await getAllCategories(locale)) as {
     categories: Category[];
@@ -51,38 +50,32 @@ export default async function SiteHeader({
           <NavigationMenuList>
             {/* About */}
             <NavigationMenuItem>
-              <NavigationMenuLink asChild>
-                <Link
-                  href="/about"
-                  className="px-4 py-2 text-sm font-semibold text-muted-foreground hover:text-slate-900 transition-colors"
-                >
-                  {t("about")}
-                </Link>
-              </NavigationMenuLink>
+              <Link
+                href="/about"
+                className="data-[active=true]:focus:bg-accent data-[active=true]:hover:bg-accent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-accent focus:bg-accent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 px-4 py-2 font-semibold text-muted-foreground hover:text-slate-900"
+              >
+                {t("about")}
+              </Link>
             </NavigationMenuItem>
 
             {/* Our Services */}
             <NavigationMenuItem>
-              <NavigationMenuLink asChild>
-                <Link
-                  href="/#our-services"
-                  className="px-4 py-2 text-sm font-semibold text-muted-foreground hover:text-slate-900 transition-colors"
-                >
-                  {t("ourServices")}
-                </Link>
-              </NavigationMenuLink>
+              <Link
+                href="/#our-services"
+                className="data-[active=true]:focus:bg-accent data-[active=true]:hover:bg-accent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-accent focus:bg-accent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 px-4 py-2 font-semibold text-muted-foreground hover:text-slate-900"
+              >
+                {t("ourServices")}
+              </Link>
             </NavigationMenuItem>
 
             {/* Technologies */}
             <NavigationMenuItem>
-              <NavigationMenuLink asChild>
-                <Link
-                  href="/technology"
-                  className="px-4 py-2 text-sm font-semibold text-muted-foreground hover:text-slate-900 transition-colors"
-                >
-                  {t("technologies")}
-                </Link>
-              </NavigationMenuLink>
+              <Link
+                href="/technology"
+                className="data-[active=true]:focus:bg-accent data-[active=true]:hover:bg-accent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-accent focus:bg-accent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 px-4 py-2 font-semibold text-muted-foreground hover:text-slate-900"
+              >
+                {t("technologies")}
+              </Link>
             </NavigationMenuItem>
 
             {/* Products Mega Menu */}

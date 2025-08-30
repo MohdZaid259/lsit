@@ -3,7 +3,7 @@ export const dynamic = "force-dynamic";
 import { getAllCategories, getProductsByCategorySlug } from "@/services";
 import { Breadcrumbs } from "@/components/products/breadcrumbs";
 import { Category } from "@/lib/types";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { SafeImage } from "@/components/ui/safe-image";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
@@ -53,10 +53,8 @@ interface CategoryDetailsProps {
   params: Promise<{ category: string; locale: "en" | "ar" }>;
 }
 
-export default async function CategoryPage({
-  params,
-}: CategoryDetailsProps) {
-  const { category: categoryParam, locale } = await params; 
+export default async function CategoryPage({ params }: CategoryDetailsProps) {
+  const { category: categoryParam, locale } = await params;
 
   const t = await getTranslations({ locale, namespace: "Products" });
   const { category } = (await getProductsByCategorySlug(
