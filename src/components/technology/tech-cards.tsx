@@ -60,7 +60,7 @@ export default function TechCards() {
                   {icons[index]}
                   <Badge variant="secondary">{tech.badge}</Badge>
                 </div>
-                <CardTitle className="text-2xl">{tech.title}</CardTitle>
+                <CardTitle className="text-2xl">{tech.image? <img src={tech.image} alt={tech.title} className="w-full h-12 -ml-10 scale-75 object-cover" /> : tech.title}</CardTitle>
                 <CardDescription>{tech.description}</CardDescription>
               </CardHeader>
               <CardContent>

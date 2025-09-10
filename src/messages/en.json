@@ -241,6 +241,7 @@
         {
           "badge": "Adjustable Insulation",
           "title": "PRIMERRA",
+          "image": "/technology/images/primerra.png",
           "description": "SMC nano-tube insulation with customizable warmth and comfort.",
           "bullets": [
             "Antibacterial silver-dot treatment",
@@ -252,6 +253,7 @@
         {
           "badge": "Advanced Materials",
           "title": "X15 TECH",
+          "image": "/technology/images/suntech.png",
           "description": "Graphene-enhanced polymers for urban heat control and sustainability.",
           "bullets": [
             "Multilayer graphene/polymer options",
@@ -262,7 +264,7 @@
         },
         {
           "badge": "Waterproof Protection",
-          "title": "HydroGuard",
+          "title": "HydroLoom",
           "description": "High-performance membranes designed to block water penetration while keeping fabrics lightweight.",
           "bullets": [
             "100% waterproof barrier",
@@ -272,7 +274,7 @@
         },
         {
           "badge": "Breathable Comfort",
-          "title": "AeroWeave",
+          "title": "AeroLoom",
           "description": "Engineered for airflow without sacrificing protection.",
           "bullets": [
             "Optimized moisture vapor transmission",
@@ -282,7 +284,7 @@
         },
         {
           "badge": "Fireproof Safety",
-          "title": "FlameShield",
+          "title": "PyroWeave",
           "description": "Heat- and flame-resistant fabrics for extreme protection.",
           "bullets": [
             "Meets NFPA & EN safety standards",
@@ -292,7 +294,7 @@
         },
         {
           "badge": "Thermal Insulation",
-          "title": "ThermoCore",
+          "title": "ThermoLoom",
           "description": "Advanced fibers for year-round temperature control.",
           "bullets": [
             "Superior heat retention in cold climates",
@@ -302,7 +304,7 @@
         },
         {
           "badge": "Antibacterial Protection",
-          "title": "BioDefend",
+          "title": "BioLoom",
           "description": "Textiles infused with long-lasting antibacterial agents.",
           "bullets": [
             "Inhibits bacterial growth & odor",
