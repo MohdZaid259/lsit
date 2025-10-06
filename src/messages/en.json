@@ -264,7 +264,7 @@
         },
         {
           "badge": "Waterproof Protection",
-          "title": "HydroLoom",
+          "title": "Hydro",
           "description": "High-performance membranes designed to block water penetration while keeping fabrics lightweight.",
           "bullets": [
             "100% waterproof barrier",
@@ -274,7 +274,7 @@
         },
         {
           "badge": "Breathable Comfort",
-          "title": "AeroLoom",
+          "title": "Aero",
           "description": "Engineered for airflow without sacrificing protection.",
           "bullets": [
             "Optimized moisture vapor transmission",
@@ -294,7 +294,7 @@
         },
         {
           "badge": "Thermal Insulation",
-          "title": "ThermoLoom",
+          "title": "Thermo",
           "description": "Advanced fibers for year-round temperature control.",
           "bullets": [
             "Superior heat retention in cold climates",
@@ -304,7 +304,7 @@
         },
         {
           "badge": "Antibacterial Protection",
-          "title": "BioLoom",
+          "title": "Bio",
           "description": "Textiles infused with long-lasting antibacterial agents.",
           "bullets": [
             "Inhibits bacterial growth & odor",
