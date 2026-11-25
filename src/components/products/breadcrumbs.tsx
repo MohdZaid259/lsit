@@ -7,9 +7,9 @@ import { useTranslations } from "next-intl";
 
 export function Breadcrumbs({
   className = "",
-  locale,
 }: {
   readonly className?: string;
+  // Still passed by callers; the Link takes the locale from context.
   readonly locale: "en" | "ar";
 }) {
   const t = useTranslations("Breadcrumbs");
@@ -19,19 +19,17 @@ export function Breadcrumbs({
     locale?: string;
   }>();
 
-  // Use locale from prop or params
-  const currentLocale = locale || (params.locale as "en" | "ar") || "en";
-
-  // Start with base crumbs
+  // Hrefs stay unprefixed: the locale-aware Link adds /en or /ar itself
+  // (prefixing here produced /en/en, which 404s).
   const items = [
-    { label: t("home"), href: `/${currentLocale}` },
-    { label: t("products"), href: `/${currentLocale}/products` },
+    { label: t("home"), href: "/" },
+    { label: t("products"), href: "/products" },
   ];
 
   if (params.category) {
     items.push({
       label: decodeURIComponent(params.category),
-      href: `/${currentLocale}/products/${params.category}`,
+      href: `/products/${params.category}`,
     });
   }
 
