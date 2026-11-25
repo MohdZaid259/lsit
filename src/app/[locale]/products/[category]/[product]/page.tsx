@@ -20,13 +20,14 @@ export async function generateStaticParams() {
 }
 
 interface ProjectDetailsProps {
-  params: Promise<{ product: string; locale: "en" | "ar" }>;
+  params: Promise<{ product: string; locale: string }>;
 }
 
 export default async function ProductDetailPage({
   params,
 }: ProjectDetailsProps) {
-  const { product: productSlug, locale } = await params;
+  const { product: productSlug, locale: rawLocale } = await params;
+  const locale = rawLocale as "en" | "ar"; // [locale] layout guarantees this via hasLocale
 
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "Product" });

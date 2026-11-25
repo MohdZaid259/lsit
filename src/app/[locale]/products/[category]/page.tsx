@@ -23,7 +23,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: CategoryDetailsProps): Promise<Metadata> {
-  const { category: categoryParam, locale } = await params;
+  const { category: categoryParam, locale: rawLocale } = await params;
+  const locale = rawLocale as "en" | "ar"; // [locale] layout guarantees this via hasLocale
 
   const res = (await getProductsByCategorySlug(categoryParam, locale)) as {
     category: Category;
@@ -51,11 +52,12 @@ export async function generateMetadata({
 }
 
 interface CategoryDetailsProps {
-  params: Promise<{ category: string; locale: "en" | "ar" }>;
+  params: Promise<{ category: string; locale: string }>;
 }
 
 export default async function CategoryPage({ params }: CategoryDetailsProps) {
-  const { category: categoryParam, locale } = await params;
+  const { category: categoryParam, locale: rawLocale } = await params;
+  const locale = rawLocale as "en" | "ar"; // [locale] layout guarantees this via hasLocale
   setRequestLocale(locale);
 
   const t = await getTranslations({ locale, namespace: "Products" });

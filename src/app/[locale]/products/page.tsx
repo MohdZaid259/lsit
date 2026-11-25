@@ -32,11 +32,12 @@ export const metadata: Metadata = {
 };
 
 interface CategoryProps {
-  params: Promise<{ locale: "en" | "ar" }>;
+  params: Promise<{ locale: string }>;
 }
 
 export default async function ProductsPage({ params }: CategoryProps) {
-  const { locale } = await params;
+  const { locale: rawLocale } = await params;
+  const locale = rawLocale as "en" | "ar"; // [locale] layout guarantees this via hasLocale
 
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "Products" });

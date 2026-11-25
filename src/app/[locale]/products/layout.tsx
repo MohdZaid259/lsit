@@ -24,9 +24,10 @@ export default async function ProductsLayout({
   params,
 }: {
   readonly children: React.ReactNode;
-  readonly params: Promise<{ locale: "en" | "ar" }>;
+  readonly params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
+  const { locale: rawLocale } = await params;
+  const locale = rawLocale as "en" | "ar"; // [locale] layout guarantees this via hasLocale
 
   return (
     <div className="px-4 md:px-6 py-6 md:mx-16 mx-0">
