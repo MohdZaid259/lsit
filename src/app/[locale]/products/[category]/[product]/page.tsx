@@ -1,6 +1,7 @@
-export const dynamic = "force-dynamic";
+// Rendered once, then cached on the CDN and refreshed hourly (was force-dynamic: one function run per request)
+export const revalidate = 3600;
 
-import { getAllProducts, getProductBySubCategorySlug } from "@/services";
+import { getProductBySubCategorySlug } from "@/services";
 import { Breadcrumbs } from "@/components/products/breadcrumbs";
 import { Link } from "@/i18n/navigation";
 import type { Metadata } from "next";
@@ -8,14 +9,14 @@ import { Product } from "@/lib/types";
 import { ProductGallery } from "@/components/products/product-gallery";
 import { SafeImage } from "@/components/ui/safe-image";
 import { notFound } from "next/navigation";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
+// Build each product page on its first visit, then serve it from the cache (refreshed hourly).
+// Pre-building at deploy time is avoided on purpose: this route is nested under [category],
+// and the product list ignores the category, so every product would be built under every
+// category (thousands of Hygraph calls per build). An empty array keeps the route cacheable.
 export async function generateStaticParams() {
-  const res = (await getAllProducts()) as { products: Product[] };
-  return res.products.flatMap((p) => [
-    { product: p.slug, locale: "en" },
-    { product: p.slug, locale: "ar" },
-  ]);
+  return [];
 }
 
 interface ProjectDetailsProps {
@@ -27,6 +28,7 @@ export default async function ProductDetailPage({
 }: ProjectDetailsProps) {
   const { product: productSlug, locale } = await params;
 
+  setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "Product" });
   const { product } = (await getProductBySubCategorySlug(
     productSlug,

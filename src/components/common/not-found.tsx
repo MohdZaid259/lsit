@@ -1,7 +1,10 @@
 import { Home, Phone } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { Link } from "@/i18n/navigation";
+// Plain next/link on purpose: this also renders in the root 404, which has no locale. A locale-aware
+// Link there reads request headers and forces every page to render dynamically. "/" and "/#contact"
+// are redirected to the visitor's language by the middleware.
+import Link from "next/link";
 
 export default function NotFoundContent({
   title,

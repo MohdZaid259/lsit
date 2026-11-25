@@ -1,8 +1,12 @@
+import { use } from "react";
+import { setRequestLocale } from "next-intl/server";
 import TechHeader from "@/components/technology/tech-header";
 import TechCards from "@/components/technology/tech-cards";
 import TechApplication from "@/components/technology/tech-application";
 
-export default function TechnologyPage() {
+export default function TechnologyPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = use(params);
+  setRequestLocale(locale);
 
   return (
     <>      

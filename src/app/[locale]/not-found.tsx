@@ -1,8 +1,13 @@
-import NotFoundContent from "@/components/common/not-found";
-import { getTranslations } from "next-intl/server";
+"use client";
 
-export default async function LocaleNotFound() {
-  const t = await getTranslations("NotFound");
+// Client component on purpose: it takes translations from the layout's NextIntlClientProvider.
+// As a server component, getTranslations() here had no locale and read request headers, which
+// forced every page under [locale] to render dynamically instead of being served statically.
+import NotFoundContent from "@/components/common/not-found";
+import { useTranslations } from "next-intl";
+
+export default function LocaleNotFound() {
+  const t = useTranslations("NotFound");
 
   return (
     <NotFoundContent

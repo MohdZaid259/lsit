@@ -1,3 +1,5 @@
+import { use } from "react";
+import { setRequestLocale } from "next-intl/server";
 import React from 'react'
 import type { Metadata } from "next";
 import Privacy from '@/components/privacy';
@@ -20,7 +22,9 @@ export const metadata: Metadata = {
   },
 };
 
-function page() {
+function page({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = use(params);
+  setRequestLocale(locale);
   return (
     <Privacy/>
   )

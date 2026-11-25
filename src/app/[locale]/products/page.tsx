@@ -1,4 +1,5 @@
-export const dynamic = "force-dynamic";
+// Rendered once, then cached on the CDN and refreshed hourly (was force-dynamic: one function run per request)
+export const revalidate = 3600;
 
 import { Category } from "@/lib/types";
 import { Link } from "@/i18n/navigation";
@@ -6,7 +7,7 @@ import { Metadata } from "next";
 import { PackageX } from "lucide-react";
 import { SafeImage } from "@/components/ui/safe-image";
 import { getAllCategories } from "@/services";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Products",
@@ -37,6 +38,7 @@ interface CategoryProps {
 export default async function ProductsPage({ params }: CategoryProps) {
   const { locale } = await params;
 
+  setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "Products" });
   const data = (await getAllCategories(locale)) as { categories: Category[] };
 
